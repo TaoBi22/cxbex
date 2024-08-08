@@ -1,0 +1,3 @@
+[submodule "flexbex"]
+	path = flexbex
+	url = https://github.com/meiniKi/flexbex
