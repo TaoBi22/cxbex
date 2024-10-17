@@ -1,5 +1,5 @@
 {
-  "creator": "Yosys 0.43 (git sha1 ead4718e5, g++ 14.1.1 -march=x86-64 -mtune=generic -O2 -fno-plt -fexceptions -fstack-clash-protection -fcf-protection -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -ffile-prefix-map=/build/yosys/src=/usr/src/debug/yosys -fPIC -Os)",
+  "creator": "Yosys 0.43 (git sha1 ead4718e5, g++ 14.2.1 -march=x86-64 -mtune=generic -O2 -fno-plt -fexceptions -fstack-clash-protection -fcf-protection -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -ffile-prefix-map=/build/yosys/src=/usr/src/debug/yosys -fPIC -Os)",
   "modules": {
     "RegFile_32x4": {
       "attributes": {
@@ -9,7 +9,7 @@
         "FABulous": 1,
         "dynports": 1,
         "cells_not_processed": 1,
-        "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:20.1-112.10"
+        "src": "CXBex/Tile/RegFile/RegFile_32x4.v:20.1-112.10"
       },
       "parameter_default_values": {
         "NoConfigBits": 2
@@ -150,7 +150,7 @@
             "WIDTH": 4
           },
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:90.4-90.19"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:90.4-90.19"
           },
           "port_directions": {
             "ADDR": "input",
@@ -165,7 +165,7 @@
             "EN": [ 42, 43, 44, 45 ]
           }
         },
-        "$eq$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:89$39": {
+        "$eq$CXBex/Tile/RegFile/RegFile_32x4.v:89$39": {
           "hide_name": 1,
           "type": "$eq",
           "parameters": {
@@ -176,7 +176,7 @@
             "Y_WIDTH": 1
           },
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:89.7-89.19"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:89.7-89.19"
           },
           "port_directions": {
             "A": "input",
@@ -189,7 +189,7 @@
             "Y": [ 46 ]
           }
         },
-        "$meminit$\\mem$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83$54": {
+        "$meminit$\\mem$CXBex/Tile/RegFile/RegFile_32x4.v:83$54": {
           "hide_name": 1,
           "type": "$meminit_v2",
           "parameters": {
@@ -200,7 +200,7 @@
             "WORDS": 1
           },
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83.4-83.20"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:83.4-83.20"
           },
           "port_directions": {
             "ADDR": "input",
@@ -213,7 +213,7 @@
             "EN": [ "1", "1", "1", "1" ]
           }
         },
-        "$meminit$\\mem$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83$55": {
+        "$meminit$\\mem$CXBex/Tile/RegFile/RegFile_32x4.v:83$55": {
           "hide_name": 1,
           "type": "$meminit_v2",
           "parameters": {
@@ -224,7 +224,7 @@
             "WORDS": 1
           },
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83.4-83.20"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:83.4-83.20"
           },
           "port_directions": {
             "ADDR": "input",
@@ -237,7 +237,7 @@
             "EN": [ "1", "1", "1", "1" ]
           }
         },
-        "$meminit$\\mem$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83$56": {
+        "$meminit$\\mem$CXBex/Tile/RegFile/RegFile_32x4.v:83$56": {
           "hide_name": 1,
           "type": "$meminit_v2",
           "parameters": {
@@ -248,7 +248,7 @@
             "WORDS": 1
           },
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83.4-83.20"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:83.4-83.20"
           },
           "port_directions": {
             "ADDR": "input",
@@ -261,7 +261,7 @@
             "EN": [ "1", "1", "1", "1" ]
           }
         },
-        "$meminit$\\mem$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83$57": {
+        "$meminit$\\mem$CXBex/Tile/RegFile/RegFile_32x4.v:83$57": {
           "hide_name": 1,
           "type": "$meminit_v2",
           "parameters": {
@@ -272,7 +272,7 @@
             "WORDS": 1
           },
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83.4-83.20"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:83.4-83.20"
           },
           "port_directions": {
             "ADDR": "input",
@@ -285,7 +285,7 @@
             "EN": [ "1", "1", "1", "1" ]
           }
         },
-        "$meminit$\\mem$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83$58": {
+        "$meminit$\\mem$CXBex/Tile/RegFile/RegFile_32x4.v:83$58": {
           "hide_name": 1,
           "type": "$meminit_v2",
           "parameters": {
@@ -296,7 +296,7 @@
             "WORDS": 1
           },
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83.4-83.20"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:83.4-83.20"
           },
           "port_directions": {
             "ADDR": "input",
@@ -309,7 +309,7 @@
             "EN": [ "1", "1", "1", "1" ]
           }
         },
-        "$meminit$\\mem$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83$59": {
+        "$meminit$\\mem$CXBex/Tile/RegFile/RegFile_32x4.v:83$59": {
           "hide_name": 1,
           "type": "$meminit_v2",
           "parameters": {
@@ -320,7 +320,7 @@
             "WORDS": 1
           },
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83.4-83.20"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:83.4-83.20"
           },
           "port_directions": {
             "ADDR": "input",
@@ -333,7 +333,7 @@
             "EN": [ "1", "1", "1", "1" ]
           }
         },
-        "$meminit$\\mem$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83$60": {
+        "$meminit$\\mem$CXBex/Tile/RegFile/RegFile_32x4.v:83$60": {
           "hide_name": 1,
           "type": "$meminit_v2",
           "parameters": {
@@ -344,7 +344,7 @@
             "WORDS": 1
           },
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83.4-83.20"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:83.4-83.20"
           },
           "port_directions": {
             "ADDR": "input",
@@ -357,7 +357,7 @@
             "EN": [ "1", "1", "1", "1" ]
           }
         },
-        "$meminit$\\mem$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83$61": {
+        "$meminit$\\mem$CXBex/Tile/RegFile/RegFile_32x4.v:83$61": {
           "hide_name": 1,
           "type": "$meminit_v2",
           "parameters": {
@@ -368,7 +368,7 @@
             "WORDS": 1
           },
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83.4-83.20"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:83.4-83.20"
           },
           "port_directions": {
             "ADDR": "input",
@@ -381,7 +381,7 @@
             "EN": [ "1", "1", "1", "1" ]
           }
         },
-        "$meminit$\\mem$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83$62": {
+        "$meminit$\\mem$CXBex/Tile/RegFile/RegFile_32x4.v:83$62": {
           "hide_name": 1,
           "type": "$meminit_v2",
           "parameters": {
@@ -392,7 +392,7 @@
             "WORDS": 1
           },
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83.4-83.20"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:83.4-83.20"
           },
           "port_directions": {
             "ADDR": "input",
@@ -405,7 +405,7 @@
             "EN": [ "1", "1", "1", "1" ]
           }
         },
-        "$meminit$\\mem$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83$63": {
+        "$meminit$\\mem$CXBex/Tile/RegFile/RegFile_32x4.v:83$63": {
           "hide_name": 1,
           "type": "$meminit_v2",
           "parameters": {
@@ -416,7 +416,7 @@
             "WORDS": 1
           },
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83.4-83.20"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:83.4-83.20"
           },
           "port_directions": {
             "ADDR": "input",
@@ -429,7 +429,7 @@
             "EN": [ "1", "1", "1", "1" ]
           }
         },
-        "$meminit$\\mem$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83$64": {
+        "$meminit$\\mem$CXBex/Tile/RegFile/RegFile_32x4.v:83$64": {
           "hide_name": 1,
           "type": "$meminit_v2",
           "parameters": {
@@ -440,7 +440,7 @@
             "WORDS": 1
           },
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83.4-83.20"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:83.4-83.20"
           },
           "port_directions": {
             "ADDR": "input",
@@ -453,7 +453,7 @@
             "EN": [ "1", "1", "1", "1" ]
           }
         },
-        "$meminit$\\mem$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83$65": {
+        "$meminit$\\mem$CXBex/Tile/RegFile/RegFile_32x4.v:83$65": {
           "hide_name": 1,
           "type": "$meminit_v2",
           "parameters": {
@@ -464,7 +464,7 @@
             "WORDS": 1
           },
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83.4-83.20"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:83.4-83.20"
           },
           "port_directions": {
             "ADDR": "input",
@@ -477,7 +477,7 @@
             "EN": [ "1", "1", "1", "1" ]
           }
         },
-        "$meminit$\\mem$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83$66": {
+        "$meminit$\\mem$CXBex/Tile/RegFile/RegFile_32x4.v:83$66": {
           "hide_name": 1,
           "type": "$meminit_v2",
           "parameters": {
@@ -488,7 +488,7 @@
             "WORDS": 1
           },
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83.4-83.20"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:83.4-83.20"
           },
           "port_directions": {
             "ADDR": "input",
@@ -501,7 +501,7 @@
             "EN": [ "1", "1", "1", "1" ]
           }
         },
-        "$meminit$\\mem$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83$67": {
+        "$meminit$\\mem$CXBex/Tile/RegFile/RegFile_32x4.v:83$67": {
           "hide_name": 1,
           "type": "$meminit_v2",
           "parameters": {
@@ -512,7 +512,7 @@
             "WORDS": 1
           },
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83.4-83.20"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:83.4-83.20"
           },
           "port_directions": {
             "ADDR": "input",
@@ -525,7 +525,7 @@
             "EN": [ "1", "1", "1", "1" ]
           }
         },
-        "$meminit$\\mem$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83$68": {
+        "$meminit$\\mem$CXBex/Tile/RegFile/RegFile_32x4.v:83$68": {
           "hide_name": 1,
           "type": "$meminit_v2",
           "parameters": {
@@ -536,7 +536,7 @@
             "WORDS": 1
           },
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83.4-83.20"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:83.4-83.20"
           },
           "port_directions": {
             "ADDR": "input",
@@ -549,7 +549,7 @@
             "EN": [ "1", "1", "1", "1" ]
           }
         },
-        "$meminit$\\mem$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83$69": {
+        "$meminit$\\mem$CXBex/Tile/RegFile/RegFile_32x4.v:83$69": {
           "hide_name": 1,
           "type": "$meminit_v2",
           "parameters": {
@@ -560,7 +560,7 @@
             "WORDS": 1
           },
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83.4-83.20"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:83.4-83.20"
           },
           "port_directions": {
             "ADDR": "input",
@@ -573,7 +573,7 @@
             "EN": [ "1", "1", "1", "1" ]
           }
         },
-        "$meminit$\\mem$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83$70": {
+        "$meminit$\\mem$CXBex/Tile/RegFile/RegFile_32x4.v:83$70": {
           "hide_name": 1,
           "type": "$meminit_v2",
           "parameters": {
@@ -584,7 +584,7 @@
             "WORDS": 1
           },
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83.4-83.20"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:83.4-83.20"
           },
           "port_directions": {
             "ADDR": "input",
@@ -597,7 +597,7 @@
             "EN": [ "1", "1", "1", "1" ]
           }
         },
-        "$meminit$\\mem$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83$71": {
+        "$meminit$\\mem$CXBex/Tile/RegFile/RegFile_32x4.v:83$71": {
           "hide_name": 1,
           "type": "$meminit_v2",
           "parameters": {
@@ -608,7 +608,7 @@
             "WORDS": 1
           },
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83.4-83.20"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:83.4-83.20"
           },
           "port_directions": {
             "ADDR": "input",
@@ -621,7 +621,7 @@
             "EN": [ "1", "1", "1", "1" ]
           }
         },
-        "$meminit$\\mem$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83$72": {
+        "$meminit$\\mem$CXBex/Tile/RegFile/RegFile_32x4.v:83$72": {
           "hide_name": 1,
           "type": "$meminit_v2",
           "parameters": {
@@ -632,7 +632,7 @@
             "WORDS": 1
           },
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83.4-83.20"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:83.4-83.20"
           },
           "port_directions": {
             "ADDR": "input",
@@ -645,7 +645,7 @@
             "EN": [ "1", "1", "1", "1" ]
           }
         },
-        "$meminit$\\mem$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83$73": {
+        "$meminit$\\mem$CXBex/Tile/RegFile/RegFile_32x4.v:83$73": {
           "hide_name": 1,
           "type": "$meminit_v2",
           "parameters": {
@@ -656,7 +656,7 @@
             "WORDS": 1
           },
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83.4-83.20"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:83.4-83.20"
           },
           "port_directions": {
             "ADDR": "input",
@@ -669,7 +669,7 @@
             "EN": [ "1", "1", "1", "1" ]
           }
         },
-        "$meminit$\\mem$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83$74": {
+        "$meminit$\\mem$CXBex/Tile/RegFile/RegFile_32x4.v:83$74": {
           "hide_name": 1,
           "type": "$meminit_v2",
           "parameters": {
@@ -680,7 +680,7 @@
             "WORDS": 1
           },
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83.4-83.20"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:83.4-83.20"
           },
           "port_directions": {
             "ADDR": "input",
@@ -693,7 +693,7 @@
             "EN": [ "1", "1", "1", "1" ]
           }
         },
-        "$meminit$\\mem$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83$75": {
+        "$meminit$\\mem$CXBex/Tile/RegFile/RegFile_32x4.v:83$75": {
           "hide_name": 1,
           "type": "$meminit_v2",
           "parameters": {
@@ -704,7 +704,7 @@
             "WORDS": 1
           },
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83.4-83.20"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:83.4-83.20"
           },
           "port_directions": {
             "ADDR": "input",
@@ -717,7 +717,7 @@
             "EN": [ "1", "1", "1", "1" ]
           }
         },
-        "$meminit$\\mem$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83$76": {
+        "$meminit$\\mem$CXBex/Tile/RegFile/RegFile_32x4.v:83$76": {
           "hide_name": 1,
           "type": "$meminit_v2",
           "parameters": {
@@ -728,7 +728,7 @@
             "WORDS": 1
           },
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83.4-83.20"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:83.4-83.20"
           },
           "port_directions": {
             "ADDR": "input",
@@ -741,7 +741,7 @@
             "EN": [ "1", "1", "1", "1" ]
           }
         },
-        "$meminit$\\mem$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83$77": {
+        "$meminit$\\mem$CXBex/Tile/RegFile/RegFile_32x4.v:83$77": {
           "hide_name": 1,
           "type": "$meminit_v2",
           "parameters": {
@@ -752,7 +752,7 @@
             "WORDS": 1
           },
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83.4-83.20"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:83.4-83.20"
           },
           "port_directions": {
             "ADDR": "input",
@@ -765,7 +765,7 @@
             "EN": [ "1", "1", "1", "1" ]
           }
         },
-        "$meminit$\\mem$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83$78": {
+        "$meminit$\\mem$CXBex/Tile/RegFile/RegFile_32x4.v:83$78": {
           "hide_name": 1,
           "type": "$meminit_v2",
           "parameters": {
@@ -776,7 +776,7 @@
             "WORDS": 1
           },
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83.4-83.20"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:83.4-83.20"
           },
           "port_directions": {
             "ADDR": "input",
@@ -789,7 +789,7 @@
             "EN": [ "1", "1", "1", "1" ]
           }
         },
-        "$meminit$\\mem$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83$79": {
+        "$meminit$\\mem$CXBex/Tile/RegFile/RegFile_32x4.v:83$79": {
           "hide_name": 1,
           "type": "$meminit_v2",
           "parameters": {
@@ -800,7 +800,7 @@
             "WORDS": 1
           },
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83.4-83.20"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:83.4-83.20"
           },
           "port_directions": {
             "ADDR": "input",
@@ -813,7 +813,7 @@
             "EN": [ "1", "1", "1", "1" ]
           }
         },
-        "$meminit$\\mem$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83$80": {
+        "$meminit$\\mem$CXBex/Tile/RegFile/RegFile_32x4.v:83$80": {
           "hide_name": 1,
           "type": "$meminit_v2",
           "parameters": {
@@ -824,7 +824,7 @@
             "WORDS": 1
           },
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83.4-83.20"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:83.4-83.20"
           },
           "port_directions": {
             "ADDR": "input",
@@ -837,7 +837,7 @@
             "EN": [ "1", "1", "1", "1" ]
           }
         },
-        "$meminit$\\mem$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83$81": {
+        "$meminit$\\mem$CXBex/Tile/RegFile/RegFile_32x4.v:83$81": {
           "hide_name": 1,
           "type": "$meminit_v2",
           "parameters": {
@@ -848,7 +848,7 @@
             "WORDS": 1
           },
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83.4-83.20"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:83.4-83.20"
           },
           "port_directions": {
             "ADDR": "input",
@@ -861,7 +861,7 @@
             "EN": [ "1", "1", "1", "1" ]
           }
         },
-        "$meminit$\\mem$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83$82": {
+        "$meminit$\\mem$CXBex/Tile/RegFile/RegFile_32x4.v:83$82": {
           "hide_name": 1,
           "type": "$meminit_v2",
           "parameters": {
@@ -872,7 +872,7 @@
             "WORDS": 1
           },
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83.4-83.20"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:83.4-83.20"
           },
           "port_directions": {
             "ADDR": "input",
@@ -885,7 +885,7 @@
             "EN": [ "1", "1", "1", "1" ]
           }
         },
-        "$meminit$\\mem$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83$83": {
+        "$meminit$\\mem$CXBex/Tile/RegFile/RegFile_32x4.v:83$83": {
           "hide_name": 1,
           "type": "$meminit_v2",
           "parameters": {
@@ -896,7 +896,7 @@
             "WORDS": 1
           },
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83.4-83.20"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:83.4-83.20"
           },
           "port_directions": {
             "ADDR": "input",
@@ -909,7 +909,7 @@
             "EN": [ "1", "1", "1", "1" ]
           }
         },
-        "$meminit$\\mem$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83$84": {
+        "$meminit$\\mem$CXBex/Tile/RegFile/RegFile_32x4.v:83$84": {
           "hide_name": 1,
           "type": "$meminit_v2",
           "parameters": {
@@ -920,7 +920,7 @@
             "WORDS": 1
           },
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83.4-83.20"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:83.4-83.20"
           },
           "port_directions": {
             "ADDR": "input",
@@ -933,7 +933,7 @@
             "EN": [ "1", "1", "1", "1" ]
           }
         },
-        "$meminit$\\mem$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83$85": {
+        "$meminit$\\mem$CXBex/Tile/RegFile/RegFile_32x4.v:83$85": {
           "hide_name": 1,
           "type": "$meminit_v2",
           "parameters": {
@@ -944,7 +944,7 @@
             "WORDS": 1
           },
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83.4-83.20"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:83.4-83.20"
           },
           "port_directions": {
             "ADDR": "input",
@@ -957,7 +957,7 @@
             "EN": [ "1", "1", "1", "1" ]
           }
         },
-        "$memrd$\\mem$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:94$43": {
+        "$memrd$\\mem$CXBex/Tile/RegFile/RegFile_32x4.v:94$43": {
           "hide_name": 1,
           "type": "$memrd",
           "parameters": {
@@ -969,7 +969,7 @@
             "WIDTH": 4
           },
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:94.14-94.17"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:94.14-94.17"
           },
           "port_directions": {
             "ADDR": "input",
@@ -984,7 +984,7 @@
             "EN": [ "x" ]
           }
         },
-        "$memrd$\\mem$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:95$44": {
+        "$memrd$\\mem$CXBex/Tile/RegFile/RegFile_32x4.v:95$44": {
           "hide_name": 1,
           "type": "$memrd",
           "parameters": {
@@ -996,7 +996,7 @@
             "WIDTH": 4
           },
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:95.14-95.17"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:95.14-95.17"
           },
           "port_directions": {
             "ADDR": "input",
@@ -1019,7 +1019,7 @@
             "WIDTH": 4
           },
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:97.5-100.8"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:97.5-100.8"
           },
           "port_directions": {
             "CLK": "input",
@@ -1040,7 +1040,7 @@
             "WIDTH": 4
           },
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:97.5-100.8"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:97.5-100.8"
           },
           "port_directions": {
             "CLK": "input",
@@ -1061,7 +1061,7 @@
             "WIDTH": 5
           },
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:88.2-92.5"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:88.2-92.5"
           },
           "port_directions": {
             "CLK": "input",
@@ -1082,7 +1082,7 @@
             "WIDTH": 4
           },
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:88.2-92.5"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:88.2-92.5"
           },
           "port_directions": {
             "CLK": "input",
@@ -1103,7 +1103,7 @@
             "WIDTH": 4
           },
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:88.2-92.5"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:88.2-92.5"
           },
           "port_directions": {
             "CLK": "input",
@@ -1124,7 +1124,7 @@
           },
           "attributes": {
             "full_case": 1,
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:89.7-89.19|/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:89.3-91.6"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:89.7-89.19|CXBex/Tile/RegFile/RegFile_32x4.v:89.3-91.6"
           },
           "port_directions": {
             "A": "input",
@@ -1147,7 +1147,7 @@
           },
           "attributes": {
             "full_case": 1,
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:89.7-89.19|/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:89.3-91.6"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:89.7-89.19|CXBex/Tile/RegFile/RegFile_32x4.v:89.3-91.6"
           },
           "port_directions": {
             "A": "input",
@@ -1170,7 +1170,7 @@
           },
           "attributes": {
             "full_case": 1,
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:89.7-89.19|/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:89.3-91.6"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:89.7-89.19|CXBex/Tile/RegFile/RegFile_32x4.v:89.3-91.6"
           },
           "port_directions": {
             "A": "input",
@@ -1185,14 +1185,14 @@
             "Y": [ 33, 34, 35, 36, 37 ]
           }
         },
-        "$ternary$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:102$46": {
+        "$ternary$CXBex/Tile/RegFile/RegFile_32x4.v:102$46": {
           "hide_name": 1,
           "type": "$mux",
           "parameters": {
             "WIDTH": 1
           },
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:102.15-102.48"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:102.15-102.48"
           },
           "port_directions": {
             "A": "input",
@@ -1207,14 +1207,14 @@
             "Y": [ 12 ]
           }
         },
-        "$ternary$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:103$47": {
+        "$ternary$CXBex/Tile/RegFile/RegFile_32x4.v:103$47": {
           "hide_name": 1,
           "type": "$mux",
           "parameters": {
             "WIDTH": 1
           },
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:103.15-103.48"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:103.15-103.48"
           },
           "port_directions": {
             "A": "input",
@@ -1229,14 +1229,14 @@
             "Y": [ 13 ]
           }
         },
-        "$ternary$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:104$48": {
+        "$ternary$CXBex/Tile/RegFile/RegFile_32x4.v:104$48": {
           "hide_name": 1,
           "type": "$mux",
           "parameters": {
             "WIDTH": 1
           },
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:104.15-104.48"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:104.15-104.48"
           },
           "port_directions": {
             "A": "input",
@@ -1251,14 +1251,14 @@
             "Y": [ 14 ]
           }
         },
-        "$ternary$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:105$49": {
+        "$ternary$CXBex/Tile/RegFile/RegFile_32x4.v:105$49": {
           "hide_name": 1,
           "type": "$mux",
           "parameters": {
             "WIDTH": 1
           },
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:105.15-105.48"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:105.15-105.48"
           },
           "port_directions": {
             "A": "input",
@@ -1273,14 +1273,14 @@
             "Y": [ 15 ]
           }
         },
-        "$ternary$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:107$50": {
+        "$ternary$CXBex/Tile/RegFile/RegFile_32x4.v:107$50": {
           "hide_name": 1,
           "type": "$mux",
           "parameters": {
             "WIDTH": 1
           },
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:107.15-107.48"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:107.15-107.48"
           },
           "port_directions": {
             "A": "input",
@@ -1295,14 +1295,14 @@
             "Y": [ 21 ]
           }
         },
-        "$ternary$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:108$51": {
+        "$ternary$CXBex/Tile/RegFile/RegFile_32x4.v:108$51": {
           "hide_name": 1,
           "type": "$mux",
           "parameters": {
             "WIDTH": 1
           },
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:108.15-108.48"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:108.15-108.48"
           },
           "port_directions": {
             "A": "input",
@@ -1317,14 +1317,14 @@
             "Y": [ 22 ]
           }
         },
-        "$ternary$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:109$52": {
+        "$ternary$CXBex/Tile/RegFile/RegFile_32x4.v:109$52": {
           "hide_name": 1,
           "type": "$mux",
           "parameters": {
             "WIDTH": 1
           },
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:109.15-109.48"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:109.15-109.48"
           },
           "port_directions": {
             "A": "input",
@@ -1339,14 +1339,14 @@
             "Y": [ 23 ]
           }
         },
-        "$ternary$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:110$53": {
+        "$ternary$CXBex/Tile/RegFile/RegFile_32x4.v:110$53": {
           "hide_name": 1,
           "type": "$mux",
           "parameters": {
             "WIDTH": 1
           },
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:110.15-110.48"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:110.15-110.48"
           },
           "port_directions": {
             "A": "input",
@@ -1366,7 +1366,7 @@
         "mem": {
           "hide_name": 0,
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:60.12-60.15"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:60.12-60.15"
           },
           "width": 4,
           "start_offset": 0,
@@ -1374,557 +1374,557 @@
         }
       },
       "netnames": {
-        "$0$memwr$\\mem$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83$10_EN[3:0]$95": {
+        "$0$memwr$\\mem$CXBex/Tile/RegFile/RegFile_32x4.v:83$10_EN[3:0]$95": {
           "hide_name": 1,
           "bits": [ "1", "1", "1", "1" ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:0.0-0.0"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:0.0-0.0"
           }
         },
-        "$0$memwr$\\mem$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83$11_EN[3:0]$96": {
+        "$0$memwr$\\mem$CXBex/Tile/RegFile/RegFile_32x4.v:83$11_EN[3:0]$96": {
           "hide_name": 1,
           "bits": [ "1", "1", "1", "1" ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:0.0-0.0"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:0.0-0.0"
           }
         },
-        "$0$memwr$\\mem$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83$12_EN[3:0]$97": {
+        "$0$memwr$\\mem$CXBex/Tile/RegFile/RegFile_32x4.v:83$12_EN[3:0]$97": {
           "hide_name": 1,
           "bits": [ "1", "1", "1", "1" ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:0.0-0.0"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:0.0-0.0"
           }
         },
-        "$0$memwr$\\mem$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83$13_EN[3:0]$98": {
+        "$0$memwr$\\mem$CXBex/Tile/RegFile/RegFile_32x4.v:83$13_EN[3:0]$98": {
           "hide_name": 1,
           "bits": [ "1", "1", "1", "1" ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:0.0-0.0"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:0.0-0.0"
           }
         },
-        "$0$memwr$\\mem$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83$14_EN[3:0]$99": {
+        "$0$memwr$\\mem$CXBex/Tile/RegFile/RegFile_32x4.v:83$14_EN[3:0]$99": {
           "hide_name": 1,
           "bits": [ "1", "1", "1", "1" ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:0.0-0.0"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:0.0-0.0"
           }
         },
-        "$0$memwr$\\mem$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83$15_EN[3:0]$100": {
+        "$0$memwr$\\mem$CXBex/Tile/RegFile/RegFile_32x4.v:83$15_EN[3:0]$100": {
           "hide_name": 1,
           "bits": [ "1", "1", "1", "1" ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:0.0-0.0"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:0.0-0.0"
           }
         },
-        "$0$memwr$\\mem$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83$16_EN[3:0]$101": {
+        "$0$memwr$\\mem$CXBex/Tile/RegFile/RegFile_32x4.v:83$16_EN[3:0]$101": {
           "hide_name": 1,
           "bits": [ "1", "1", "1", "1" ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:0.0-0.0"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:0.0-0.0"
           }
         },
-        "$0$memwr$\\mem$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83$17_EN[3:0]$102": {
+        "$0$memwr$\\mem$CXBex/Tile/RegFile/RegFile_32x4.v:83$17_EN[3:0]$102": {
           "hide_name": 1,
           "bits": [ "1", "1", "1", "1" ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:0.0-0.0"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:0.0-0.0"
           }
         },
-        "$0$memwr$\\mem$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83$18_EN[3:0]$103": {
+        "$0$memwr$\\mem$CXBex/Tile/RegFile/RegFile_32x4.v:83$18_EN[3:0]$103": {
           "hide_name": 1,
           "bits": [ "1", "1", "1", "1" ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:0.0-0.0"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:0.0-0.0"
           }
         },
-        "$0$memwr$\\mem$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83$19_EN[3:0]$104": {
+        "$0$memwr$\\mem$CXBex/Tile/RegFile/RegFile_32x4.v:83$19_EN[3:0]$104": {
           "hide_name": 1,
           "bits": [ "1", "1", "1", "1" ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:0.0-0.0"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:0.0-0.0"
           }
         },
-        "$0$memwr$\\mem$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83$20_EN[3:0]$105": {
+        "$0$memwr$\\mem$CXBex/Tile/RegFile/RegFile_32x4.v:83$20_EN[3:0]$105": {
           "hide_name": 1,
           "bits": [ "1", "1", "1", "1" ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:0.0-0.0"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:0.0-0.0"
           }
         },
-        "$0$memwr$\\mem$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83$21_EN[3:0]$106": {
+        "$0$memwr$\\mem$CXBex/Tile/RegFile/RegFile_32x4.v:83$21_EN[3:0]$106": {
           "hide_name": 1,
           "bits": [ "1", "1", "1", "1" ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:0.0-0.0"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:0.0-0.0"
           }
         },
-        "$0$memwr$\\mem$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83$22_EN[3:0]$107": {
+        "$0$memwr$\\mem$CXBex/Tile/RegFile/RegFile_32x4.v:83$22_EN[3:0]$107": {
           "hide_name": 1,
           "bits": [ "1", "1", "1", "1" ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:0.0-0.0"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:0.0-0.0"
           }
         },
-        "$0$memwr$\\mem$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83$23_EN[3:0]$108": {
+        "$0$memwr$\\mem$CXBex/Tile/RegFile/RegFile_32x4.v:83$23_EN[3:0]$108": {
           "hide_name": 1,
           "bits": [ "1", "1", "1", "1" ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:0.0-0.0"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:0.0-0.0"
           }
         },
-        "$0$memwr$\\mem$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83$24_EN[3:0]$109": {
+        "$0$memwr$\\mem$CXBex/Tile/RegFile/RegFile_32x4.v:83$24_EN[3:0]$109": {
           "hide_name": 1,
           "bits": [ "1", "1", "1", "1" ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:0.0-0.0"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:0.0-0.0"
           }
         },
-        "$0$memwr$\\mem$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83$25_EN[3:0]$110": {
+        "$0$memwr$\\mem$CXBex/Tile/RegFile/RegFile_32x4.v:83$25_EN[3:0]$110": {
           "hide_name": 1,
           "bits": [ "1", "1", "1", "1" ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:0.0-0.0"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:0.0-0.0"
           }
         },
-        "$0$memwr$\\mem$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83$26_EN[3:0]$111": {
+        "$0$memwr$\\mem$CXBex/Tile/RegFile/RegFile_32x4.v:83$26_EN[3:0]$111": {
           "hide_name": 1,
           "bits": [ "1", "1", "1", "1" ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:0.0-0.0"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:0.0-0.0"
           }
         },
-        "$0$memwr$\\mem$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83$27_EN[3:0]$112": {
+        "$0$memwr$\\mem$CXBex/Tile/RegFile/RegFile_32x4.v:83$27_EN[3:0]$112": {
           "hide_name": 1,
           "bits": [ "1", "1", "1", "1" ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:0.0-0.0"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:0.0-0.0"
           }
         },
-        "$0$memwr$\\mem$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83$28_EN[3:0]$113": {
+        "$0$memwr$\\mem$CXBex/Tile/RegFile/RegFile_32x4.v:83$28_EN[3:0]$113": {
           "hide_name": 1,
           "bits": [ "1", "1", "1", "1" ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:0.0-0.0"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:0.0-0.0"
           }
         },
-        "$0$memwr$\\mem$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83$29_EN[3:0]$114": {
+        "$0$memwr$\\mem$CXBex/Tile/RegFile/RegFile_32x4.v:83$29_EN[3:0]$114": {
           "hide_name": 1,
           "bits": [ "1", "1", "1", "1" ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:0.0-0.0"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:0.0-0.0"
           }
         },
-        "$0$memwr$\\mem$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83$2_EN[3:0]$87": {
+        "$0$memwr$\\mem$CXBex/Tile/RegFile/RegFile_32x4.v:83$2_EN[3:0]$87": {
           "hide_name": 1,
           "bits": [ "1", "1", "1", "1" ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:0.0-0.0"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:0.0-0.0"
           }
         },
-        "$0$memwr$\\mem$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83$30_EN[3:0]$115": {
+        "$0$memwr$\\mem$CXBex/Tile/RegFile/RegFile_32x4.v:83$30_EN[3:0]$115": {
           "hide_name": 1,
           "bits": [ "1", "1", "1", "1" ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:0.0-0.0"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:0.0-0.0"
           }
         },
-        "$0$memwr$\\mem$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83$31_EN[3:0]$116": {
+        "$0$memwr$\\mem$CXBex/Tile/RegFile/RegFile_32x4.v:83$31_EN[3:0]$116": {
           "hide_name": 1,
           "bits": [ "1", "1", "1", "1" ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:0.0-0.0"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:0.0-0.0"
           }
         },
-        "$0$memwr$\\mem$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83$32_EN[3:0]$117": {
+        "$0$memwr$\\mem$CXBex/Tile/RegFile/RegFile_32x4.v:83$32_EN[3:0]$117": {
           "hide_name": 1,
           "bits": [ "1", "1", "1", "1" ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:0.0-0.0"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:0.0-0.0"
           }
         },
-        "$0$memwr$\\mem$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83$33_EN[3:0]$118": {
+        "$0$memwr$\\mem$CXBex/Tile/RegFile/RegFile_32x4.v:83$33_EN[3:0]$118": {
           "hide_name": 1,
           "bits": [ "1", "1", "1", "1" ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:0.0-0.0"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:0.0-0.0"
           }
         },
-        "$0$memwr$\\mem$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83$3_EN[3:0]$88": {
+        "$0$memwr$\\mem$CXBex/Tile/RegFile/RegFile_32x4.v:83$3_EN[3:0]$88": {
           "hide_name": 1,
           "bits": [ "1", "1", "1", "1" ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:0.0-0.0"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:0.0-0.0"
           }
         },
-        "$0$memwr$\\mem$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83$4_EN[3:0]$89": {
+        "$0$memwr$\\mem$CXBex/Tile/RegFile/RegFile_32x4.v:83$4_EN[3:0]$89": {
           "hide_name": 1,
           "bits": [ "1", "1", "1", "1" ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:0.0-0.0"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:0.0-0.0"
           }
         },
-        "$0$memwr$\\mem$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83$5_EN[3:0]$90": {
+        "$0$memwr$\\mem$CXBex/Tile/RegFile/RegFile_32x4.v:83$5_EN[3:0]$90": {
           "hide_name": 1,
           "bits": [ "1", "1", "1", "1" ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:0.0-0.0"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:0.0-0.0"
           }
         },
-        "$0$memwr$\\mem$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83$6_EN[3:0]$91": {
+        "$0$memwr$\\mem$CXBex/Tile/RegFile/RegFile_32x4.v:83$6_EN[3:0]$91": {
           "hide_name": 1,
           "bits": [ "1", "1", "1", "1" ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:0.0-0.0"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:0.0-0.0"
           }
         },
-        "$0$memwr$\\mem$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83$7_EN[3:0]$92": {
+        "$0$memwr$\\mem$CXBex/Tile/RegFile/RegFile_32x4.v:83$7_EN[3:0]$92": {
           "hide_name": 1,
           "bits": [ "1", "1", "1", "1" ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:0.0-0.0"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:0.0-0.0"
           }
         },
-        "$0$memwr$\\mem$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83$8_EN[3:0]$93": {
+        "$0$memwr$\\mem$CXBex/Tile/RegFile/RegFile_32x4.v:83$8_EN[3:0]$93": {
           "hide_name": 1,
           "bits": [ "1", "1", "1", "1" ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:0.0-0.0"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:0.0-0.0"
           }
         },
-        "$0$memwr$\\mem$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83$9_EN[3:0]$94": {
+        "$0$memwr$\\mem$CXBex/Tile/RegFile/RegFile_32x4.v:83$9_EN[3:0]$94": {
           "hide_name": 1,
           "bits": [ "1", "1", "1", "1" ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:0.0-0.0"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:0.0-0.0"
           }
         },
-        "$0$memwr$\\mem$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:90$34_ADDR[4:0]$36": {
+        "$0$memwr$\\mem$CXBex/Tile/RegFile/RegFile_32x4.v:90$34_ADDR[4:0]$36": {
           "hide_name": 1,
           "bits": [ 33, 34, 35, 36, 37 ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:88.2-92.5"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:88.2-92.5"
           }
         },
-        "$0$memwr$\\mem$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:90$34_DATA[3:0]$37": {
+        "$0$memwr$\\mem$CXBex/Tile/RegFile/RegFile_32x4.v:90$34_DATA[3:0]$37": {
           "hide_name": 1,
           "bits": [ 38, 39, 40, 41 ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:88.2-92.5"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:88.2-92.5"
           }
         },
-        "$0$memwr$\\mem$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:90$34_EN[3:0]$38": {
+        "$0$memwr$\\mem$CXBex/Tile/RegFile/RegFile_32x4.v:90$34_EN[3:0]$38": {
           "hide_name": 1,
           "bits": [ 42, 43, 44, 45 ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:88.2-92.5"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:88.2-92.5"
           }
         },
         "$0\\AD_reg[3:0]": {
           "hide_name": 1,
           "bits": [ 47, 48, 49, 50 ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:97.5-100.8"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:97.5-100.8"
           }
         },
         "$0\\BD_reg[3:0]": {
           "hide_name": 1,
           "bits": [ 51, 52, 53, 54 ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:97.5-100.8"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:97.5-100.8"
           }
         },
         "$0\\i[31:0]": {
           "hide_name": 1,
           "bits": [ "0", "0", "0", "0", "0", "1", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:0.0-0.0"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:0.0-0.0"
           }
         },
-        "$1$memwr$\\mem$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:90$34_ADDR[4:0]$40": {
+        "$1$memwr$\\mem$CXBex/Tile/RegFile/RegFile_32x4.v:90$34_ADDR[4:0]$40": {
           "hide_name": 1,
           "bits": [ 33, 34, 35, 36, 37 ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:88.2-92.5"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:88.2-92.5"
           }
         },
-        "$1$memwr$\\mem$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:90$34_DATA[3:0]$41": {
+        "$1$memwr$\\mem$CXBex/Tile/RegFile/RegFile_32x4.v:90$34_DATA[3:0]$41": {
           "hide_name": 1,
           "bits": [ 38, 39, 40, 41 ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:88.2-92.5"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:88.2-92.5"
           }
         },
-        "$1$memwr$\\mem$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:90$34_EN[3:0]$42": {
+        "$1$memwr$\\mem$CXBex/Tile/RegFile/RegFile_32x4.v:90$34_EN[3:0]$42": {
           "hide_name": 1,
           "bits": [ 42, 43, 44, 45 ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:88.2-92.5"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:88.2-92.5"
           }
         },
-        "$eq$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:89$39_Y": {
+        "$eq$CXBex/Tile/RegFile/RegFile_32x4.v:89$39_Y": {
           "hide_name": 1,
           "bits": [ 46 ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:89.7-89.19"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:89.7-89.19"
           }
         },
-        "$memrd$\\mem$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:94$43_DATA": {
+        "$memrd$\\mem$CXBex/Tile/RegFile/RegFile_32x4.v:94$43_DATA": {
           "hide_name": 1,
           "bits": [ 47, 48, 49, 50 ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:94.14-94.17"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:94.14-94.17"
           }
         },
-        "$memrd$\\mem$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:95$44_DATA": {
+        "$memrd$\\mem$CXBex/Tile/RegFile/RegFile_32x4.v:95$44_DATA": {
           "hide_name": 1,
           "bits": [ 51, 52, 53, 54 ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:95.14-95.17"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:95.14-95.17"
           }
         },
-        "$memwr$\\mem$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83$10_EN": {
+        "$memwr$\\mem$CXBex/Tile/RegFile/RegFile_32x4.v:83$10_EN": {
           "hide_name": 1,
           "bits": [ "1", "1", "1", "1" ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:0.0-0.0"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:0.0-0.0"
           }
         },
-        "$memwr$\\mem$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83$11_EN": {
+        "$memwr$\\mem$CXBex/Tile/RegFile/RegFile_32x4.v:83$11_EN": {
           "hide_name": 1,
           "bits": [ "1", "1", "1", "1" ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:0.0-0.0"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:0.0-0.0"
           }
         },
-        "$memwr$\\mem$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83$12_EN": {
+        "$memwr$\\mem$CXBex/Tile/RegFile/RegFile_32x4.v:83$12_EN": {
           "hide_name": 1,
           "bits": [ "1", "1", "1", "1" ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:0.0-0.0"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:0.0-0.0"
           }
         },
-        "$memwr$\\mem$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83$13_EN": {
+        "$memwr$\\mem$CXBex/Tile/RegFile/RegFile_32x4.v:83$13_EN": {
           "hide_name": 1,
           "bits": [ "1", "1", "1", "1" ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:0.0-0.0"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:0.0-0.0"
           }
         },
-        "$memwr$\\mem$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83$14_EN": {
+        "$memwr$\\mem$CXBex/Tile/RegFile/RegFile_32x4.v:83$14_EN": {
           "hide_name": 1,
           "bits": [ "1", "1", "1", "1" ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:0.0-0.0"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:0.0-0.0"
           }
         },
-        "$memwr$\\mem$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83$15_EN": {
+        "$memwr$\\mem$CXBex/Tile/RegFile/RegFile_32x4.v:83$15_EN": {
           "hide_name": 1,
           "bits": [ "1", "1", "1", "1" ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:0.0-0.0"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:0.0-0.0"
           }
         },
-        "$memwr$\\mem$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83$16_EN": {
+        "$memwr$\\mem$CXBex/Tile/RegFile/RegFile_32x4.v:83$16_EN": {
           "hide_name": 1,
           "bits": [ "1", "1", "1", "1" ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:0.0-0.0"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:0.0-0.0"
           }
         },
-        "$memwr$\\mem$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83$17_EN": {
+        "$memwr$\\mem$CXBex/Tile/RegFile/RegFile_32x4.v:83$17_EN": {
           "hide_name": 1,
           "bits": [ "1", "1", "1", "1" ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:0.0-0.0"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:0.0-0.0"
           }
         },
-        "$memwr$\\mem$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83$18_EN": {
+        "$memwr$\\mem$CXBex/Tile/RegFile/RegFile_32x4.v:83$18_EN": {
           "hide_name": 1,
           "bits": [ "1", "1", "1", "1" ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:0.0-0.0"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:0.0-0.0"
           }
         },
-        "$memwr$\\mem$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83$19_EN": {
+        "$memwr$\\mem$CXBex/Tile/RegFile/RegFile_32x4.v:83$19_EN": {
           "hide_name": 1,
           "bits": [ "1", "1", "1", "1" ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:0.0-0.0"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:0.0-0.0"
           }
         },
-        "$memwr$\\mem$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83$20_EN": {
+        "$memwr$\\mem$CXBex/Tile/RegFile/RegFile_32x4.v:83$20_EN": {
           "hide_name": 1,
           "bits": [ "1", "1", "1", "1" ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:0.0-0.0"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:0.0-0.0"
           }
         },
-        "$memwr$\\mem$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83$21_EN": {
+        "$memwr$\\mem$CXBex/Tile/RegFile/RegFile_32x4.v:83$21_EN": {
           "hide_name": 1,
           "bits": [ "1", "1", "1", "1" ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:0.0-0.0"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:0.0-0.0"
           }
         },
-        "$memwr$\\mem$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83$22_EN": {
+        "$memwr$\\mem$CXBex/Tile/RegFile/RegFile_32x4.v:83$22_EN": {
           "hide_name": 1,
           "bits": [ "1", "1", "1", "1" ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:0.0-0.0"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:0.0-0.0"
           }
         },
-        "$memwr$\\mem$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83$23_EN": {
+        "$memwr$\\mem$CXBex/Tile/RegFile/RegFile_32x4.v:83$23_EN": {
           "hide_name": 1,
           "bits": [ "1", "1", "1", "1" ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:0.0-0.0"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:0.0-0.0"
           }
         },
-        "$memwr$\\mem$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83$24_EN": {
+        "$memwr$\\mem$CXBex/Tile/RegFile/RegFile_32x4.v:83$24_EN": {
           "hide_name": 1,
           "bits": [ "1", "1", "1", "1" ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:0.0-0.0"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:0.0-0.0"
           }
         },
-        "$memwr$\\mem$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83$25_EN": {
+        "$memwr$\\mem$CXBex/Tile/RegFile/RegFile_32x4.v:83$25_EN": {
           "hide_name": 1,
           "bits": [ "1", "1", "1", "1" ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:0.0-0.0"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:0.0-0.0"
           }
         },
-        "$memwr$\\mem$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83$26_EN": {
+        "$memwr$\\mem$CXBex/Tile/RegFile/RegFile_32x4.v:83$26_EN": {
           "hide_name": 1,
           "bits": [ "1", "1", "1", "1" ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:0.0-0.0"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:0.0-0.0"
           }
         },
-        "$memwr$\\mem$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83$27_EN": {
+        "$memwr$\\mem$CXBex/Tile/RegFile/RegFile_32x4.v:83$27_EN": {
           "hide_name": 1,
           "bits": [ "1", "1", "1", "1" ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:0.0-0.0"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:0.0-0.0"
           }
         },
-        "$memwr$\\mem$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83$28_EN": {
+        "$memwr$\\mem$CXBex/Tile/RegFile/RegFile_32x4.v:83$28_EN": {
           "hide_name": 1,
           "bits": [ "1", "1", "1", "1" ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:0.0-0.0"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:0.0-0.0"
           }
         },
-        "$memwr$\\mem$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83$29_EN": {
+        "$memwr$\\mem$CXBex/Tile/RegFile/RegFile_32x4.v:83$29_EN": {
           "hide_name": 1,
           "bits": [ "1", "1", "1", "1" ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:0.0-0.0"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:0.0-0.0"
           }
         },
-        "$memwr$\\mem$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83$2_EN": {
+        "$memwr$\\mem$CXBex/Tile/RegFile/RegFile_32x4.v:83$2_EN": {
           "hide_name": 1,
           "bits": [ "1", "1", "1", "1" ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:0.0-0.0"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:0.0-0.0"
           }
         },
-        "$memwr$\\mem$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83$30_EN": {
+        "$memwr$\\mem$CXBex/Tile/RegFile/RegFile_32x4.v:83$30_EN": {
           "hide_name": 1,
           "bits": [ "1", "1", "1", "1" ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:0.0-0.0"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:0.0-0.0"
           }
         },
-        "$memwr$\\mem$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83$31_EN": {
+        "$memwr$\\mem$CXBex/Tile/RegFile/RegFile_32x4.v:83$31_EN": {
           "hide_name": 1,
           "bits": [ "1", "1", "1", "1" ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:0.0-0.0"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:0.0-0.0"
           }
         },
-        "$memwr$\\mem$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83$32_EN": {
+        "$memwr$\\mem$CXBex/Tile/RegFile/RegFile_32x4.v:83$32_EN": {
           "hide_name": 1,
           "bits": [ "1", "1", "1", "1" ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:0.0-0.0"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:0.0-0.0"
           }
         },
-        "$memwr$\\mem$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83$33_EN": {
+        "$memwr$\\mem$CXBex/Tile/RegFile/RegFile_32x4.v:83$33_EN": {
           "hide_name": 1,
           "bits": [ "1", "1", "1", "1" ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:0.0-0.0"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:0.0-0.0"
           }
         },
-        "$memwr$\\mem$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83$3_EN": {
+        "$memwr$\\mem$CXBex/Tile/RegFile/RegFile_32x4.v:83$3_EN": {
           "hide_name": 1,
           "bits": [ "1", "1", "1", "1" ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:0.0-0.0"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:0.0-0.0"
           }
         },
-        "$memwr$\\mem$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83$4_EN": {
+        "$memwr$\\mem$CXBex/Tile/RegFile/RegFile_32x4.v:83$4_EN": {
           "hide_name": 1,
           "bits": [ "1", "1", "1", "1" ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:0.0-0.0"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:0.0-0.0"
           }
         },
-        "$memwr$\\mem$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83$5_EN": {
+        "$memwr$\\mem$CXBex/Tile/RegFile/RegFile_32x4.v:83$5_EN": {
           "hide_name": 1,
           "bits": [ "1", "1", "1", "1" ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:0.0-0.0"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:0.0-0.0"
           }
         },
-        "$memwr$\\mem$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83$6_EN": {
+        "$memwr$\\mem$CXBex/Tile/RegFile/RegFile_32x4.v:83$6_EN": {
           "hide_name": 1,
           "bits": [ "1", "1", "1", "1" ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:0.0-0.0"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:0.0-0.0"
           }
         },
-        "$memwr$\\mem$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83$7_EN": {
+        "$memwr$\\mem$CXBex/Tile/RegFile/RegFile_32x4.v:83$7_EN": {
           "hide_name": 1,
           "bits": [ "1", "1", "1", "1" ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:0.0-0.0"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:0.0-0.0"
           }
         },
-        "$memwr$\\mem$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83$8_EN": {
+        "$memwr$\\mem$CXBex/Tile/RegFile/RegFile_32x4.v:83$8_EN": {
           "hide_name": 1,
           "bits": [ "1", "1", "1", "1" ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:0.0-0.0"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:0.0-0.0"
           }
         },
-        "$memwr$\\mem$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:83$9_EN": {
+        "$memwr$\\mem$CXBex/Tile/RegFile/RegFile_32x4.v:83$9_EN": {
           "hide_name": 1,
           "bits": [ "1", "1", "1", "1" ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:0.0-0.0"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:0.0-0.0"
           }
         },
-        "$memwr$\\mem$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:90$34_ADDR": {
+        "$memwr$\\mem$CXBex/Tile/RegFile/RegFile_32x4.v:90$34_ADDR": {
           "hide_name": 1,
           "bits": [ 63, 64, 65, 66, 67 ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:0.0-0.0"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:0.0-0.0"
           }
         },
-        "$memwr$\\mem$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:90$34_DATA": {
+        "$memwr$\\mem$CXBex/Tile/RegFile/RegFile_32x4.v:90$34_DATA": {
           "hide_name": 1,
           "bits": [ 68, 69, 70, 71 ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:0.0-0.0"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:0.0-0.0"
           }
         },
-        "$memwr$\\mem$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:90$34_EN": {
+        "$memwr$\\mem$CXBex/Tile/RegFile/RegFile_32x4.v:90$34_EN": {
           "hide_name": 1,
           "bits": [ 72, 73, 74, 75 ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:0.0-0.0"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:0.0-0.0"
           }
         },
         "$procmux$120_Y": {
@@ -1963,228 +1963,228 @@
           "attributes": {
           }
         },
-        "$ternary$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:102$46_Y": {
+        "$ternary$CXBex/Tile/RegFile/RegFile_32x4.v:102$46_Y": {
           "hide_name": 1,
           "bits": [ 12 ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:102.15-102.48"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:102.15-102.48"
           }
         },
-        "$ternary$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:103$47_Y": {
+        "$ternary$CXBex/Tile/RegFile/RegFile_32x4.v:103$47_Y": {
           "hide_name": 1,
           "bits": [ 13 ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:103.15-103.48"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:103.15-103.48"
           }
         },
-        "$ternary$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:104$48_Y": {
+        "$ternary$CXBex/Tile/RegFile/RegFile_32x4.v:104$48_Y": {
           "hide_name": 1,
           "bits": [ 14 ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:104.15-104.48"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:104.15-104.48"
           }
         },
-        "$ternary$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:105$49_Y": {
+        "$ternary$CXBex/Tile/RegFile/RegFile_32x4.v:105$49_Y": {
           "hide_name": 1,
           "bits": [ 15 ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:105.15-105.48"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:105.15-105.48"
           }
         },
-        "$ternary$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:107$50_Y": {
+        "$ternary$CXBex/Tile/RegFile/RegFile_32x4.v:107$50_Y": {
           "hide_name": 1,
           "bits": [ 21 ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:107.15-107.48"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:107.15-107.48"
           }
         },
-        "$ternary$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:108$51_Y": {
+        "$ternary$CXBex/Tile/RegFile/RegFile_32x4.v:108$51_Y": {
           "hide_name": 1,
           "bits": [ 22 ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:108.15-108.48"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:108.15-108.48"
           }
         },
-        "$ternary$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:109$52_Y": {
+        "$ternary$CXBex/Tile/RegFile/RegFile_32x4.v:109$52_Y": {
           "hide_name": 1,
           "bits": [ 23 ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:109.15-109.48"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:109.15-109.48"
           }
         },
-        "$ternary$/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:110$53_Y": {
+        "$ternary$CXBex/Tile/RegFile/RegFile_32x4.v:110$53_Y": {
           "hide_name": 1,
           "bits": [ 24 ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:110.15-110.48"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:110.15-110.48"
           }
         },
         "AD": {
           "hide_name": 0,
           "bits": [ 47, 48, 49, 50 ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:67.13-67.15"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:67.13-67.15"
           }
         },
         "AD0": {
           "hide_name": 0,
           "bits": [ 12 ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:34.9-34.12"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:34.9-34.12"
           }
         },
         "AD1": {
           "hide_name": 0,
           "bits": [ 13 ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:35.9-35.12"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:35.9-35.12"
           }
         },
         "AD2": {
           "hide_name": 0,
           "bits": [ 14 ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:36.9-36.12"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:36.9-36.12"
           }
         },
         "AD3": {
           "hide_name": 0,
           "bits": [ 15 ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:37.9-37.12"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:37.9-37.12"
           }
         },
         "AD_reg": {
           "hide_name": 0,
           "bits": [ 55, 56, 57, 58 ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:70.12-70.18"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:70.12-70.18"
           }
         },
         "A_ADR": {
           "hide_name": 0,
           "bits": [ 16, 17, 18, 19, 20 ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:63.13-63.18"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:63.13-63.18"
           }
         },
         "A_ADR0": {
           "hide_name": 0,
           "bits": [ 16 ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:38.8-38.14"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:38.8-38.14"
           }
         },
         "A_ADR1": {
           "hide_name": 0,
           "bits": [ 17 ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:39.8-39.14"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:39.8-39.14"
           }
         },
         "A_ADR2": {
           "hide_name": 0,
           "bits": [ 18 ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:40.8-40.14"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:40.8-40.14"
           }
         },
         "A_ADR3": {
           "hide_name": 0,
           "bits": [ 19 ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:41.8-41.14"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:41.8-41.14"
           }
         },
         "A_ADR4": {
           "hide_name": 0,
           "bits": [ 20 ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:42.8-42.14"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:42.8-42.14"
           }
         },
         "BD": {
           "hide_name": 0,
           "bits": [ 51, 52, 53, 54 ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:68.13-68.15"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:68.13-68.15"
           }
         },
         "BD0": {
           "hide_name": 0,
           "bits": [ 21 ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:44.9-44.12"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:44.9-44.12"
           }
         },
         "BD1": {
           "hide_name": 0,
           "bits": [ 22 ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:45.9-45.12"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:45.9-45.12"
           }
         },
         "BD2": {
           "hide_name": 0,
           "bits": [ 23 ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:46.9-46.12"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:46.9-46.12"
           }
         },
         "BD3": {
           "hide_name": 0,
           "bits": [ 24 ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:47.9-47.12"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:47.9-47.12"
           }
         },
         "BD_reg": {
           "hide_name": 0,
           "bits": [ 59, 60, 61, 62 ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:71.12-71.18"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:71.12-71.18"
           }
         },
         "B_ADR": {
           "hide_name": 0,
           "bits": [ 25, 26, 27, 28, 29 ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:64.13-64.18"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:64.13-64.18"
           }
         },
         "B_ADR0": {
           "hide_name": 0,
           "bits": [ 25 ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:48.8-48.14"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:48.8-48.14"
           }
         },
         "B_ADR1": {
           "hide_name": 0,
           "bits": [ 26 ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:49.8-49.14"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:49.8-49.14"
           }
         },
         "B_ADR2": {
           "hide_name": 0,
           "bits": [ 27 ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:50.8-50.14"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:50.8-50.14"
           }
         },
         "B_ADR3": {
           "hide_name": 0,
           "bits": [ 28 ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:51.8-51.14"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:51.8-51.14"
           }
         },
         "B_ADR4": {
           "hide_name": 0,
           "bits": [ 29 ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:52.8-52.14"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:52.8-52.14"
           }
         },
         "ConfigBits": {
@@ -2193,42 +2193,42 @@
           "attributes": {
             "FABulous": 1,
             "GLOBAL": 1,
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:56.50-56.60"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:56.50-56.60"
           }
         },
         "D": {
           "hide_name": 0,
           "bits": [ 2, 3, 4, 5 ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:66.13-66.14"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:66.13-66.14"
           }
         },
         "D0": {
           "hide_name": 0,
           "bits": [ 2 ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:23.8-23.10"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:23.8-23.10"
           }
         },
         "D1": {
           "hide_name": 0,
           "bits": [ 3 ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:24.8-24.10"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:24.8-24.10"
           }
         },
         "D2": {
           "hide_name": 0,
           "bits": [ 4 ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:25.8-25.10"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:25.8-25.10"
           }
         },
         "D3": {
           "hide_name": 0,
           "bits": [ 5 ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:26.8-26.10"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:26.8-26.10"
           }
         },
         "UserCLK": {
@@ -2238,56 +2238,56 @@
             "EXTERNAL": 1,
             "FABulous": 1,
             "SHARED_PORT": 1,
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:54.46-54.53"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:54.46-54.53"
           }
         },
         "W_ADR": {
           "hide_name": 0,
           "bits": [ 6, 7, 8, 9, 10 ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:62.13-62.18"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:62.13-62.18"
           }
         },
         "W_ADR0": {
           "hide_name": 0,
           "bits": [ 6 ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:27.8-27.14"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:27.8-27.14"
           }
         },
         "W_ADR1": {
           "hide_name": 0,
           "bits": [ 7 ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:28.8-28.14"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:28.8-28.14"
           }
         },
         "W_ADR2": {
           "hide_name": 0,
           "bits": [ 8 ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:29.8-29.14"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:29.8-29.14"
           }
         },
         "W_ADR3": {
           "hide_name": 0,
           "bits": [ 9 ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:30.8-30.14"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:30.8-30.14"
           }
         },
         "W_ADR4": {
           "hide_name": 0,
           "bits": [ 10 ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:31.8-31.14"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:31.8-31.14"
           }
         },
         "W_en": {
           "hide_name": 0,
           "bits": [ 11 ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:32.8-32.12"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:32.8-32.12"
           }
         },
         "i": {
@@ -2295,7 +2295,7 @@
           "bits": [ "0", "0", "0", "0", "0", "1", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
           "signed": 1,
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RegFile/./RegFile_32x4.v:73.10-73.11"
+            "src": "CXBex/Tile/RegFile/RegFile_32x4.v:73.10-73.11"
           }
         }
       }

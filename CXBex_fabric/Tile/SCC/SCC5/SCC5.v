@@ -5,7 +5,7 @@ module SCC5
 `endif
         parameter MaxFramesPerCol=20,
         parameter FrameBitsPerRow=32,
-        parameter NoConfigBits=0
+        parameter NoConfigBits=384
     )
     (
  //Side.NORTH
@@ -14,13 +14,11 @@ module SCC5
         output [7:0] N2BEGb,        //Port(Name=N2BEGb, IO=OUTPUT, XOffset=0, YOffset=-1, WireCount=8, Side=NORTH)
         output [15:0] N4BEG,        //Port(Name=N4BEG, IO=OUTPUT, XOffset=0, YOffset=-4, WireCount=4, Side=NORTH)
         output [15:0] NN4BEG,        //Port(Name=NN4BEG, IO=OUTPUT, XOffset=0, YOffset=-4, WireCount=4, Side=NORTH)
-        output [9:0] bot2top,        //Port(Name=bot2top, IO=OUTPUT, XOffset=0, YOffset=-1, WireCount=10, Side=NORTH)
         input [3:0] S1END,        //Port(Name=S1END, IO=INPUT, XOffset=0, YOffset=1, WireCount=4, Side=NORTH)
         input [7:0] S2MID,        //Port(Name=S2MID, IO=INPUT, XOffset=0, YOffset=1, WireCount=8, Side=NORTH)
         input [7:0] S2END,        //Port(Name=S2END, IO=INPUT, XOffset=0, YOffset=1, WireCount=8, Side=NORTH)
         input [15:0] S4END,        //Port(Name=S4END, IO=INPUT, XOffset=0, YOffset=4, WireCount=4, Side=NORTH)
         input [15:0] SS4END,        //Port(Name=SS4END, IO=INPUT, XOffset=0, YOffset=4, WireCount=4, Side=NORTH)
-        input [17:0] top2bot,        //Port(Name=top2bot, IO=INPUT, XOffset=0, YOffset=1, WireCount=18, Side=NORTH)
  //Side.EAST
         output [3:0] E1BEG,        //Port(Name=E1BEG, IO=OUTPUT, XOffset=1, YOffset=0, WireCount=4, Side=EAST)
         output [7:0] E2BEG,        //Port(Name=E2BEG, IO=OUTPUT, XOffset=1, YOffset=0, WireCount=8, Side=EAST)
@@ -44,6 +42,8 @@ module SCC5
         output [15:0] WW4BEG,        //Port(Name=WW4BEG, IO=OUTPUT, XOffset=-4, YOffset=0, WireCount=4, Side=WEST)
         output [11:0] W6BEG,        //Port(Name=W6BEG, IO=OUTPUT, XOffset=-6, YOffset=0, WireCount=2, Side=WEST)
  //Side.SOUTH
+        input [7:0] o_6to5,        //Port(Name=o_6to5, IO=INPUT, XOffset=0, YOffset=-1, WireCount=8, Side=SOUTH)
+        output [7:0] i_5to6,        //Port(Name=i_5to6, IO=OUTPUT, XOffset=0, YOffset=1, WireCount=8, Side=SOUTH)
         input [3:0] N1END,        //Port(Name=N1END, IO=INPUT, XOffset=0, YOffset=-1, WireCount=4, Side=SOUTH)
         input [7:0] N2MID,        //Port(Name=N2MID, IO=INPUT, XOffset=0, YOffset=-1, WireCount=8, Side=SOUTH)
         input [7:0] N2END,        //Port(Name=N2END, IO=INPUT, XOffset=0, YOffset=-1, WireCount=8, Side=SOUTH)
@@ -57,235 +57,14 @@ module SCC5
     //Tile IO ports from BELs
         input UserCLK,
         output UserCLKo,
-        input [MaxFramesPerCol -1:0] FrameStrobe,
+        input [FrameBitsPerRow -1:0] FrameData, //CONFIG_PORT
+        output [FrameBitsPerRow -1:0] FrameData_O,
+        input [MaxFramesPerCol -1:0] FrameStrobe, //CONFIG_PORT
         output [MaxFramesPerCol -1:0] FrameStrobe_O
     //global
 );
  //signal declarations
  //BEL ports (e.g., slices)
-wire clk;
-wire clk_en;
-wire req_cxu0;
-wire req_cxu1;
-wire req_data00;
-wire req_data01;
-wire req_data02;
-wire req_data03;
-wire req_data04;
-wire req_data05;
-wire req_data06;
-wire req_data07;
-wire req_data08;
-wire req_data09;
-wire req_data010;
-wire req_data011;
-wire req_data012;
-wire req_data013;
-wire req_data014;
-wire req_data015;
-wire req_data016;
-wire req_data017;
-wire req_data018;
-wire req_data019;
-wire req_data020;
-wire req_data021;
-wire req_data022;
-wire req_data023;
-wire req_data024;
-wire req_data025;
-wire req_data026;
-wire req_data027;
-wire req_data028;
-wire req_data029;
-wire req_data030;
-wire req_data031;
-wire req_data10;
-wire req_data11;
-wire req_data12;
-wire req_data13;
-wire req_data14;
-wire req_data15;
-wire req_data16;
-wire req_data17;
-wire req_data18;
-wire req_data19;
-wire req_data110;
-wire req_data111;
-wire req_data112;
-wire req_data113;
-wire req_data114;
-wire req_data115;
-wire req_data116;
-wire req_data117;
-wire req_data118;
-wire req_data119;
-wire req_data120;
-wire req_data121;
-wire req_data122;
-wire req_data123;
-wire req_data124;
-wire req_data125;
-wire req_data126;
-wire req_data127;
-wire req_data128;
-wire req_data129;
-wire req_data130;
-wire req_data131;
-wire req_func0;
-wire req_func1;
-wire req_func2;
-wire req_insn;
-wire req_state;
-wire req_valid;
-wire resp_ready;
-wire rst;
-wire t_req_ready;
-wire t_resp_data0;
-wire t_resp_data1;
-wire t_resp_data2;
-wire t_resp_data3;
-wire t_resp_data4;
-wire t_resp_data5;
-wire t_resp_data6;
-wire t_resp_data7;
-wire t_resp_data8;
-wire t_resp_data9;
-wire t_resp_data10;
-wire t_resp_data11;
-wire t_resp_data12;
-wire t_resp_data13;
-wire t_resp_data14;
-wire t_resp_data15;
-wire t_resp_data16;
-wire t_resp_data17;
-wire t_resp_data18;
-wire t_resp_data19;
-wire t_resp_data20;
-wire t_resp_data21;
-wire t_resp_data22;
-wire t_resp_data23;
-wire t_resp_data24;
-wire t_resp_data25;
-wire t_resp_data26;
-wire t_resp_data27;
-wire t_resp_data28;
-wire t_resp_data29;
-wire t_resp_data30;
-wire t_resp_data31;
-wire t_resp_status0;
-wire t_resp_status1;
-wire t_resp_status2;
-wire t_resp_valid;
-wire req_ready;
-wire resp_data0;
-wire resp_data1;
-wire resp_data2;
-wire resp_data3;
-wire resp_data4;
-wire resp_data5;
-wire resp_data6;
-wire resp_data7;
-wire resp_data8;
-wire resp_data9;
-wire resp_data10;
-wire resp_data11;
-wire resp_data12;
-wire resp_data13;
-wire resp_data14;
-wire resp_data15;
-wire resp_data16;
-wire resp_data17;
-wire resp_data18;
-wire resp_data19;
-wire resp_data20;
-wire resp_data21;
-wire resp_data22;
-wire resp_data23;
-wire resp_data24;
-wire resp_data25;
-wire resp_data26;
-wire resp_data27;
-wire resp_data28;
-wire resp_data29;
-wire resp_data30;
-wire resp_data31;
-wire resp_status0;
-wire resp_status1;
-wire resp_status2;
-wire resp_valid;
-wire t_req_cxu0;
-wire t_req_cxu1;
-wire t_req_data00;
-wire t_req_data01;
-wire t_req_data02;
-wire t_req_data03;
-wire t_req_data04;
-wire t_req_data05;
-wire t_req_data06;
-wire t_req_data07;
-wire t_req_data08;
-wire t_req_data09;
-wire t_req_data010;
-wire t_req_data011;
-wire t_req_data012;
-wire t_req_data013;
-wire t_req_data014;
-wire t_req_data015;
-wire t_req_data016;
-wire t_req_data017;
-wire t_req_data018;
-wire t_req_data019;
-wire t_req_data020;
-wire t_req_data021;
-wire t_req_data022;
-wire t_req_data023;
-wire t_req_data024;
-wire t_req_data025;
-wire t_req_data026;
-wire t_req_data027;
-wire t_req_data028;
-wire t_req_data029;
-wire t_req_data030;
-wire t_req_data031;
-wire t_req_data10;
-wire t_req_data11;
-wire t_req_data12;
-wire t_req_data13;
-wire t_req_data14;
-wire t_req_data15;
-wire t_req_data16;
-wire t_req_data17;
-wire t_req_data18;
-wire t_req_data19;
-wire t_req_data110;
-wire t_req_data111;
-wire t_req_data112;
-wire t_req_data113;
-wire t_req_data114;
-wire t_req_data115;
-wire t_req_data116;
-wire t_req_data117;
-wire t_req_data118;
-wire t_req_data119;
-wire t_req_data120;
-wire t_req_data121;
-wire t_req_data122;
-wire t_req_data123;
-wire t_req_data124;
-wire t_req_data125;
-wire t_req_data126;
-wire t_req_data127;
-wire t_req_data128;
-wire t_req_data129;
-wire t_req_data130;
-wire t_req_data131;
-wire t_req_func0;
-wire t_req_func1;
-wire t_req_func2;
-wire t_req_insn;
-wire t_req_state;
-wire t_req_valid;
-wire t_resp_ready;
  //Jump wires
 wire[4-1:0] J2MID_ABa_BEG;
 wire[4-1:0] J2MID_CDa_BEG;
@@ -332,6 +111,328 @@ wire[15:0] WW4END_i;
 wire[11:0] WW4BEG_i;
 wire[11:0] W6END_i;
 wire[9:0] W6BEG_i;
+
+assign FrameData_O_i = FrameData_i;
+
+my_buf data_inbuf_0 (
+    .A(FrameData[0]),
+    .X(FrameData_i[0])
+);
+
+my_buf data_inbuf_1 (
+    .A(FrameData[1]),
+    .X(FrameData_i[1])
+);
+
+my_buf data_inbuf_2 (
+    .A(FrameData[2]),
+    .X(FrameData_i[2])
+);
+
+my_buf data_inbuf_3 (
+    .A(FrameData[3]),
+    .X(FrameData_i[3])
+);
+
+my_buf data_inbuf_4 (
+    .A(FrameData[4]),
+    .X(FrameData_i[4])
+);
+
+my_buf data_inbuf_5 (
+    .A(FrameData[5]),
+    .X(FrameData_i[5])
+);
+
+my_buf data_inbuf_6 (
+    .A(FrameData[6]),
+    .X(FrameData_i[6])
+);
+
+my_buf data_inbuf_7 (
+    .A(FrameData[7]),
+    .X(FrameData_i[7])
+);
+
+my_buf data_inbuf_8 (
+    .A(FrameData[8]),
+    .X(FrameData_i[8])
+);
+
+my_buf data_inbuf_9 (
+    .A(FrameData[9]),
+    .X(FrameData_i[9])
+);
+
+my_buf data_inbuf_10 (
+    .A(FrameData[10]),
+    .X(FrameData_i[10])
+);
+
+my_buf data_inbuf_11 (
+    .A(FrameData[11]),
+    .X(FrameData_i[11])
+);
+
+my_buf data_inbuf_12 (
+    .A(FrameData[12]),
+    .X(FrameData_i[12])
+);
+
+my_buf data_inbuf_13 (
+    .A(FrameData[13]),
+    .X(FrameData_i[13])
+);
+
+my_buf data_inbuf_14 (
+    .A(FrameData[14]),
+    .X(FrameData_i[14])
+);
+
+my_buf data_inbuf_15 (
+    .A(FrameData[15]),
+    .X(FrameData_i[15])
+);
+
+my_buf data_inbuf_16 (
+    .A(FrameData[16]),
+    .X(FrameData_i[16])
+);
+
+my_buf data_inbuf_17 (
+    .A(FrameData[17]),
+    .X(FrameData_i[17])
+);
+
+my_buf data_inbuf_18 (
+    .A(FrameData[18]),
+    .X(FrameData_i[18])
+);
+
+my_buf data_inbuf_19 (
+    .A(FrameData[19]),
+    .X(FrameData_i[19])
+);
+
+my_buf data_inbuf_20 (
+    .A(FrameData[20]),
+    .X(FrameData_i[20])
+);
+
+my_buf data_inbuf_21 (
+    .A(FrameData[21]),
+    .X(FrameData_i[21])
+);
+
+my_buf data_inbuf_22 (
+    .A(FrameData[22]),
+    .X(FrameData_i[22])
+);
+
+my_buf data_inbuf_23 (
+    .A(FrameData[23]),
+    .X(FrameData_i[23])
+);
+
+my_buf data_inbuf_24 (
+    .A(FrameData[24]),
+    .X(FrameData_i[24])
+);
+
+my_buf data_inbuf_25 (
+    .A(FrameData[25]),
+    .X(FrameData_i[25])
+);
+
+my_buf data_inbuf_26 (
+    .A(FrameData[26]),
+    .X(FrameData_i[26])
+);
+
+my_buf data_inbuf_27 (
+    .A(FrameData[27]),
+    .X(FrameData_i[27])
+);
+
+my_buf data_inbuf_28 (
+    .A(FrameData[28]),
+    .X(FrameData_i[28])
+);
+
+my_buf data_inbuf_29 (
+    .A(FrameData[29]),
+    .X(FrameData_i[29])
+);
+
+my_buf data_inbuf_30 (
+    .A(FrameData[30]),
+    .X(FrameData_i[30])
+);
+
+my_buf data_inbuf_31 (
+    .A(FrameData[31]),
+    .X(FrameData_i[31])
+);
+
+my_buf data_outbuf_0 (
+    .A(FrameData_O_i[0]),
+    .X(FrameData_O[0])
+);
+
+my_buf data_outbuf_1 (
+    .A(FrameData_O_i[1]),
+    .X(FrameData_O[1])
+);
+
+my_buf data_outbuf_2 (
+    .A(FrameData_O_i[2]),
+    .X(FrameData_O[2])
+);
+
+my_buf data_outbuf_3 (
+    .A(FrameData_O_i[3]),
+    .X(FrameData_O[3])
+);
+
+my_buf data_outbuf_4 (
+    .A(FrameData_O_i[4]),
+    .X(FrameData_O[4])
+);
+
+my_buf data_outbuf_5 (
+    .A(FrameData_O_i[5]),
+    .X(FrameData_O[5])
+);
+
+my_buf data_outbuf_6 (
+    .A(FrameData_O_i[6]),
+    .X(FrameData_O[6])
+);
+
+my_buf data_outbuf_7 (
+    .A(FrameData_O_i[7]),
+    .X(FrameData_O[7])
+);
+
+my_buf data_outbuf_8 (
+    .A(FrameData_O_i[8]),
+    .X(FrameData_O[8])
+);
+
+my_buf data_outbuf_9 (
+    .A(FrameData_O_i[9]),
+    .X(FrameData_O[9])
+);
+
+my_buf data_outbuf_10 (
+    .A(FrameData_O_i[10]),
+    .X(FrameData_O[10])
+);
+
+my_buf data_outbuf_11 (
+    .A(FrameData_O_i[11]),
+    .X(FrameData_O[11])
+);
+
+my_buf data_outbuf_12 (
+    .A(FrameData_O_i[12]),
+    .X(FrameData_O[12])
+);
+
+my_buf data_outbuf_13 (
+    .A(FrameData_O_i[13]),
+    .X(FrameData_O[13])
+);
+
+my_buf data_outbuf_14 (
+    .A(FrameData_O_i[14]),
+    .X(FrameData_O[14])
+);
+
+my_buf data_outbuf_15 (
+    .A(FrameData_O_i[15]),
+    .X(FrameData_O[15])
+);
+
+my_buf data_outbuf_16 (
+    .A(FrameData_O_i[16]),
+    .X(FrameData_O[16])
+);
+
+my_buf data_outbuf_17 (
+    .A(FrameData_O_i[17]),
+    .X(FrameData_O[17])
+);
+
+my_buf data_outbuf_18 (
+    .A(FrameData_O_i[18]),
+    .X(FrameData_O[18])
+);
+
+my_buf data_outbuf_19 (
+    .A(FrameData_O_i[19]),
+    .X(FrameData_O[19])
+);
+
+my_buf data_outbuf_20 (
+    .A(FrameData_O_i[20]),
+    .X(FrameData_O[20])
+);
+
+my_buf data_outbuf_21 (
+    .A(FrameData_O_i[21]),
+    .X(FrameData_O[21])
+);
+
+my_buf data_outbuf_22 (
+    .A(FrameData_O_i[22]),
+    .X(FrameData_O[22])
+);
+
+my_buf data_outbuf_23 (
+    .A(FrameData_O_i[23]),
+    .X(FrameData_O[23])
+);
+
+my_buf data_outbuf_24 (
+    .A(FrameData_O_i[24]),
+    .X(FrameData_O[24])
+);
+
+my_buf data_outbuf_25 (
+    .A(FrameData_O_i[25]),
+    .X(FrameData_O[25])
+);
+
+my_buf data_outbuf_26 (
+    .A(FrameData_O_i[26]),
+    .X(FrameData_O[26])
+);
+
+my_buf data_outbuf_27 (
+    .A(FrameData_O_i[27]),
+    .X(FrameData_O[27])
+);
+
+my_buf data_outbuf_28 (
+    .A(FrameData_O_i[28]),
+    .X(FrameData_O[28])
+);
+
+my_buf data_outbuf_29 (
+    .A(FrameData_O_i[29]),
+    .X(FrameData_O[29])
+);
+
+my_buf data_outbuf_30 (
+    .A(FrameData_O_i[30]),
+    .X(FrameData_O[30])
+);
+
+my_buf data_outbuf_31 (
+    .A(FrameData_O_i[31]),
+    .X(FrameData_O[31])
+);
 
 assign FrameStrobe_O_i = FrameStrobe_i;
 
@@ -1477,234 +1578,31 @@ clk_buf inst_clk_buf (
 );
 
 
- //BEL component instantiations
-mux4_cxu Inst_mux4_cxu (
-    .clk(clk),
-    .clk_en(clk_en),
-    .req_cxu0(req_cxu0),
-    .req_cxu1(req_cxu1),
-    .req_data00(req_data00),
-    .req_data01(req_data01),
-    .req_data02(req_data02),
-    .req_data03(req_data03),
-    .req_data04(req_data04),
-    .req_data05(req_data05),
-    .req_data06(req_data06),
-    .req_data07(req_data07),
-    .req_data08(req_data08),
-    .req_data09(req_data09),
-    .req_data010(req_data010),
-    .req_data011(req_data011),
-    .req_data012(req_data012),
-    .req_data013(req_data013),
-    .req_data014(req_data014),
-    .req_data015(req_data015),
-    .req_data016(req_data016),
-    .req_data017(req_data017),
-    .req_data018(req_data018),
-    .req_data019(req_data019),
-    .req_data020(req_data020),
-    .req_data021(req_data021),
-    .req_data022(req_data022),
-    .req_data023(req_data023),
-    .req_data024(req_data024),
-    .req_data025(req_data025),
-    .req_data026(req_data026),
-    .req_data027(req_data027),
-    .req_data028(req_data028),
-    .req_data029(req_data029),
-    .req_data030(req_data030),
-    .req_data031(req_data031),
-    .req_data10(req_data10),
-    .req_data11(req_data11),
-    .req_data12(req_data12),
-    .req_data13(req_data13),
-    .req_data14(req_data14),
-    .req_data15(req_data15),
-    .req_data16(req_data16),
-    .req_data17(req_data17),
-    .req_data18(req_data18),
-    .req_data19(req_data19),
-    .req_data110(req_data110),
-    .req_data111(req_data111),
-    .req_data112(req_data112),
-    .req_data113(req_data113),
-    .req_data114(req_data114),
-    .req_data115(req_data115),
-    .req_data116(req_data116),
-    .req_data117(req_data117),
-    .req_data118(req_data118),
-    .req_data119(req_data119),
-    .req_data120(req_data120),
-    .req_data121(req_data121),
-    .req_data122(req_data122),
-    .req_data123(req_data123),
-    .req_data124(req_data124),
-    .req_data125(req_data125),
-    .req_data126(req_data126),
-    .req_data127(req_data127),
-    .req_data128(req_data128),
-    .req_data129(req_data129),
-    .req_data130(req_data130),
-    .req_data131(req_data131),
-    .req_func0(req_func0),
-    .req_func1(req_func1),
-    .req_func2(req_func2),
-    .req_insn(req_insn),
-    .req_state(req_state),
-    .req_valid(req_valid),
-    .resp_ready(resp_ready),
-    .rst(rst),
-    .t_req_ready(t_req_ready),
-    .t_resp_data0(t_resp_data0),
-    .t_resp_data1(t_resp_data1),
-    .t_resp_data2(t_resp_data2),
-    .t_resp_data3(t_resp_data3),
-    .t_resp_data4(t_resp_data4),
-    .t_resp_data5(t_resp_data5),
-    .t_resp_data6(t_resp_data6),
-    .t_resp_data7(t_resp_data7),
-    .t_resp_data8(t_resp_data8),
-    .t_resp_data9(t_resp_data9),
-    .t_resp_data10(t_resp_data10),
-    .t_resp_data11(t_resp_data11),
-    .t_resp_data12(t_resp_data12),
-    .t_resp_data13(t_resp_data13),
-    .t_resp_data14(t_resp_data14),
-    .t_resp_data15(t_resp_data15),
-    .t_resp_data16(t_resp_data16),
-    .t_resp_data17(t_resp_data17),
-    .t_resp_data18(t_resp_data18),
-    .t_resp_data19(t_resp_data19),
-    .t_resp_data20(t_resp_data20),
-    .t_resp_data21(t_resp_data21),
-    .t_resp_data22(t_resp_data22),
-    .t_resp_data23(t_resp_data23),
-    .t_resp_data24(t_resp_data24),
-    .t_resp_data25(t_resp_data25),
-    .t_resp_data26(t_resp_data26),
-    .t_resp_data27(t_resp_data27),
-    .t_resp_data28(t_resp_data28),
-    .t_resp_data29(t_resp_data29),
-    .t_resp_data30(t_resp_data30),
-    .t_resp_data31(t_resp_data31),
-    .t_resp_status0(t_resp_status0),
-    .t_resp_status1(t_resp_status1),
-    .t_resp_status2(t_resp_status2),
-    .t_resp_valid(t_resp_valid),
-    .req_ready(req_ready),
-    .resp_data0(resp_data0),
-    .resp_data1(resp_data1),
-    .resp_data2(resp_data2),
-    .resp_data3(resp_data3),
-    .resp_data4(resp_data4),
-    .resp_data5(resp_data5),
-    .resp_data6(resp_data6),
-    .resp_data7(resp_data7),
-    .resp_data8(resp_data8),
-    .resp_data9(resp_data9),
-    .resp_data10(resp_data10),
-    .resp_data11(resp_data11),
-    .resp_data12(resp_data12),
-    .resp_data13(resp_data13),
-    .resp_data14(resp_data14),
-    .resp_data15(resp_data15),
-    .resp_data16(resp_data16),
-    .resp_data17(resp_data17),
-    .resp_data18(resp_data18),
-    .resp_data19(resp_data19),
-    .resp_data20(resp_data20),
-    .resp_data21(resp_data21),
-    .resp_data22(resp_data22),
-    .resp_data23(resp_data23),
-    .resp_data24(resp_data24),
-    .resp_data25(resp_data25),
-    .resp_data26(resp_data26),
-    .resp_data27(resp_data27),
-    .resp_data28(resp_data28),
-    .resp_data29(resp_data29),
-    .resp_data30(resp_data30),
-    .resp_data31(resp_data31),
-    .resp_status0(resp_status0),
-    .resp_status1(resp_status1),
-    .resp_status2(resp_status2),
-    .resp_valid(resp_valid),
-    .t_req_cxu0(t_req_cxu0),
-    .t_req_cxu1(t_req_cxu1),
-    .t_req_data00(t_req_data00),
-    .t_req_data01(t_req_data01),
-    .t_req_data02(t_req_data02),
-    .t_req_data03(t_req_data03),
-    .t_req_data04(t_req_data04),
-    .t_req_data05(t_req_data05),
-    .t_req_data06(t_req_data06),
-    .t_req_data07(t_req_data07),
-    .t_req_data08(t_req_data08),
-    .t_req_data09(t_req_data09),
-    .t_req_data010(t_req_data010),
-    .t_req_data011(t_req_data011),
-    .t_req_data012(t_req_data012),
-    .t_req_data013(t_req_data013),
-    .t_req_data014(t_req_data014),
-    .t_req_data015(t_req_data015),
-    .t_req_data016(t_req_data016),
-    .t_req_data017(t_req_data017),
-    .t_req_data018(t_req_data018),
-    .t_req_data019(t_req_data019),
-    .t_req_data020(t_req_data020),
-    .t_req_data021(t_req_data021),
-    .t_req_data022(t_req_data022),
-    .t_req_data023(t_req_data023),
-    .t_req_data024(t_req_data024),
-    .t_req_data025(t_req_data025),
-    .t_req_data026(t_req_data026),
-    .t_req_data027(t_req_data027),
-    .t_req_data028(t_req_data028),
-    .t_req_data029(t_req_data029),
-    .t_req_data030(t_req_data030),
-    .t_req_data031(t_req_data031),
-    .t_req_data10(t_req_data10),
-    .t_req_data11(t_req_data11),
-    .t_req_data12(t_req_data12),
-    .t_req_data13(t_req_data13),
-    .t_req_data14(t_req_data14),
-    .t_req_data15(t_req_data15),
-    .t_req_data16(t_req_data16),
-    .t_req_data17(t_req_data17),
-    .t_req_data18(t_req_data18),
-    .t_req_data19(t_req_data19),
-    .t_req_data110(t_req_data110),
-    .t_req_data111(t_req_data111),
-    .t_req_data112(t_req_data112),
-    .t_req_data113(t_req_data113),
-    .t_req_data114(t_req_data114),
-    .t_req_data115(t_req_data115),
-    .t_req_data116(t_req_data116),
-    .t_req_data117(t_req_data117),
-    .t_req_data118(t_req_data118),
-    .t_req_data119(t_req_data119),
-    .t_req_data120(t_req_data120),
-    .t_req_data121(t_req_data121),
-    .t_req_data122(t_req_data122),
-    .t_req_data123(t_req_data123),
-    .t_req_data124(t_req_data124),
-    .t_req_data125(t_req_data125),
-    .t_req_data126(t_req_data126),
-    .t_req_data127(t_req_data127),
-    .t_req_data128(t_req_data128),
-    .t_req_data129(t_req_data129),
-    .t_req_data130(t_req_data130),
-    .t_req_data131(t_req_data131),
-    .t_req_func0(t_req_func0),
-    .t_req_func1(t_req_func1),
-    .t_req_func2(t_req_func2),
-    .t_req_insn(t_req_insn),
-    .t_req_state(t_req_state),
-    .t_req_valid(t_req_valid),
-    .t_resp_ready(t_resp_ready)
+ //configuration storage latches
+SCC5_ConfigMem
+`ifdef EMULATION
+    #(
+    .Emulate_Bitstream(Emulate_Bitstream)
+    )
+`endif
+    Inst_SCC5_ConfigMem
+    (
+    .FrameData(FrameData),
+    .FrameStrobe(FrameStrobe),
+    .ConfigBits(ConfigBits),
+    .ConfigBits_N(ConfigBits_N)
 );
 
+ //BEL component instantiations
 SCC5_switch_matrix Inst_SCC5_switch_matrix (
+    .o_6to50(o_6to5[0]),
+    .o_6to51(o_6to5[1]),
+    .o_6to52(o_6to5[2]),
+    .o_6to53(o_6to5[3]),
+    .o_6to54(o_6to5[4]),
+    .o_6to55(o_6to5[5]),
+    .o_6to56(o_6to5[6]),
+    .o_6to57(o_6to5[7]),
     .N1END0(N1END[0]),
     .N1END1(N1END[1]),
     .N1END2(N1END[2]),
@@ -1787,24 +1685,6 @@ SCC5_switch_matrix Inst_SCC5_switch_matrix (
     .SS4END1(SS4END[1]),
     .SS4END2(SS4END[2]),
     .SS4END3(SS4END[3]),
-    .top2bot0(top2bot[0]),
-    .top2bot1(top2bot[1]),
-    .top2bot2(top2bot[2]),
-    .top2bot3(top2bot[3]),
-    .top2bot4(top2bot[4]),
-    .top2bot5(top2bot[5]),
-    .top2bot6(top2bot[6]),
-    .top2bot7(top2bot[7]),
-    .top2bot8(top2bot[8]),
-    .top2bot9(top2bot[9]),
-    .top2bot10(top2bot[10]),
-    .top2bot11(top2bot[11]),
-    .top2bot12(top2bot[12]),
-    .top2bot13(top2bot[13]),
-    .top2bot14(top2bot[14]),
-    .top2bot15(top2bot[15]),
-    .top2bot16(top2bot[16]),
-    .top2bot17(top2bot[17]),
     .W1END0(W1END[0]),
     .W1END1(W1END[1]),
     .W1END2(W1END[2]),
@@ -1831,116 +1711,6 @@ SCC5_switch_matrix Inst_SCC5_switch_matrix (
     .WW4END3(WW4END[3]),
     .W6END0(W6END[0]),
     .W6END1(W6END[1]),
-    .req_ready(req_ready),
-    .resp_data0(resp_data0),
-    .resp_data1(resp_data1),
-    .resp_data2(resp_data2),
-    .resp_data3(resp_data3),
-    .resp_data4(resp_data4),
-    .resp_data5(resp_data5),
-    .resp_data6(resp_data6),
-    .resp_data7(resp_data7),
-    .resp_data8(resp_data8),
-    .resp_data9(resp_data9),
-    .resp_data10(resp_data10),
-    .resp_data11(resp_data11),
-    .resp_data12(resp_data12),
-    .resp_data13(resp_data13),
-    .resp_data14(resp_data14),
-    .resp_data15(resp_data15),
-    .resp_data16(resp_data16),
-    .resp_data17(resp_data17),
-    .resp_data18(resp_data18),
-    .resp_data19(resp_data19),
-    .resp_data20(resp_data20),
-    .resp_data21(resp_data21),
-    .resp_data22(resp_data22),
-    .resp_data23(resp_data23),
-    .resp_data24(resp_data24),
-    .resp_data25(resp_data25),
-    .resp_data26(resp_data26),
-    .resp_data27(resp_data27),
-    .resp_data28(resp_data28),
-    .resp_data29(resp_data29),
-    .resp_data30(resp_data30),
-    .resp_data31(resp_data31),
-    .resp_status0(resp_status0),
-    .resp_status1(resp_status1),
-    .resp_status2(resp_status2),
-    .resp_valid(resp_valid),
-    .t_req_cxu0(t_req_cxu0),
-    .t_req_cxu1(t_req_cxu1),
-    .t_req_data00(t_req_data00),
-    .t_req_data01(t_req_data01),
-    .t_req_data02(t_req_data02),
-    .t_req_data03(t_req_data03),
-    .t_req_data04(t_req_data04),
-    .t_req_data05(t_req_data05),
-    .t_req_data06(t_req_data06),
-    .t_req_data07(t_req_data07),
-    .t_req_data08(t_req_data08),
-    .t_req_data09(t_req_data09),
-    .t_req_data010(t_req_data010),
-    .t_req_data011(t_req_data011),
-    .t_req_data012(t_req_data012),
-    .t_req_data013(t_req_data013),
-    .t_req_data014(t_req_data014),
-    .t_req_data015(t_req_data015),
-    .t_req_data016(t_req_data016),
-    .t_req_data017(t_req_data017),
-    .t_req_data018(t_req_data018),
-    .t_req_data019(t_req_data019),
-    .t_req_data020(t_req_data020),
-    .t_req_data021(t_req_data021),
-    .t_req_data022(t_req_data022),
-    .t_req_data023(t_req_data023),
-    .t_req_data024(t_req_data024),
-    .t_req_data025(t_req_data025),
-    .t_req_data026(t_req_data026),
-    .t_req_data027(t_req_data027),
-    .t_req_data028(t_req_data028),
-    .t_req_data029(t_req_data029),
-    .t_req_data030(t_req_data030),
-    .t_req_data031(t_req_data031),
-    .t_req_data10(t_req_data10),
-    .t_req_data11(t_req_data11),
-    .t_req_data12(t_req_data12),
-    .t_req_data13(t_req_data13),
-    .t_req_data14(t_req_data14),
-    .t_req_data15(t_req_data15),
-    .t_req_data16(t_req_data16),
-    .t_req_data17(t_req_data17),
-    .t_req_data18(t_req_data18),
-    .t_req_data19(t_req_data19),
-    .t_req_data110(t_req_data110),
-    .t_req_data111(t_req_data111),
-    .t_req_data112(t_req_data112),
-    .t_req_data113(t_req_data113),
-    .t_req_data114(t_req_data114),
-    .t_req_data115(t_req_data115),
-    .t_req_data116(t_req_data116),
-    .t_req_data117(t_req_data117),
-    .t_req_data118(t_req_data118),
-    .t_req_data119(t_req_data119),
-    .t_req_data120(t_req_data120),
-    .t_req_data121(t_req_data121),
-    .t_req_data122(t_req_data122),
-    .t_req_data123(t_req_data123),
-    .t_req_data124(t_req_data124),
-    .t_req_data125(t_req_data125),
-    .t_req_data126(t_req_data126),
-    .t_req_data127(t_req_data127),
-    .t_req_data128(t_req_data128),
-    .t_req_data129(t_req_data129),
-    .t_req_data130(t_req_data130),
-    .t_req_data131(t_req_data131),
-    .t_req_func0(t_req_func0),
-    .t_req_func1(t_req_func1),
-    .t_req_func2(t_req_func2),
-    .t_req_insn(t_req_insn),
-    .t_req_state(t_req_state),
-    .t_req_valid(t_req_valid),
-    .t_resp_ready(t_resp_ready),
     .J2MID_ABa_END0(J2MID_ABa_BEG[0]),
     .J2MID_ABa_END1(J2MID_ABa_BEG[1]),
     .J2MID_ABa_END2(J2MID_ABa_BEG[2]),
@@ -2037,6 +1807,14 @@ SCC5_switch_matrix Inst_SCC5_switch_matrix (
     .J_l_GH_END1(J_l_GH_BEG[1]),
     .J_l_GH_END2(J_l_GH_BEG[2]),
     .J_l_GH_END3(J_l_GH_BEG[3]),
+    .i_5to60(i_5to6[0]),
+    .i_5to61(i_5to6[1]),
+    .i_5to62(i_5to6[2]),
+    .i_5to63(i_5to6[3]),
+    .i_5to64(i_5to6[4]),
+    .i_5to65(i_5to6[5]),
+    .i_5to66(i_5to6[6]),
+    .i_5to67(i_5to6[7]),
     .N1BEG0(N1BEG[0]),
     .N1BEG1(N1BEG[1]),
     .N1BEG2(N1BEG[2]),
@@ -2065,16 +1843,6 @@ SCC5_switch_matrix Inst_SCC5_switch_matrix (
     .NN4BEG1(NN4BEG[13]),
     .NN4BEG2(NN4BEG[14]),
     .NN4BEG3(NN4BEG[15]),
-    .bot2top0(bot2top[0]),
-    .bot2top1(bot2top[1]),
-    .bot2top2(bot2top[2]),
-    .bot2top3(bot2top[3]),
-    .bot2top4(bot2top[4]),
-    .bot2top5(bot2top[5]),
-    .bot2top6(bot2top[6]),
-    .bot2top7(bot2top[7]),
-    .bot2top8(bot2top[8]),
-    .bot2top9(bot2top[9]),
     .E1BEG0(E1BEG[0]),
     .E1BEG1(E1BEG[1]),
     .E1BEG2(E1BEG[2]),
@@ -2155,119 +1923,6 @@ SCC5_switch_matrix Inst_SCC5_switch_matrix (
     .WW4BEG3(WW4BEG[15]),
     .W6BEG0(W6BEG[10]),
     .W6BEG1(W6BEG[11]),
-    .clk(clk),
-    .clk_en(clk_en),
-    .req_cxu0(req_cxu0),
-    .req_cxu1(req_cxu1),
-    .req_data00(req_data00),
-    .req_data01(req_data01),
-    .req_data02(req_data02),
-    .req_data03(req_data03),
-    .req_data04(req_data04),
-    .req_data05(req_data05),
-    .req_data06(req_data06),
-    .req_data07(req_data07),
-    .req_data08(req_data08),
-    .req_data09(req_data09),
-    .req_data010(req_data010),
-    .req_data011(req_data011),
-    .req_data012(req_data012),
-    .req_data013(req_data013),
-    .req_data014(req_data014),
-    .req_data015(req_data015),
-    .req_data016(req_data016),
-    .req_data017(req_data017),
-    .req_data018(req_data018),
-    .req_data019(req_data019),
-    .req_data020(req_data020),
-    .req_data021(req_data021),
-    .req_data022(req_data022),
-    .req_data023(req_data023),
-    .req_data024(req_data024),
-    .req_data025(req_data025),
-    .req_data026(req_data026),
-    .req_data027(req_data027),
-    .req_data028(req_data028),
-    .req_data029(req_data029),
-    .req_data030(req_data030),
-    .req_data031(req_data031),
-    .req_data10(req_data10),
-    .req_data11(req_data11),
-    .req_data12(req_data12),
-    .req_data13(req_data13),
-    .req_data14(req_data14),
-    .req_data15(req_data15),
-    .req_data16(req_data16),
-    .req_data17(req_data17),
-    .req_data18(req_data18),
-    .req_data19(req_data19),
-    .req_data110(req_data110),
-    .req_data111(req_data111),
-    .req_data112(req_data112),
-    .req_data113(req_data113),
-    .req_data114(req_data114),
-    .req_data115(req_data115),
-    .req_data116(req_data116),
-    .req_data117(req_data117),
-    .req_data118(req_data118),
-    .req_data119(req_data119),
-    .req_data120(req_data120),
-    .req_data121(req_data121),
-    .req_data122(req_data122),
-    .req_data123(req_data123),
-    .req_data124(req_data124),
-    .req_data125(req_data125),
-    .req_data126(req_data126),
-    .req_data127(req_data127),
-    .req_data128(req_data128),
-    .req_data129(req_data129),
-    .req_data130(req_data130),
-    .req_data131(req_data131),
-    .req_func0(req_func0),
-    .req_func1(req_func1),
-    .req_func2(req_func2),
-    .req_insn(req_insn),
-    .req_state(req_state),
-    .req_valid(req_valid),
-    .resp_ready(resp_ready),
-    .rst(rst),
-    .t_req_ready(t_req_ready),
-    .t_resp_data0(t_resp_data0),
-    .t_resp_data1(t_resp_data1),
-    .t_resp_data2(t_resp_data2),
-    .t_resp_data3(t_resp_data3),
-    .t_resp_data4(t_resp_data4),
-    .t_resp_data5(t_resp_data5),
-    .t_resp_data6(t_resp_data6),
-    .t_resp_data7(t_resp_data7),
-    .t_resp_data8(t_resp_data8),
-    .t_resp_data9(t_resp_data9),
-    .t_resp_data10(t_resp_data10),
-    .t_resp_data11(t_resp_data11),
-    .t_resp_data12(t_resp_data12),
-    .t_resp_data13(t_resp_data13),
-    .t_resp_data14(t_resp_data14),
-    .t_resp_data15(t_resp_data15),
-    .t_resp_data16(t_resp_data16),
-    .t_resp_data17(t_resp_data17),
-    .t_resp_data18(t_resp_data18),
-    .t_resp_data19(t_resp_data19),
-    .t_resp_data20(t_resp_data20),
-    .t_resp_data21(t_resp_data21),
-    .t_resp_data22(t_resp_data22),
-    .t_resp_data23(t_resp_data23),
-    .t_resp_data24(t_resp_data24),
-    .t_resp_data25(t_resp_data25),
-    .t_resp_data26(t_resp_data26),
-    .t_resp_data27(t_resp_data27),
-    .t_resp_data28(t_resp_data28),
-    .t_resp_data29(t_resp_data29),
-    .t_resp_data30(t_resp_data30),
-    .t_resp_data31(t_resp_data31),
-    .t_resp_status0(t_resp_status0),
-    .t_resp_status1(t_resp_status1),
-    .t_resp_status2(t_resp_status2),
-    .t_resp_valid(t_resp_valid),
     .J2MID_ABa_BEG0(J2MID_ABa_BEG[0]),
     .J2MID_ABa_BEG1(J2MID_ABa_BEG[1]),
     .J2MID_ABa_BEG2(J2MID_ABa_BEG[2]),
@@ -2363,7 +2018,9 @@ SCC5_switch_matrix Inst_SCC5_switch_matrix (
     .J_l_GH_BEG0(J_l_GH_BEG[0]),
     .J_l_GH_BEG1(J_l_GH_BEG[1]),
     .J_l_GH_BEG2(J_l_GH_BEG[2]),
-    .J_l_GH_BEG3(J_l_GH_BEG[3])
+    .J_l_GH_BEG3(J_l_GH_BEG[3]),
+    .ConfigBits(ConfigBits[384-1:0]),
+    .ConfigBits_N(ConfigBits_N[384-1:0])
 );
 
 endmodule

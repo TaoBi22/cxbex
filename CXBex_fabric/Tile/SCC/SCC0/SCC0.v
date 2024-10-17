@@ -5,7 +5,7 @@ module SCC0
 `endif
         parameter MaxFramesPerCol=20,
         parameter FrameBitsPerRow=32,
-        parameter NoConfigBits=0
+        parameter NoConfigBits=384
     )
     (
  //Side.NORTH
@@ -42,22 +42,24 @@ module SCC0
         output [15:0] WW4BEG,        //Port(Name=WW4BEG, IO=OUTPUT, XOffset=-4, YOffset=0, WireCount=4, Side=WEST)
         output [11:0] W6BEG,        //Port(Name=W6BEG, IO=OUTPUT, XOffset=-6, YOffset=0, WireCount=2, Side=WEST)
  //Side.SOUTH
+        input [47:0] o_6to0,        //Port(Name=o_6to0, IO=INPUT, XOffset=0, YOffset=-6, WireCount=8, Side=SOUTH)
+        output [47:0] i_0to6,        //Port(Name=i_0to6, IO=OUTPUT, XOffset=0, YOffset=6, WireCount=8, Side=SOUTH)
         input [3:0] N1END,        //Port(Name=N1END, IO=INPUT, XOffset=0, YOffset=-1, WireCount=4, Side=SOUTH)
         input [7:0] N2MID,        //Port(Name=N2MID, IO=INPUT, XOffset=0, YOffset=-1, WireCount=8, Side=SOUTH)
         input [7:0] N2END,        //Port(Name=N2END, IO=INPUT, XOffset=0, YOffset=-1, WireCount=8, Side=SOUTH)
         input [15:0] N4END,        //Port(Name=N4END, IO=INPUT, XOffset=0, YOffset=-4, WireCount=4, Side=SOUTH)
         input [15:0] NN4END,        //Port(Name=NN4END, IO=INPUT, XOffset=0, YOffset=-4, WireCount=4, Side=SOUTH)
-        input [9:0] bot2top,        //Port(Name=bot2top, IO=INPUT, XOffset=0, YOffset=-1, WireCount=10, Side=SOUTH)
         output [3:0] S1BEG,        //Port(Name=S1BEG, IO=OUTPUT, XOffset=0, YOffset=1, WireCount=4, Side=SOUTH)
         output [7:0] S2BEG,        //Port(Name=S2BEG, IO=OUTPUT, XOffset=0, YOffset=1, WireCount=8, Side=SOUTH)
         output [7:0] S2BEGb,        //Port(Name=S2BEGb, IO=OUTPUT, XOffset=0, YOffset=1, WireCount=8, Side=SOUTH)
         output [15:0] S4BEG,        //Port(Name=S4BEG, IO=OUTPUT, XOffset=0, YOffset=4, WireCount=4, Side=SOUTH)
         output [15:0] SS4BEG,        //Port(Name=SS4BEG, IO=OUTPUT, XOffset=0, YOffset=4, WireCount=4, Side=SOUTH)
-        output [17:0] top2bot,        //Port(Name=top2bot, IO=OUTPUT, XOffset=0, YOffset=1, WireCount=18, Side=SOUTH)
     //Tile IO ports from BELs
         input UserCLK,
         output UserCLKo,
-        input [MaxFramesPerCol -1:0] FrameStrobe,
+        input [FrameBitsPerRow -1:0] FrameData, //CONFIG_PORT
+        output [FrameBitsPerRow -1:0] FrameData_O,
+        input [MaxFramesPerCol -1:0] FrameStrobe, //CONFIG_PORT
         output [MaxFramesPerCol -1:0] FrameStrobe_O
     //global
 );
@@ -109,6 +111,328 @@ wire[15:0] WW4END_i;
 wire[11:0] WW4BEG_i;
 wire[11:0] W6END_i;
 wire[9:0] W6BEG_i;
+
+assign FrameData_O_i = FrameData_i;
+
+my_buf data_inbuf_0 (
+    .A(FrameData[0]),
+    .X(FrameData_i[0])
+);
+
+my_buf data_inbuf_1 (
+    .A(FrameData[1]),
+    .X(FrameData_i[1])
+);
+
+my_buf data_inbuf_2 (
+    .A(FrameData[2]),
+    .X(FrameData_i[2])
+);
+
+my_buf data_inbuf_3 (
+    .A(FrameData[3]),
+    .X(FrameData_i[3])
+);
+
+my_buf data_inbuf_4 (
+    .A(FrameData[4]),
+    .X(FrameData_i[4])
+);
+
+my_buf data_inbuf_5 (
+    .A(FrameData[5]),
+    .X(FrameData_i[5])
+);
+
+my_buf data_inbuf_6 (
+    .A(FrameData[6]),
+    .X(FrameData_i[6])
+);
+
+my_buf data_inbuf_7 (
+    .A(FrameData[7]),
+    .X(FrameData_i[7])
+);
+
+my_buf data_inbuf_8 (
+    .A(FrameData[8]),
+    .X(FrameData_i[8])
+);
+
+my_buf data_inbuf_9 (
+    .A(FrameData[9]),
+    .X(FrameData_i[9])
+);
+
+my_buf data_inbuf_10 (
+    .A(FrameData[10]),
+    .X(FrameData_i[10])
+);
+
+my_buf data_inbuf_11 (
+    .A(FrameData[11]),
+    .X(FrameData_i[11])
+);
+
+my_buf data_inbuf_12 (
+    .A(FrameData[12]),
+    .X(FrameData_i[12])
+);
+
+my_buf data_inbuf_13 (
+    .A(FrameData[13]),
+    .X(FrameData_i[13])
+);
+
+my_buf data_inbuf_14 (
+    .A(FrameData[14]),
+    .X(FrameData_i[14])
+);
+
+my_buf data_inbuf_15 (
+    .A(FrameData[15]),
+    .X(FrameData_i[15])
+);
+
+my_buf data_inbuf_16 (
+    .A(FrameData[16]),
+    .X(FrameData_i[16])
+);
+
+my_buf data_inbuf_17 (
+    .A(FrameData[17]),
+    .X(FrameData_i[17])
+);
+
+my_buf data_inbuf_18 (
+    .A(FrameData[18]),
+    .X(FrameData_i[18])
+);
+
+my_buf data_inbuf_19 (
+    .A(FrameData[19]),
+    .X(FrameData_i[19])
+);
+
+my_buf data_inbuf_20 (
+    .A(FrameData[20]),
+    .X(FrameData_i[20])
+);
+
+my_buf data_inbuf_21 (
+    .A(FrameData[21]),
+    .X(FrameData_i[21])
+);
+
+my_buf data_inbuf_22 (
+    .A(FrameData[22]),
+    .X(FrameData_i[22])
+);
+
+my_buf data_inbuf_23 (
+    .A(FrameData[23]),
+    .X(FrameData_i[23])
+);
+
+my_buf data_inbuf_24 (
+    .A(FrameData[24]),
+    .X(FrameData_i[24])
+);
+
+my_buf data_inbuf_25 (
+    .A(FrameData[25]),
+    .X(FrameData_i[25])
+);
+
+my_buf data_inbuf_26 (
+    .A(FrameData[26]),
+    .X(FrameData_i[26])
+);
+
+my_buf data_inbuf_27 (
+    .A(FrameData[27]),
+    .X(FrameData_i[27])
+);
+
+my_buf data_inbuf_28 (
+    .A(FrameData[28]),
+    .X(FrameData_i[28])
+);
+
+my_buf data_inbuf_29 (
+    .A(FrameData[29]),
+    .X(FrameData_i[29])
+);
+
+my_buf data_inbuf_30 (
+    .A(FrameData[30]),
+    .X(FrameData_i[30])
+);
+
+my_buf data_inbuf_31 (
+    .A(FrameData[31]),
+    .X(FrameData_i[31])
+);
+
+my_buf data_outbuf_0 (
+    .A(FrameData_O_i[0]),
+    .X(FrameData_O[0])
+);
+
+my_buf data_outbuf_1 (
+    .A(FrameData_O_i[1]),
+    .X(FrameData_O[1])
+);
+
+my_buf data_outbuf_2 (
+    .A(FrameData_O_i[2]),
+    .X(FrameData_O[2])
+);
+
+my_buf data_outbuf_3 (
+    .A(FrameData_O_i[3]),
+    .X(FrameData_O[3])
+);
+
+my_buf data_outbuf_4 (
+    .A(FrameData_O_i[4]),
+    .X(FrameData_O[4])
+);
+
+my_buf data_outbuf_5 (
+    .A(FrameData_O_i[5]),
+    .X(FrameData_O[5])
+);
+
+my_buf data_outbuf_6 (
+    .A(FrameData_O_i[6]),
+    .X(FrameData_O[6])
+);
+
+my_buf data_outbuf_7 (
+    .A(FrameData_O_i[7]),
+    .X(FrameData_O[7])
+);
+
+my_buf data_outbuf_8 (
+    .A(FrameData_O_i[8]),
+    .X(FrameData_O[8])
+);
+
+my_buf data_outbuf_9 (
+    .A(FrameData_O_i[9]),
+    .X(FrameData_O[9])
+);
+
+my_buf data_outbuf_10 (
+    .A(FrameData_O_i[10]),
+    .X(FrameData_O[10])
+);
+
+my_buf data_outbuf_11 (
+    .A(FrameData_O_i[11]),
+    .X(FrameData_O[11])
+);
+
+my_buf data_outbuf_12 (
+    .A(FrameData_O_i[12]),
+    .X(FrameData_O[12])
+);
+
+my_buf data_outbuf_13 (
+    .A(FrameData_O_i[13]),
+    .X(FrameData_O[13])
+);
+
+my_buf data_outbuf_14 (
+    .A(FrameData_O_i[14]),
+    .X(FrameData_O[14])
+);
+
+my_buf data_outbuf_15 (
+    .A(FrameData_O_i[15]),
+    .X(FrameData_O[15])
+);
+
+my_buf data_outbuf_16 (
+    .A(FrameData_O_i[16]),
+    .X(FrameData_O[16])
+);
+
+my_buf data_outbuf_17 (
+    .A(FrameData_O_i[17]),
+    .X(FrameData_O[17])
+);
+
+my_buf data_outbuf_18 (
+    .A(FrameData_O_i[18]),
+    .X(FrameData_O[18])
+);
+
+my_buf data_outbuf_19 (
+    .A(FrameData_O_i[19]),
+    .X(FrameData_O[19])
+);
+
+my_buf data_outbuf_20 (
+    .A(FrameData_O_i[20]),
+    .X(FrameData_O[20])
+);
+
+my_buf data_outbuf_21 (
+    .A(FrameData_O_i[21]),
+    .X(FrameData_O[21])
+);
+
+my_buf data_outbuf_22 (
+    .A(FrameData_O_i[22]),
+    .X(FrameData_O[22])
+);
+
+my_buf data_outbuf_23 (
+    .A(FrameData_O_i[23]),
+    .X(FrameData_O[23])
+);
+
+my_buf data_outbuf_24 (
+    .A(FrameData_O_i[24]),
+    .X(FrameData_O[24])
+);
+
+my_buf data_outbuf_25 (
+    .A(FrameData_O_i[25]),
+    .X(FrameData_O[25])
+);
+
+my_buf data_outbuf_26 (
+    .A(FrameData_O_i[26]),
+    .X(FrameData_O[26])
+);
+
+my_buf data_outbuf_27 (
+    .A(FrameData_O_i[27]),
+    .X(FrameData_O[27])
+);
+
+my_buf data_outbuf_28 (
+    .A(FrameData_O_i[28]),
+    .X(FrameData_O[28])
+);
+
+my_buf data_outbuf_29 (
+    .A(FrameData_O_i[29]),
+    .X(FrameData_O[29])
+);
+
+my_buf data_outbuf_30 (
+    .A(FrameData_O_i[30]),
+    .X(FrameData_O[30])
+);
+
+my_buf data_outbuf_31 (
+    .A(FrameData_O_i[31]),
+    .X(FrameData_O[31])
+);
 
 assign FrameStrobe_O_i = FrameStrobe_i;
 
@@ -1254,8 +1578,71 @@ clk_buf inst_clk_buf (
 );
 
 
+ //configuration storage latches
+SCC0_ConfigMem
+`ifdef EMULATION
+    #(
+    .Emulate_Bitstream(Emulate_Bitstream)
+    )
+`endif
+    Inst_SCC0_ConfigMem
+    (
+    .FrameData(FrameData),
+    .FrameStrobe(FrameStrobe),
+    .ConfigBits(ConfigBits),
+    .ConfigBits_N(ConfigBits_N)
+);
+
  //BEL component instantiations
 SCC0_switch_matrix Inst_SCC0_switch_matrix (
+    .o_6to00(o_6to0[0]),
+    .o_6to01(o_6to0[1]),
+    .o_6to02(o_6to0[2]),
+    .o_6to03(o_6to0[3]),
+    .o_6to04(o_6to0[4]),
+    .o_6to05(o_6to0[5]),
+    .o_6to06(o_6to0[6]),
+    .o_6to07(o_6to0[7]),
+    .o_6to08(o_6to0[8]),
+    .o_6to09(o_6to0[9]),
+    .o_6to010(o_6to0[10]),
+    .o_6to011(o_6to0[11]),
+    .o_6to012(o_6to0[12]),
+    .o_6to013(o_6to0[13]),
+    .o_6to014(o_6to0[14]),
+    .o_6to015(o_6to0[15]),
+    .o_6to016(o_6to0[16]),
+    .o_6to017(o_6to0[17]),
+    .o_6to018(o_6to0[18]),
+    .o_6to019(o_6to0[19]),
+    .o_6to020(o_6to0[20]),
+    .o_6to021(o_6to0[21]),
+    .o_6to022(o_6to0[22]),
+    .o_6to023(o_6to0[23]),
+    .o_6to024(o_6to0[24]),
+    .o_6to025(o_6to0[25]),
+    .o_6to026(o_6to0[26]),
+    .o_6to027(o_6to0[27]),
+    .o_6to028(o_6to0[28]),
+    .o_6to029(o_6to0[29]),
+    .o_6to030(o_6to0[30]),
+    .o_6to031(o_6to0[31]),
+    .o_6to032(o_6to0[32]),
+    .o_6to033(o_6to0[33]),
+    .o_6to034(o_6to0[34]),
+    .o_6to035(o_6to0[35]),
+    .o_6to036(o_6to0[36]),
+    .o_6to037(o_6to0[37]),
+    .o_6to038(o_6to0[38]),
+    .o_6to039(o_6to0[39]),
+    .o_6to040(o_6to0[40]),
+    .o_6to041(o_6to0[41]),
+    .o_6to042(o_6to0[42]),
+    .o_6to043(o_6to0[43]),
+    .o_6to044(o_6to0[44]),
+    .o_6to045(o_6to0[45]),
+    .o_6to046(o_6to0[46]),
+    .o_6to047(o_6to0[47]),
     .N1END0(N1END[0]),
     .N1END1(N1END[1]),
     .N1END2(N1END[2]),
@@ -1284,16 +1671,6 @@ SCC0_switch_matrix Inst_SCC0_switch_matrix (
     .NN4END1(NN4END[1]),
     .NN4END2(NN4END[2]),
     .NN4END3(NN4END[3]),
-    .bot2top0(bot2top[0]),
-    .bot2top1(bot2top[1]),
-    .bot2top2(bot2top[2]),
-    .bot2top3(bot2top[3]),
-    .bot2top4(bot2top[4]),
-    .bot2top5(bot2top[5]),
-    .bot2top6(bot2top[6]),
-    .bot2top7(bot2top[7]),
-    .bot2top8(bot2top[8]),
-    .bot2top9(bot2top[9]),
     .E1END0(E1END[0]),
     .E1END1(E1END[1]),
     .E1END2(E1END[2]),
@@ -1470,6 +1847,54 @@ SCC0_switch_matrix Inst_SCC0_switch_matrix (
     .J_l_GH_END1(J_l_GH_BEG[1]),
     .J_l_GH_END2(J_l_GH_BEG[2]),
     .J_l_GH_END3(J_l_GH_BEG[3]),
+    .i_0to60(i_0to6[0]),
+    .i_0to61(i_0to6[1]),
+    .i_0to62(i_0to6[2]),
+    .i_0to63(i_0to6[3]),
+    .i_0to64(i_0to6[4]),
+    .i_0to65(i_0to6[5]),
+    .i_0to66(i_0to6[6]),
+    .i_0to67(i_0to6[7]),
+    .i_0to68(i_0to6[8]),
+    .i_0to69(i_0to6[9]),
+    .i_0to610(i_0to6[10]),
+    .i_0to611(i_0to6[11]),
+    .i_0to612(i_0to6[12]),
+    .i_0to613(i_0to6[13]),
+    .i_0to614(i_0to6[14]),
+    .i_0to615(i_0to6[15]),
+    .i_0to616(i_0to6[16]),
+    .i_0to617(i_0to6[17]),
+    .i_0to618(i_0to6[18]),
+    .i_0to619(i_0to6[19]),
+    .i_0to620(i_0to6[20]),
+    .i_0to621(i_0to6[21]),
+    .i_0to622(i_0to6[22]),
+    .i_0to623(i_0to6[23]),
+    .i_0to624(i_0to6[24]),
+    .i_0to625(i_0to6[25]),
+    .i_0to626(i_0to6[26]),
+    .i_0to627(i_0to6[27]),
+    .i_0to628(i_0to6[28]),
+    .i_0to629(i_0to6[29]),
+    .i_0to630(i_0to6[30]),
+    .i_0to631(i_0to6[31]),
+    .i_0to632(i_0to6[32]),
+    .i_0to633(i_0to6[33]),
+    .i_0to634(i_0to6[34]),
+    .i_0to635(i_0to6[35]),
+    .i_0to636(i_0to6[36]),
+    .i_0to637(i_0to6[37]),
+    .i_0to638(i_0to6[38]),
+    .i_0to639(i_0to6[39]),
+    .i_0to640(i_0to6[40]),
+    .i_0to641(i_0to6[41]),
+    .i_0to642(i_0to6[42]),
+    .i_0to643(i_0to6[43]),
+    .i_0to644(i_0to6[44]),
+    .i_0to645(i_0to6[45]),
+    .i_0to646(i_0to6[46]),
+    .i_0to647(i_0to6[47]),
     .N1BEG0(N1BEG[0]),
     .N1BEG1(N1BEG[1]),
     .N1BEG2(N1BEG[2]),
@@ -1552,24 +1977,6 @@ SCC0_switch_matrix Inst_SCC0_switch_matrix (
     .SS4BEG1(SS4BEG[13]),
     .SS4BEG2(SS4BEG[14]),
     .SS4BEG3(SS4BEG[15]),
-    .top2bot0(top2bot[0]),
-    .top2bot1(top2bot[1]),
-    .top2bot2(top2bot[2]),
-    .top2bot3(top2bot[3]),
-    .top2bot4(top2bot[4]),
-    .top2bot5(top2bot[5]),
-    .top2bot6(top2bot[6]),
-    .top2bot7(top2bot[7]),
-    .top2bot8(top2bot[8]),
-    .top2bot9(top2bot[9]),
-    .top2bot10(top2bot[10]),
-    .top2bot11(top2bot[11]),
-    .top2bot12(top2bot[12]),
-    .top2bot13(top2bot[13]),
-    .top2bot14(top2bot[14]),
-    .top2bot15(top2bot[15]),
-    .top2bot16(top2bot[16]),
-    .top2bot17(top2bot[17]),
     .W1BEG0(W1BEG[0]),
     .W1BEG1(W1BEG[1]),
     .W1BEG2(W1BEG[2]),
@@ -1691,7 +2098,9 @@ SCC0_switch_matrix Inst_SCC0_switch_matrix (
     .J_l_GH_BEG0(J_l_GH_BEG[0]),
     .J_l_GH_BEG1(J_l_GH_BEG[1]),
     .J_l_GH_BEG2(J_l_GH_BEG[2]),
-    .J_l_GH_BEG3(J_l_GH_BEG[3])
+    .J_l_GH_BEG3(J_l_GH_BEG[3]),
+    .ConfigBits(ConfigBits[384-1:0]),
+    .ConfigBits_N(ConfigBits_N[384-1:0])
 );
 
 endmodule

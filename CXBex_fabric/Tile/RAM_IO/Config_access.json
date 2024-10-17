@@ -1,5 +1,5 @@
 {
-  "creator": "Yosys 0.43 (git sha1 ead4718e5, g++ 14.1.1 -march=x86-64 -mtune=generic -O2 -fno-plt -fexceptions -fstack-clash-protection -fcf-protection -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -ffile-prefix-map=/build/yosys/src=/usr/src/debug/yosys -fPIC -Os)",
+  "creator": "Yosys 0.43 (git sha1 ead4718e5, g++ 14.2.1 -march=x86-64 -mtune=generic -O2 -fno-plt -fexceptions -fstack-clash-protection -fcf-protection -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -ffile-prefix-map=/build/yosys/src=/usr/src/debug/yosys -fPIC -Os)",
   "modules": {
     "Config_access": {
       "attributes": {
@@ -11,7 +11,7 @@
         "FABulous": 1,
         "dynports": 1,
         "cells_not_processed": 1,
-        "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RAM_IO/./Config_access.v:7.1-23.10"
+        "src": "CXBex/Tile/RAM_IO/Config_access.v:7.1-23.10"
       },
       "parameter_default_values": {
         "NoConfigBits": 4
@@ -47,7 +47,7 @@
           "attributes": {
             "EXTERNAL": 1,
             "FABulous": 1,
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RAM_IO/./Config_access.v:10.33-10.39"
+            "src": "CXBex/Tile/RAM_IO/Config_access.v:10.33-10.39"
           }
         },
         "C_bit1": {
@@ -56,7 +56,7 @@
           "attributes": {
             "EXTERNAL": 1,
             "FABulous": 1,
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RAM_IO/./Config_access.v:11.33-11.39"
+            "src": "CXBex/Tile/RAM_IO/Config_access.v:11.33-11.39"
           }
         },
         "C_bit2": {
@@ -65,7 +65,7 @@
           "attributes": {
             "EXTERNAL": 1,
             "FABulous": 1,
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RAM_IO/./Config_access.v:12.33-12.39"
+            "src": "CXBex/Tile/RAM_IO/Config_access.v:12.33-12.39"
           }
         },
         "C_bit3": {
@@ -74,7 +74,7 @@
           "attributes": {
             "EXTERNAL": 1,
             "FABulous": 1,
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RAM_IO/./Config_access.v:13.33-13.39"
+            "src": "CXBex/Tile/RAM_IO/Config_access.v:13.33-13.39"
           }
         },
         "ConfigBits": {
@@ -83,7 +83,7 @@
           "attributes": {
             "FABulous": 1,
             "GLOBAL": 1,
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RAM_IO/./Config_access.v:15.49-15.59"
+            "src": "CXBex/Tile/RAM_IO/Config_access.v:15.49-15.59"
           }
         }
       }

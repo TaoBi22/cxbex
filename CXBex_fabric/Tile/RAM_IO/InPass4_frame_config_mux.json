@@ -1,5 +1,5 @@
 {
-  "creator": "Yosys 0.43 (git sha1 ead4718e5, g++ 14.1.1 -march=x86-64 -mtune=generic -O2 -fno-plt -fexceptions -fstack-clash-protection -fcf-protection -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -ffile-prefix-map=/build/yosys/src=/usr/src/debug/yosys -fPIC -Os)",
+  "creator": "Yosys 0.43 (git sha1 ead4718e5, g++ 14.2.1 -march=x86-64 -mtune=generic -O2 -fno-plt -fexceptions -fstack-clash-protection -fcf-protection -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -ffile-prefix-map=/build/yosys/src=/usr/src/debug/yosys -fPIC -Os)",
   "modules": {
     "InPass4_frame_config_mux": {
       "attributes": {
@@ -11,7 +11,7 @@
         "FABulous": 1,
         "dynports": 1,
         "cells_not_processed": 1,
-        "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RAM_IO/./InPass4_frame_config_mux.v:22.1-85.10"
+        "src": "CXBex/Tile/RAM_IO/InPass4_frame_config_mux.v:22.1-85.10"
       },
       "parameter_default_values": {
         "NoConfigBits": 4
@@ -67,7 +67,7 @@
             "WIDTH": 1
           },
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RAM_IO/./InPass4_frame_config_mux.v:45.2-51.5"
+            "src": "CXBex/Tile/RAM_IO/InPass4_frame_config_mux.v:45.2-51.5"
           },
           "port_directions": {
             "CLK": "input",
@@ -88,7 +88,7 @@
             "WIDTH": 1
           },
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RAM_IO/./InPass4_frame_config_mux.v:45.2-51.5"
+            "src": "CXBex/Tile/RAM_IO/InPass4_frame_config_mux.v:45.2-51.5"
           },
           "port_directions": {
             "CLK": "input",
@@ -109,7 +109,7 @@
             "WIDTH": 1
           },
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RAM_IO/./InPass4_frame_config_mux.v:45.2-51.5"
+            "src": "CXBex/Tile/RAM_IO/InPass4_frame_config_mux.v:45.2-51.5"
           },
           "port_directions": {
             "CLK": "input",
@@ -130,7 +130,7 @@
             "WIDTH": 1
           },
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RAM_IO/./InPass4_frame_config_mux.v:45.2-51.5"
+            "src": "CXBex/Tile/RAM_IO/InPass4_frame_config_mux.v:45.2-51.5"
           },
           "port_directions": {
             "CLK": "input",
@@ -150,7 +150,7 @@
           },
           "attributes": {
             "module_not_derived": 1,
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RAM_IO/./InPass4_frame_config_mux.v:58.13-63.6"
+            "src": "CXBex/Tile/RAM_IO/InPass4_frame_config_mux.v:58.13-63.6"
           },
           "connections": {
             "A0": [ 2 ],
@@ -166,7 +166,7 @@
           },
           "attributes": {
             "module_not_derived": 1,
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RAM_IO/./InPass4_frame_config_mux.v:65.13-70.6"
+            "src": "CXBex/Tile/RAM_IO/InPass4_frame_config_mux.v:65.13-70.6"
           },
           "connections": {
             "A0": [ 3 ],
@@ -182,7 +182,7 @@
           },
           "attributes": {
             "module_not_derived": 1,
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RAM_IO/./InPass4_frame_config_mux.v:72.13-77.6"
+            "src": "CXBex/Tile/RAM_IO/InPass4_frame_config_mux.v:72.13-77.6"
           },
           "connections": {
             "A0": [ 4 ],
@@ -198,7 +198,7 @@
           },
           "attributes": {
             "module_not_derived": 1,
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RAM_IO/./InPass4_frame_config_mux.v:79.13-84.6"
+            "src": "CXBex/Tile/RAM_IO/InPass4_frame_config_mux.v:79.13-84.6"
           },
           "connections": {
             "A0": [ 5 ],
@@ -213,28 +213,28 @@
           "hide_name": 1,
           "bits": [ 2 ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RAM_IO/./InPass4_frame_config_mux.v:45.2-51.5"
+            "src": "CXBex/Tile/RAM_IO/InPass4_frame_config_mux.v:45.2-51.5"
           }
         },
         "$0\\Q1[0:0]": {
           "hide_name": 1,
           "bits": [ 3 ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RAM_IO/./InPass4_frame_config_mux.v:45.2-51.5"
+            "src": "CXBex/Tile/RAM_IO/InPass4_frame_config_mux.v:45.2-51.5"
           }
         },
         "$0\\Q2[0:0]": {
           "hide_name": 1,
           "bits": [ 4 ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RAM_IO/./InPass4_frame_config_mux.v:45.2-51.5"
+            "src": "CXBex/Tile/RAM_IO/InPass4_frame_config_mux.v:45.2-51.5"
           }
         },
         "$0\\Q3[0:0]": {
           "hide_name": 1,
           "bits": [ 5 ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RAM_IO/./InPass4_frame_config_mux.v:45.2-51.5"
+            "src": "CXBex/Tile/RAM_IO/InPass4_frame_config_mux.v:45.2-51.5"
           }
         },
         "ConfigBits": {
@@ -243,7 +243,7 @@
           "attributes": {
             "FABulous": 1,
             "GLOBAL": 1,
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RAM_IO/./InPass4_frame_config_mux.v:36.54-36.64"
+            "src": "CXBex/Tile/RAM_IO/InPass4_frame_config_mux.v:36.54-36.64"
           }
         },
         "I0": {
@@ -252,7 +252,7 @@
           "attributes": {
             "EXTERNAL": 1,
             "FABulous": 1,
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RAM_IO/./InPass4_frame_config_mux.v:25.33-25.35"
+            "src": "CXBex/Tile/RAM_IO/InPass4_frame_config_mux.v:25.33-25.35"
           }
         },
         "I1": {
@@ -261,7 +261,7 @@
           "attributes": {
             "EXTERNAL": 1,
             "FABulous": 1,
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RAM_IO/./InPass4_frame_config_mux.v:26.33-26.35"
+            "src": "CXBex/Tile/RAM_IO/InPass4_frame_config_mux.v:26.33-26.35"
           }
         },
         "I2": {
@@ -270,7 +270,7 @@
           "attributes": {
             "EXTERNAL": 1,
             "FABulous": 1,
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RAM_IO/./InPass4_frame_config_mux.v:27.33-27.35"
+            "src": "CXBex/Tile/RAM_IO/InPass4_frame_config_mux.v:27.33-27.35"
           }
         },
         "I3": {
@@ -279,63 +279,63 @@
           "attributes": {
             "EXTERNAL": 1,
             "FABulous": 1,
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RAM_IO/./InPass4_frame_config_mux.v:28.33-28.35"
+            "src": "CXBex/Tile/RAM_IO/InPass4_frame_config_mux.v:28.33-28.35"
           }
         },
         "O0": {
           "hide_name": 0,
           "bits": [ 6 ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RAM_IO/./InPass4_frame_config_mux.v:29.9-29.11"
+            "src": "CXBex/Tile/RAM_IO/InPass4_frame_config_mux.v:29.9-29.11"
           }
         },
         "O1": {
           "hide_name": 0,
           "bits": [ 7 ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RAM_IO/./InPass4_frame_config_mux.v:30.9-30.11"
+            "src": "CXBex/Tile/RAM_IO/InPass4_frame_config_mux.v:30.9-30.11"
           }
         },
         "O2": {
           "hide_name": 0,
           "bits": [ 8 ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RAM_IO/./InPass4_frame_config_mux.v:31.9-31.11"
+            "src": "CXBex/Tile/RAM_IO/InPass4_frame_config_mux.v:31.9-31.11"
           }
         },
         "O3": {
           "hide_name": 0,
           "bits": [ 9 ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RAM_IO/./InPass4_frame_config_mux.v:32.9-32.11"
+            "src": "CXBex/Tile/RAM_IO/InPass4_frame_config_mux.v:32.9-32.11"
           }
         },
         "Q0": {
           "hide_name": 0,
           "bits": [ 15 ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RAM_IO/./InPass4_frame_config_mux.v:43.6-43.8"
+            "src": "CXBex/Tile/RAM_IO/InPass4_frame_config_mux.v:43.6-43.8"
           }
         },
         "Q1": {
           "hide_name": 0,
           "bits": [ 16 ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RAM_IO/./InPass4_frame_config_mux.v:43.10-43.12"
+            "src": "CXBex/Tile/RAM_IO/InPass4_frame_config_mux.v:43.10-43.12"
           }
         },
         "Q2": {
           "hide_name": 0,
           "bits": [ 17 ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RAM_IO/./InPass4_frame_config_mux.v:43.14-43.16"
+            "src": "CXBex/Tile/RAM_IO/InPass4_frame_config_mux.v:43.14-43.16"
           }
         },
         "Q3": {
           "hide_name": 0,
           "bits": [ 18 ],
           "attributes": {
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RAM_IO/./InPass4_frame_config_mux.v:43.18-43.20"
+            "src": "CXBex/Tile/RAM_IO/InPass4_frame_config_mux.v:43.18-43.20"
           }
         },
         "UserCLK": {
@@ -345,7 +345,7 @@
             "EXTERNAL": 1,
             "FABulous": 1,
             "SHARED_PORT": 1,
-            "src": "/home/jart/fpga-ignite/FABulous/CXBex/Tile/RAM_IO/./InPass4_frame_config_mux.v:34.46-34.53"
+            "src": "CXBex/Tile/RAM_IO/InPass4_frame_config_mux.v:34.46-34.53"
           }
         }
       }
