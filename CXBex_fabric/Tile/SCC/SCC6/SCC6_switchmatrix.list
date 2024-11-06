@@ -46,15 +46,15 @@ t_resp_data[8|9|10|11|12|13|14|15]  ,i_w2e[8|9|10|11|12|13|14|15]
 
 ######### Supertile NORTH-SOUTH routing ####################
 # t_req_data1: output 32
-o_6to0[0|1|2|3|4|5|6|7],t_req_data1[24|25|26|27|28|29|30|31]
-o_6to1[0|1|2|3|4|5|6|7],t_req_data1[16|17|18|19|20|21|22|23]
-o_6to2[0|1|2|3|4|5|6|7],t_req_data1[8|9|10|11|12|13|14|15]
-o_6to3[0|1|2|3|4|5|6|7],t_req_data1[0|1|2|3|4|5|6|7]
+BEG_o_6to0[0|1|2|3|4|5|6|7],t_req_data1[24|25|26|27|28|29|30|31]
+BEG_o_6to0[8|9|10|11|12|13|14|15],t_req_data1[16|17|18|19|20|21|22|23]
+BEG_o_6to0[16|17|18|19|20|21|22|23],t_req_data1[8|9|10|11|12|13|14|15]
+BEG_o_6to0[24|25|26|27|28|29|30|31],t_req_data1[0|1|2|3|4|5|6|7]
 
 
 # resp_data: output 32 [Bits: 23-16 + 7-0]
-o_6to4[0|1|2|3|4|5|6|7],resp_data[8|9|10|11|12|13|14|15]
-o_6to5[0|1|2|3|4|5|6|7],resp_data[0|1|2|3|4|5|6|7]
+BEG_o_6to0[32|33|34|35|36|37|38|39],resp_data[8|9|10|11|12|13|14|15]
+BEG_o_6to0[40|41|42|43|44|45|46|47],resp_data[0|1|2|3|4|5|6|7]
 
 
 # t_resp_ready: output 1
@@ -67,15 +67,15 @@ o_6to5[0|1|2|3|4|5|6|7],resp_data[0|1|2|3|4|5|6|7]
 # CLB_O_7 replaced by S4END1
 
 # req_data1: input 32
-req_data1[24|25|26|27|28|29|30|31],i_0to6[0|1|2|3|4|5|6|7]
-req_data1[16|17|18|19|20|21|22|23],i_1to6[0|1|2|3|4|5|6|7]
-req_data1[8|9|10|11|12|13|14|15]  ,i_2to6[0|1|2|3|4|5|6|7]
-req_data1[0|1|2|3|4|5|6|7]        ,i_3to6[0|1|2|3|4|5|6|7]
+req_data1[24|25|26|27|28|29|30|31],END_i_0to6[0|1|2|3|4|5|6|7]
+req_data1[16|17|18|19|20|21|22|23],END_i_0to6[8|9|10|11|12|13|14|15]
+req_data1[8|9|10|11|12|13|14|15]  ,END_i_0to6[16|17|18|19|20|21|22|23]
+req_data1[0|1|2|3|4|5|6|7]        ,END_i_0to6[24|25|26|27|28|29|30|31]
 
 
 # t_resp_data: input 32 [Bits: 23-16 + 7-0]
-t_resp_data[16|17|18|19|20|21|22|23],i_4to6[0|1|2|3|4|5|6|7]
-t_resp_data[0|1|2|3|4|5|6|7],i_5to6[0|1|2|3|4|5|6|7]
+t_resp_data[16|17|18|19|20|21|22|23],END_i_0to6[32|33|34|35|36|37|38|39]
+t_resp_data[0|1|2|3|4|5|6|7],END_i_0to6[40|41|42|43|44|45|46|47]
 
 
 # resp_ready: input 1
@@ -92,8 +92,8 @@ t_resp_data[0|1|2|3|4|5|6|7],i_5to6[0|1|2|3|4|5|6|7]
 [t_resp_status2|t_resp_status2|t_resp_status2|t_resp_status2],[J2MID_CDa_END3|J2MID_CDb_END3|J2END_CD_END3|J_l_CD_END3]
 [t_resp_status1|t_resp_status1|t_resp_status1|t_resp_status1],[J2MID_EFa_END0|J2MID_EFb_END0|J2END_EF_END0|J_l_EF_END0]
 [t_resp_status0|t_resp_status0|t_resp_status0|t_resp_status0],[J2MID_EFa_END0|J2MID_EFb_END0|J2END_EF_END0|J_l_EF_END0]
-#CLB_I[6|6|6|6],[J2MID_GHa_END0|J2MID_GHb_END0|J2END_GH_END0|J_l_GH_END0]
-#CLB_I[7|7|7|7],[J2MID_GHa_END0|J2MID_GHb_END0|J2END_GH_END0|J_l_GH_END0]
+[UserCLK_en|UserCLK_en|UserCLK_en|UserCLK_en],[J2MID_GHa_END0|J2MID_GHb_END0|J2END_GH_END0|J_l_GH_END0]
+[rst|rst|rst|rst],[J2MID_GHa_END0|J2MID_GHb_END0|J2END_GH_END0|J_l_GH_END0]
 
 
 ############ LOCAL SWITCH MATRIX ############
@@ -213,19 +213,19 @@ JE2BEG[5|5|5|5|5|5|5|5],[t_resp_ready|req_ready|resp_valid|resp_status2|resp_sta
 JE2BEG[6|6|6|6|6|6|6|6],[t_resp_ready|req_ready|resp_valid|resp_status2|resp_status1|resp_status0|S1END1|S4END1]
 JE2BEG[7|7|7|7|7|7|7|7],[t_resp_ready|req_ready|resp_valid|resp_status2|resp_status1|resp_status0|S4END0|S1END2]
 
-JS2BEG[0|0|0|0|0|0|0|0],[E1END3|req_ready|resp_valid|resp_status2|resp_status1|resp_status0|S4END0|S4END1]
+JS2BEG[0|0|0|0|0|0|0|0],[E1END3|req_ready|resp_valid|resp_status2|resp_status1|resp_status0|S4END0|W1END1]
 JS2BEG[1|1|1|1|1|1|1|1],[t_resp_ready|E1END0|resp_valid|resp_status2|resp_status1|resp_status0|S4END0|S4END1]
 JS2BEG[2|2|2|2|2|2|2|2],[t_resp_ready|req_ready|E1END1|resp_status2|resp_status1|resp_status0|S4END0|S4END1]
-JS2BEG[3|3|3|3|3|3|3|3],[t_resp_ready|req_ready|resp_valid|E1END2|resp_status1|resp_status0|S4END0|S4END1]
+JS2BEG[3|3|3|3|3|3|3|3],[t_resp_ready|req_ready|resp_valid|E1END2|resp_status1|resp_status0|W2END1|S4END1]
 JS2BEG[4|4|4|4|4|4|4|4],[t_resp_ready|req_ready|resp_valid|resp_status2|W1END3|resp_status0|S4END0|S4END1]
 JS2BEG[5|5|5|5|5|5|5|5],[t_resp_ready|req_ready|resp_valid|resp_status2|resp_status1|W1END0|S4END0|S4END1]
 JS2BEG[6|6|6|6|6|6|6|6],[t_resp_ready|req_ready|resp_valid|resp_status2|resp_status1|resp_status0|W1END1|S4END1]
 JS2BEG[7|7|7|7|7|7|7|7],[t_resp_ready|req_ready|resp_valid|resp_status2|resp_status1|resp_status0|S4END0|W1END2]
 
-JW2BEG[0|0|0|0|0|0|0|0],[N1END3|req_ready|resp_valid|resp_status2|resp_status1|resp_status0|S4END0|S4END1]
+JW2BEG[0|0|0|0|0|0|0|0],[N1END3|req_ready|resp_valid|resp_status2|resp_status1|resp_status0|S4END0|NN4END1]
 JW2BEG[1|1|1|1|1|1|1|1],[t_resp_ready|N1END0|resp_valid|resp_status2|resp_status1|resp_status0|S4END0|S4END1]
 JW2BEG[2|2|2|2|2|2|2|2],[t_resp_ready|req_ready|N1END1|resp_status2|resp_status1|resp_status0|S4END0|S4END1]
-JW2BEG[3|3|3|3|3|3|3|3],[t_resp_ready|req_ready|resp_valid|N1END2|resp_status1|resp_status0|S4END0|S4END1]
+JW2BEG[3|3|3|3|3|3|3|3],[t_resp_ready|req_ready|resp_valid|N1END2|resp_status1|resp_status0|S4END1|WW4END1]
 JW2BEG[4|4|4|4|4|4|4|4],[t_resp_ready|req_ready|resp_valid|resp_status2|S1END3|resp_status0|S4END0|S4END1]
 JW2BEG[5|5|5|5|5|5|5|5],[t_resp_ready|req_ready|resp_valid|resp_status2|resp_status1|S1END0|S4END0|S4END1]
 JW2BEG[6|6|6|6|6|6|6|6],[t_resp_ready|req_ready|resp_valid|resp_status2|resp_status1|resp_status0|S1END1|S4END1]

@@ -1,9 +1,9 @@
 `resetall
 `default_nettype none
 module mux4_cxu (
-	clk,
+	UserCLK,
 	rst,
-	clk_en,
+	UserCLK_en,
 	req_valid,
 	req_ready,
 	req_cxu,
@@ -38,9 +38,10 @@ module mux4_cxu (
 	parameter signed [31:0] CXU_INSN_W = 0;
 	parameter signed [31:0] CXU_DATA_W = 32;
 	parameter signed [31:0] N_REQS = 16;
-	input wire clk;
+
+  (* FABulous, EXTERNAL, SHARED_PORT *) input UserCLK; // EXTERNAL // SHARED_PORT // ## the EXTERNAL keyword will send this sisgnal all the way to top and the //SHARED Allows multiple BELs using the same port (e.g. for exporting a clock to the top)
 	input wire rst;
-	input wire clk_en;
+	input wire UserCLK_en;
 	input wire req_valid;
 	output wire req_ready;
 	function signed [31:0] common_pkg_max;
@@ -136,9 +137,9 @@ module mux4_cxu (
 		.N_TGTS(4),
 		.N_REQS(N_REQS)
 	) core(
-		.clk(clk),
+		.clk(UserCLK),
 		.rst(rst),
-		.clk_en(clk_en),
+		.UserCLK_en(UserCLK_en),
 		.i_req_valids(req_valid),
 		.i_req_readys(req_ready),
 		.i_req_cxus(req_cxu),
@@ -165,7 +166,7 @@ module mux4_cxu (
 		.t_resp_datas({t3_resp_data, t2_resp_data, t1_resp_data, t0_resp_data})
 	);
 	reg [1:0] select;
-	always @(clk)
+	always @(UserCLK)
 		if (rst)
 			select <= 2'b00;
 		else if (req_valid)

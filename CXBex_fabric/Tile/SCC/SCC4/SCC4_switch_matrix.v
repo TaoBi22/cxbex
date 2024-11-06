@@ -1,25 +1,25 @@
- // NumberOfConfigBits: 358
+ // NumberOfConfigBits: 376
 module SCC4_switch_matrix
     #(
-        parameter NoConfigBits=358
+        parameter NoConfigBits=376
     )
     (
-        input o_6to40,
-        input o_6to41,
-        input o_6to42,
-        input o_6to43,
-        input o_6to44,
-        input o_6to45,
-        input o_6to46,
-        input o_6to47,
-        input o_6to48,
-        input o_6to49,
-        input o_6to410,
-        input o_6to411,
-        input o_6to412,
-        input o_6to413,
-        input o_6to414,
-        input o_6to415,
+        input END_o_6to00,
+        input END_o_6to01,
+        input END_o_6to02,
+        input END_o_6to03,
+        input END_o_6to04,
+        input END_o_6to05,
+        input END_o_6to06,
+        input END_o_6to07,
+        input END_i_0to60,
+        input END_i_0to61,
+        input END_i_0to62,
+        input END_i_0to63,
+        input END_i_0to64,
+        input END_i_0to65,
+        input END_i_0to66,
+        input END_i_0to67,
         input N1END0,
         input N1END1,
         input N1END2,
@@ -48,16 +48,6 @@ module SCC4_switch_matrix
         input NN4END1,
         input NN4END2,
         input NN4END3,
-        input bot2top0,
-        input bot2top1,
-        input bot2top2,
-        input bot2top3,
-        input bot2top4,
-        input bot2top5,
-        input bot2top6,
-        input bot2top7,
-        input bot2top8,
-        input bot2top9,
         input E1END0,
         input E1END1,
         input E1END2,
@@ -234,22 +224,22 @@ module SCC4_switch_matrix
         input J_l_GH_END1,
         input J_l_GH_END2,
         input J_l_GH_END3,
-        output i_4to60,
-        output i_4to61,
-        output i_4to62,
-        output i_4to63,
-        output i_4to64,
-        output i_4to65,
-        output i_4to66,
-        output i_4to67,
-        output i_4to68,
-        output i_4to69,
-        output i_4to610,
-        output i_4to611,
-        output i_4to612,
-        output i_4to613,
-        output i_4to614,
-        output i_4to615,
+        output BEG_o_6to00,
+        output BEG_o_6to01,
+        output BEG_o_6to02,
+        output BEG_o_6to03,
+        output BEG_o_6to04,
+        output BEG_o_6to05,
+        output BEG_o_6to06,
+        output BEG_o_6to07,
+        output BEG_i_0to60,
+        output BEG_i_0to61,
+        output BEG_i_0to62,
+        output BEG_i_0to63,
+        output BEG_i_0to64,
+        output BEG_i_0to65,
+        output BEG_i_0to66,
+        output BEG_i_0to67,
         output N1BEG0,
         output N1BEG1,
         output N1BEG2,
@@ -332,24 +322,6 @@ module SCC4_switch_matrix
         output SS4BEG1,
         output SS4BEG2,
         output SS4BEG3,
-        output top2bot0,
-        output top2bot1,
-        output top2bot2,
-        output top2bot3,
-        output top2bot4,
-        output top2bot5,
-        output top2bot6,
-        output top2bot7,
-        output top2bot8,
-        output top2bot9,
-        output top2bot10,
-        output top2bot11,
-        output top2bot12,
-        output top2bot13,
-        output top2bot14,
-        output top2bot15,
-        output top2bot16,
-        output top2bot17,
         output W1BEG0,
         output W1BEG1,
         output W1BEG2,
@@ -483,22 +455,22 @@ parameter VCC = 1'b1;
 parameter VDD0 = 1'b1;
 parameter VDD = 1'b1;
 
-wire[4-1:0] i_4to60_input;
-wire[4-1:0] i_4to61_input;
-wire[4-1:0] i_4to62_input;
-wire[4-1:0] i_4to63_input;
-wire[4-1:0] i_4to64_input;
-wire[4-1:0] i_4to65_input;
-wire[4-1:0] i_4to66_input;
-wire[4-1:0] i_4to67_input;
-wire[0-1:0] i_4to68_input;
-wire[0-1:0] i_4to69_input;
-wire[0-1:0] i_4to610_input;
-wire[0-1:0] i_4to611_input;
-wire[0-1:0] i_4to612_input;
-wire[0-1:0] i_4to613_input;
-wire[0-1:0] i_4to614_input;
-wire[0-1:0] i_4to615_input;
+wire[0-1:0] BEG_o_6to00_input;
+wire[0-1:0] BEG_o_6to01_input;
+wire[0-1:0] BEG_o_6to02_input;
+wire[0-1:0] BEG_o_6to03_input;
+wire[0-1:0] BEG_o_6to04_input;
+wire[0-1:0] BEG_o_6to05_input;
+wire[0-1:0] BEG_o_6to06_input;
+wire[0-1:0] BEG_o_6to07_input;
+wire[4-1:0] BEG_i_0to60_input;
+wire[4-1:0] BEG_i_0to61_input;
+wire[4-1:0] BEG_i_0to62_input;
+wire[4-1:0] BEG_i_0to63_input;
+wire[4-1:0] BEG_i_0to64_input;
+wire[4-1:0] BEG_i_0to65_input;
+wire[4-1:0] BEG_i_0to66_input;
+wire[4-1:0] BEG_i_0to67_input;
 wire[4-1:0] N1BEG0_input;
 wire[4-1:0] N1BEG1_input;
 wire[4-1:0] N1BEG2_input;
@@ -581,24 +553,6 @@ wire[8-1:0] SS4BEG0_input;
 wire[8-1:0] SS4BEG1_input;
 wire[8-1:0] SS4BEG2_input;
 wire[8-1:0] SS4BEG3_input;
-wire[0-1:0] top2bot0_input;
-wire[0-1:0] top2bot1_input;
-wire[0-1:0] top2bot2_input;
-wire[0-1:0] top2bot3_input;
-wire[0-1:0] top2bot4_input;
-wire[0-1:0] top2bot5_input;
-wire[0-1:0] top2bot6_input;
-wire[0-1:0] top2bot7_input;
-wire[0-1:0] top2bot8_input;
-wire[0-1:0] top2bot9_input;
-wire[0-1:0] top2bot10_input;
-wire[0-1:0] top2bot11_input;
-wire[0-1:0] top2bot12_input;
-wire[0-1:0] top2bot13_input;
-wire[0-1:0] top2bot14_input;
-wire[0-1:0] top2bot15_input;
-wire[0-1:0] top2bot16_input;
-wire[0-1:0] top2bot17_input;
 wire[4-1:0] W1BEG0_input;
 wire[4-1:0] W1BEG1_input;
 wire[4-1:0] W1BEG2_input;
@@ -722,14 +676,14 @@ wire[4-1:0] J_l_GH_BEG1_input;
 wire[4-1:0] J_l_GH_BEG2_input;
 wire[4-1:0] J_l_GH_BEG3_input;
 
-wire[2-1:0] DEBUG_select_i_4to60;
-wire[2-1:0] DEBUG_select_i_4to61;
-wire[2-1:0] DEBUG_select_i_4to62;
-wire[2-1:0] DEBUG_select_i_4to63;
-wire[2-1:0] DEBUG_select_i_4to64;
-wire[2-1:0] DEBUG_select_i_4to65;
-wire[2-1:0] DEBUG_select_i_4to66;
-wire[2-1:0] DEBUG_select_i_4to67;
+wire[2-1:0] DEBUG_select_BEG_i_0to60;
+wire[2-1:0] DEBUG_select_BEG_i_0to61;
+wire[2-1:0] DEBUG_select_BEG_i_0to62;
+wire[2-1:0] DEBUG_select_BEG_i_0to63;
+wire[2-1:0] DEBUG_select_BEG_i_0to64;
+wire[2-1:0] DEBUG_select_BEG_i_0to65;
+wire[2-1:0] DEBUG_select_BEG_i_0to66;
+wire[2-1:0] DEBUG_select_BEG_i_0to67;
 wire[2-1:0] DEBUG_select_N1BEG0;
 wire[2-1:0] DEBUG_select_N1BEG1;
 wire[2-1:0] DEBUG_select_N1BEG2;
@@ -872,136 +826,136 @@ wire[2-1:0] DEBUG_select_J_l_GH_BEG2;
 wire[2-1:0] DEBUG_select_J_l_GH_BEG3;
  //The configuration bits (if any) are just a long shift register
  //This shift register is padded to an even number of flops/latches
- //switch matrix multiplexer i_4to60 MUX-4
-assign i_4to60_input = {J_l_AB_END0,J2END_AB_END0,J2MID_ABb_END0,J2MID_ABa_END0};
-cus_mux41_buf inst_cus_mux41_buf_i_4to60 (
-    .A0(i_4to60_input[0]),
-    .A1(i_4to60_input[1]),
-    .A2(i_4to60_input[2]),
-    .A3(i_4to60_input[3]),
+ //switch matrix multiplexer BEG_o_6to00 MUX-0
+ //WARNING unused multiplexer MUX-BEG_o_6to00
+ //switch matrix multiplexer BEG_o_6to01 MUX-0
+ //WARNING unused multiplexer MUX-BEG_o_6to01
+ //switch matrix multiplexer BEG_o_6to02 MUX-0
+ //WARNING unused multiplexer MUX-BEG_o_6to02
+ //switch matrix multiplexer BEG_o_6to03 MUX-0
+ //WARNING unused multiplexer MUX-BEG_o_6to03
+ //switch matrix multiplexer BEG_o_6to04 MUX-0
+ //WARNING unused multiplexer MUX-BEG_o_6to04
+ //switch matrix multiplexer BEG_o_6to05 MUX-0
+ //WARNING unused multiplexer MUX-BEG_o_6to05
+ //switch matrix multiplexer BEG_o_6to06 MUX-0
+ //WARNING unused multiplexer MUX-BEG_o_6to06
+ //switch matrix multiplexer BEG_o_6to07 MUX-0
+ //WARNING unused multiplexer MUX-BEG_o_6to07
+ //switch matrix multiplexer BEG_i_0to60 MUX-4
+assign BEG_i_0to60_input = {J_l_AB_END0,J2END_AB_END0,J2MID_ABb_END0,J2MID_ABa_END0};
+cus_mux41_buf inst_cus_mux41_buf_BEG_i_0to60 (
+    .A0(BEG_i_0to60_input[0]),
+    .A1(BEG_i_0to60_input[1]),
+    .A2(BEG_i_0to60_input[2]),
+    .A3(BEG_i_0to60_input[3]),
     .S0(ConfigBits[0+0]),
     .S0N(ConfigBits_N[0+0]),
     .S1(ConfigBits[0+1]),
     .S1N(ConfigBits_N[0+1]),
-    .X(i_4to60)
+    .X(BEG_i_0to60)
 );
 
- //switch matrix multiplexer i_4to61 MUX-4
-assign i_4to61_input = {J_l_AB_END1,J2END_AB_END1,J2MID_ABb_END1,J2MID_ABa_END1};
-cus_mux41_buf inst_cus_mux41_buf_i_4to61 (
-    .A0(i_4to61_input[0]),
-    .A1(i_4to61_input[1]),
-    .A2(i_4to61_input[2]),
-    .A3(i_4to61_input[3]),
+ //switch matrix multiplexer BEG_i_0to61 MUX-4
+assign BEG_i_0to61_input = {J_l_AB_END1,J2END_AB_END1,J2MID_ABb_END1,J2MID_ABa_END1};
+cus_mux41_buf inst_cus_mux41_buf_BEG_i_0to61 (
+    .A0(BEG_i_0to61_input[0]),
+    .A1(BEG_i_0to61_input[1]),
+    .A2(BEG_i_0to61_input[2]),
+    .A3(BEG_i_0to61_input[3]),
     .S0(ConfigBits[2+0]),
     .S0N(ConfigBits_N[2+0]),
     .S1(ConfigBits[2+1]),
     .S1N(ConfigBits_N[2+1]),
-    .X(i_4to61)
+    .X(BEG_i_0to61)
 );
 
- //switch matrix multiplexer i_4to62 MUX-4
-assign i_4to62_input = {J_l_CD_END2,J2END_CD_END2,J2MID_CDb_END2,J2MID_CDa_END2};
-cus_mux41_buf inst_cus_mux41_buf_i_4to62 (
-    .A0(i_4to62_input[0]),
-    .A1(i_4to62_input[1]),
-    .A2(i_4to62_input[2]),
-    .A3(i_4to62_input[3]),
+ //switch matrix multiplexer BEG_i_0to62 MUX-4
+assign BEG_i_0to62_input = {J_l_CD_END2,J2END_CD_END2,J2MID_CDb_END2,J2MID_CDa_END2};
+cus_mux41_buf inst_cus_mux41_buf_BEG_i_0to62 (
+    .A0(BEG_i_0to62_input[0]),
+    .A1(BEG_i_0to62_input[1]),
+    .A2(BEG_i_0to62_input[2]),
+    .A3(BEG_i_0to62_input[3]),
     .S0(ConfigBits[4+0]),
     .S0N(ConfigBits_N[4+0]),
     .S1(ConfigBits[4+1]),
     .S1N(ConfigBits_N[4+1]),
-    .X(i_4to62)
+    .X(BEG_i_0to62)
 );
 
- //switch matrix multiplexer i_4to63 MUX-4
-assign i_4to63_input = {J_l_CD_END3,J2END_CD_END3,J2MID_CDb_END3,J2MID_CDa_END3};
-cus_mux41_buf inst_cus_mux41_buf_i_4to63 (
-    .A0(i_4to63_input[0]),
-    .A1(i_4to63_input[1]),
-    .A2(i_4to63_input[2]),
-    .A3(i_4to63_input[3]),
+ //switch matrix multiplexer BEG_i_0to63 MUX-4
+assign BEG_i_0to63_input = {J_l_CD_END3,J2END_CD_END3,J2MID_CDb_END3,J2MID_CDa_END3};
+cus_mux41_buf inst_cus_mux41_buf_BEG_i_0to63 (
+    .A0(BEG_i_0to63_input[0]),
+    .A1(BEG_i_0to63_input[1]),
+    .A2(BEG_i_0to63_input[2]),
+    .A3(BEG_i_0to63_input[3]),
     .S0(ConfigBits[6+0]),
     .S0N(ConfigBits_N[6+0]),
     .S1(ConfigBits[6+1]),
     .S1N(ConfigBits_N[6+1]),
-    .X(i_4to63)
+    .X(BEG_i_0to63)
 );
 
- //switch matrix multiplexer i_4to64 MUX-4
-assign i_4to64_input = {J_l_EF_END0,J2END_EF_END0,J2MID_EFb_END0,J2MID_EFa_END0};
-cus_mux41_buf inst_cus_mux41_buf_i_4to64 (
-    .A0(i_4to64_input[0]),
-    .A1(i_4to64_input[1]),
-    .A2(i_4to64_input[2]),
-    .A3(i_4to64_input[3]),
+ //switch matrix multiplexer BEG_i_0to64 MUX-4
+assign BEG_i_0to64_input = {J_l_EF_END0,J2END_EF_END0,J2MID_EFb_END0,J2MID_EFa_END0};
+cus_mux41_buf inst_cus_mux41_buf_BEG_i_0to64 (
+    .A0(BEG_i_0to64_input[0]),
+    .A1(BEG_i_0to64_input[1]),
+    .A2(BEG_i_0to64_input[2]),
+    .A3(BEG_i_0to64_input[3]),
     .S0(ConfigBits[8+0]),
     .S0N(ConfigBits_N[8+0]),
     .S1(ConfigBits[8+1]),
     .S1N(ConfigBits_N[8+1]),
-    .X(i_4to64)
+    .X(BEG_i_0to64)
 );
 
- //switch matrix multiplexer i_4to65 MUX-4
-assign i_4to65_input = {J_l_EF_END0,J2END_EF_END0,J2MID_EFb_END0,J2MID_EFa_END0};
-cus_mux41_buf inst_cus_mux41_buf_i_4to65 (
-    .A0(i_4to65_input[0]),
-    .A1(i_4to65_input[1]),
-    .A2(i_4to65_input[2]),
-    .A3(i_4to65_input[3]),
+ //switch matrix multiplexer BEG_i_0to65 MUX-4
+assign BEG_i_0to65_input = {J_l_EF_END0,J2END_EF_END0,J2MID_EFb_END0,J2MID_EFa_END0};
+cus_mux41_buf inst_cus_mux41_buf_BEG_i_0to65 (
+    .A0(BEG_i_0to65_input[0]),
+    .A1(BEG_i_0to65_input[1]),
+    .A2(BEG_i_0to65_input[2]),
+    .A3(BEG_i_0to65_input[3]),
     .S0(ConfigBits[10+0]),
     .S0N(ConfigBits_N[10+0]),
     .S1(ConfigBits[10+1]),
     .S1N(ConfigBits_N[10+1]),
-    .X(i_4to65)
+    .X(BEG_i_0to65)
 );
 
- //switch matrix multiplexer i_4to66 MUX-4
-assign i_4to66_input = {J_l_GH_END0,J2END_GH_END0,J2MID_GHb_END0,J2MID_GHa_END0};
-cus_mux41_buf inst_cus_mux41_buf_i_4to66 (
-    .A0(i_4to66_input[0]),
-    .A1(i_4to66_input[1]),
-    .A2(i_4to66_input[2]),
-    .A3(i_4to66_input[3]),
+ //switch matrix multiplexer BEG_i_0to66 MUX-4
+assign BEG_i_0to66_input = {J_l_GH_END0,J2END_GH_END0,J2MID_GHb_END0,J2MID_GHa_END0};
+cus_mux41_buf inst_cus_mux41_buf_BEG_i_0to66 (
+    .A0(BEG_i_0to66_input[0]),
+    .A1(BEG_i_0to66_input[1]),
+    .A2(BEG_i_0to66_input[2]),
+    .A3(BEG_i_0to66_input[3]),
     .S0(ConfigBits[12+0]),
     .S0N(ConfigBits_N[12+0]),
     .S1(ConfigBits[12+1]),
     .S1N(ConfigBits_N[12+1]),
-    .X(i_4to66)
+    .X(BEG_i_0to66)
 );
 
- //switch matrix multiplexer i_4to67 MUX-4
-assign i_4to67_input = {J_l_GH_END0,J2END_GH_END0,J2MID_GHb_END0,J2MID_GHa_END0};
-cus_mux41_buf inst_cus_mux41_buf_i_4to67 (
-    .A0(i_4to67_input[0]),
-    .A1(i_4to67_input[1]),
-    .A2(i_4to67_input[2]),
-    .A3(i_4to67_input[3]),
+ //switch matrix multiplexer BEG_i_0to67 MUX-4
+assign BEG_i_0to67_input = {J_l_GH_END0,J2END_GH_END0,J2MID_GHb_END0,J2MID_GHa_END0};
+cus_mux41_buf inst_cus_mux41_buf_BEG_i_0to67 (
+    .A0(BEG_i_0to67_input[0]),
+    .A1(BEG_i_0to67_input[1]),
+    .A2(BEG_i_0to67_input[2]),
+    .A3(BEG_i_0to67_input[3]),
     .S0(ConfigBits[14+0]),
     .S0N(ConfigBits_N[14+0]),
     .S1(ConfigBits[14+1]),
     .S1N(ConfigBits_N[14+1]),
-    .X(i_4to67)
+    .X(BEG_i_0to67)
 );
 
- //switch matrix multiplexer i_4to68 MUX-0
- //WARNING unused multiplexer MUX-i_4to68
- //switch matrix multiplexer i_4to69 MUX-0
- //WARNING unused multiplexer MUX-i_4to69
- //switch matrix multiplexer i_4to610 MUX-0
- //WARNING unused multiplexer MUX-i_4to610
- //switch matrix multiplexer i_4to611 MUX-0
- //WARNING unused multiplexer MUX-i_4to611
- //switch matrix multiplexer i_4to612 MUX-0
- //WARNING unused multiplexer MUX-i_4to612
- //switch matrix multiplexer i_4to613 MUX-0
- //WARNING unused multiplexer MUX-i_4to613
- //switch matrix multiplexer i_4to614 MUX-0
- //WARNING unused multiplexer MUX-i_4to614
- //switch matrix multiplexer i_4to615 MUX-0
- //WARNING unused multiplexer MUX-i_4to615
  //switch matrix multiplexer N1BEG0 MUX-4
-assign N1BEG0_input = {J_l_CD_END1,JW2END3,J2MID_CDb_END3,o_6to42};
+assign N1BEG0_input = {J_l_CD_END1,JW2END3,J2MID_CDb_END3,END_o_6to02};
 cus_mux41_buf inst_cus_mux41_buf_N1BEG0 (
     .A0(N1BEG0_input[0]),
     .A1(N1BEG0_input[1]),
@@ -1015,7 +969,7 @@ cus_mux41_buf inst_cus_mux41_buf_N1BEG0 (
 );
 
  //switch matrix multiplexer N1BEG1 MUX-4
-assign N1BEG1_input = {J_l_EF_END2,JW2END0,J2MID_EFb_END0,o_6to43};
+assign N1BEG1_input = {J_l_EF_END2,JW2END0,J2MID_EFb_END0,END_o_6to03};
 cus_mux41_buf inst_cus_mux41_buf_N1BEG1 (
     .A0(N1BEG1_input[0]),
     .A1(N1BEG1_input[1]),
@@ -1029,7 +983,7 @@ cus_mux41_buf inst_cus_mux41_buf_N1BEG1 (
 );
 
  //switch matrix multiplexer N1BEG2 MUX-4
-assign N1BEG2_input = {J_l_GH_END3,JW2END1,J2MID_GHb_END1,o_6to44};
+assign N1BEG2_input = {J_l_GH_END3,JW2END1,J2MID_GHb_END1,END_o_6to04};
 cus_mux41_buf inst_cus_mux41_buf_N1BEG2 (
     .A0(N1BEG2_input[0]),
     .A1(N1BEG2_input[1]),
@@ -1043,7 +997,7 @@ cus_mux41_buf inst_cus_mux41_buf_N1BEG2 (
 );
 
  //switch matrix multiplexer N1BEG3 MUX-4
-assign N1BEG3_input = {J_l_AB_END0,JW2END2,J2MID_ABb_END2,o_6to45};
+assign N1BEG3_input = {J_l_AB_END0,JW2END2,J2MID_ABb_END2,END_o_6to05};
 cus_mux41_buf inst_cus_mux41_buf_N1BEG3 (
     .A0(N1BEG3_input[0]),
     .A1(N1BEG3_input[1]),
@@ -1105,7 +1059,7 @@ assign N2BEGb6 = N2MID6;
 assign N2BEGb7 = N2MID7;
 
  //switch matrix multiplexer N4BEG0 MUX-4
-assign N4BEG0_input = {E6END1,N4END1,N2END2,o_6to44};
+assign N4BEG0_input = {E6END1,N4END1,N2END2,END_o_6to04};
 cus_mux41_buf inst_cus_mux41_buf_N4BEG0 (
     .A0(N4BEG0_input[0]),
     .A1(N4BEG0_input[1]),
@@ -1119,7 +1073,7 @@ cus_mux41_buf inst_cus_mux41_buf_N4BEG0 (
 );
 
  //switch matrix multiplexer N4BEG1 MUX-4
-assign N4BEG1_input = {E6END0,N4END2,N2END3,o_6to45};
+assign N4BEG1_input = {E6END0,N4END2,N2END3,END_o_6to05};
 cus_mux41_buf inst_cus_mux41_buf_N4BEG1 (
     .A0(N4BEG1_input[0]),
     .A1(N4BEG1_input[1]),
@@ -1133,7 +1087,7 @@ cus_mux41_buf inst_cus_mux41_buf_N4BEG1 (
 );
 
  //switch matrix multiplexer N4BEG2 MUX-4
-assign N4BEG2_input = {W6END1,N4END3,N2END0,o_6to46};
+assign N4BEG2_input = {W6END1,N4END3,N2END0,END_o_6to06};
 cus_mux41_buf inst_cus_mux41_buf_N4BEG2 (
     .A0(N4BEG2_input[0]),
     .A1(N4BEG2_input[1]),
@@ -1147,7 +1101,7 @@ cus_mux41_buf inst_cus_mux41_buf_N4BEG2 (
 );
 
  //switch matrix multiplexer N4BEG3 MUX-4
-assign N4BEG3_input = {W6END0,N4END0,N2END1,o_6to47};
+assign N4BEG3_input = {W6END0,N4END0,N2END1,END_o_6to07};
 cus_mux41_buf inst_cus_mux41_buf_N4BEG3 (
     .A0(N4BEG3_input[0]),
     .A1(N4BEG3_input[1]),
@@ -1161,7 +1115,7 @@ cus_mux41_buf inst_cus_mux41_buf_N4BEG3 (
 );
 
  //switch matrix multiplexer NN4BEG0 MUX-8
-assign NN4BEG0_input = {J2END_GH_END1,J2MID_CDb_END1,J2MID_ABb_END1,W1END2,E1END2,N1END2,o_6to46,o_6to45};
+assign NN4BEG0_input = {J2END_GH_END1,J2MID_CDb_END1,J2MID_ABb_END1,W1END2,E1END2,N1END2,END_o_6to06,END_o_6to05};
 cus_mux81_buf inst_cus_mux81_buf_NN4BEG0 (
     .A0(NN4BEG0_input[0]),
     .A1(NN4BEG0_input[1]),
@@ -1181,7 +1135,7 @@ cus_mux81_buf inst_cus_mux81_buf_NN4BEG0 (
 );
 
  //switch matrix multiplexer NN4BEG1 MUX-8
-assign NN4BEG1_input = {J2END_EF_END1,J2MID_CDa_END2,J2MID_ABa_END2,W1END3,E1END3,N1END3,o_6to47,o_6to40};
+assign NN4BEG1_input = {J2END_EF_END1,J2MID_CDa_END2,J2MID_ABa_END2,W1END3,E1END3,N1END3,END_o_6to07,END_o_6to00};
 cus_mux81_buf inst_cus_mux81_buf_NN4BEG1 (
     .A0(NN4BEG1_input[0]),
     .A1(NN4BEG1_input[1]),
@@ -1201,7 +1155,7 @@ cus_mux81_buf inst_cus_mux81_buf_NN4BEG1 (
 );
 
  //switch matrix multiplexer NN4BEG2 MUX-8
-assign NN4BEG2_input = {J2END_CD_END1,J2MID_GHb_END1,J2MID_EFb_END1,W1END0,E1END0,N1END0,o_6to42,o_6to41};
+assign NN4BEG2_input = {J2END_CD_END1,J2MID_GHb_END1,J2MID_EFb_END1,W1END0,E1END0,N1END0,END_o_6to02,END_o_6to01};
 cus_mux81_buf inst_cus_mux81_buf_NN4BEG2 (
     .A0(NN4BEG2_input[0]),
     .A1(NN4BEG2_input[1]),
@@ -1221,7 +1175,7 @@ cus_mux81_buf inst_cus_mux81_buf_NN4BEG2 (
 );
 
  //switch matrix multiplexer NN4BEG3 MUX-8
-assign NN4BEG3_input = {J2END_AB_END1,J2MID_GHa_END2,J2MID_EFa_END2,W1END1,E1END1,N1END1,o_6to44,o_6to43};
+assign NN4BEG3_input = {J2END_AB_END1,J2MID_GHa_END2,J2MID_EFa_END2,W1END1,E1END1,N1END1,END_o_6to04,END_o_6to03};
 cus_mux81_buf inst_cus_mux81_buf_NN4BEG3 (
     .A0(NN4BEG3_input[0]),
     .A1(NN4BEG3_input[1]),
@@ -1241,7 +1195,7 @@ cus_mux81_buf inst_cus_mux81_buf_NN4BEG3 (
 );
 
  //switch matrix multiplexer E1BEG0 MUX-4
-assign E1BEG0_input = {J_l_CD_END1,JN2END3,J2MID_CDb_END3,o_6to43};
+assign E1BEG0_input = {J_l_CD_END1,JN2END3,J2MID_CDb_END3,END_o_6to03};
 cus_mux41_buf inst_cus_mux41_buf_E1BEG0 (
     .A0(E1BEG0_input[0]),
     .A1(E1BEG0_input[1]),
@@ -1255,7 +1209,7 @@ cus_mux41_buf inst_cus_mux41_buf_E1BEG0 (
 );
 
  //switch matrix multiplexer E1BEG1 MUX-4
-assign E1BEG1_input = {J_l_EF_END2,JN2END0,J2MID_EFb_END0,o_6to44};
+assign E1BEG1_input = {J_l_EF_END2,JN2END0,J2MID_EFb_END0,END_o_6to04};
 cus_mux41_buf inst_cus_mux41_buf_E1BEG1 (
     .A0(E1BEG1_input[0]),
     .A1(E1BEG1_input[1]),
@@ -1269,7 +1223,7 @@ cus_mux41_buf inst_cus_mux41_buf_E1BEG1 (
 );
 
  //switch matrix multiplexer E1BEG2 MUX-4
-assign E1BEG2_input = {J_l_GH_END3,JN2END1,J2MID_GHb_END1,o_6to45};
+assign E1BEG2_input = {J_l_GH_END3,JN2END1,J2MID_GHb_END1,END_o_6to05};
 cus_mux41_buf inst_cus_mux41_buf_E1BEG2 (
     .A0(E1BEG2_input[0]),
     .A1(E1BEG2_input[1]),
@@ -1283,7 +1237,7 @@ cus_mux41_buf inst_cus_mux41_buf_E1BEG2 (
 );
 
  //switch matrix multiplexer E1BEG3 MUX-4
-assign E1BEG3_input = {J_l_AB_END0,JN2END2,J2MID_ABb_END2,o_6to46};
+assign E1BEG3_input = {J_l_AB_END0,JN2END2,J2MID_ABb_END2,END_o_6to06};
 cus_mux41_buf inst_cus_mux41_buf_E1BEG3 (
     .A0(E1BEG3_input[0]),
     .A1(E1BEG3_input[1]),
@@ -1345,7 +1299,7 @@ assign E2BEGb6 = E2MID6;
 assign E2BEGb7 = E2MID7;
 
  //switch matrix multiplexer EE4BEG0 MUX-8
-assign EE4BEG0_input = {J2END_GH_END0,J2MID_CDb_END1,J2MID_ABb_END1,S1END2,E1END2,N1END2,o_6to46,o_6to45};
+assign EE4BEG0_input = {J2END_GH_END0,J2MID_CDb_END1,J2MID_ABb_END1,S1END2,E1END2,N1END2,END_o_6to06,END_o_6to05};
 cus_mux81_buf inst_cus_mux81_buf_EE4BEG0 (
     .A0(EE4BEG0_input[0]),
     .A1(EE4BEG0_input[1]),
@@ -1365,7 +1319,7 @@ cus_mux81_buf inst_cus_mux81_buf_EE4BEG0 (
 );
 
  //switch matrix multiplexer EE4BEG1 MUX-8
-assign EE4BEG1_input = {J2END_EF_END0,J2MID_CDa_END2,J2MID_ABa_END2,S1END3,E1END3,N1END3,o_6to47,o_6to40};
+assign EE4BEG1_input = {J2END_EF_END0,J2MID_CDa_END2,J2MID_ABa_END2,S1END3,E1END3,N1END3,END_o_6to07,END_o_6to00};
 cus_mux81_buf inst_cus_mux81_buf_EE4BEG1 (
     .A0(EE4BEG1_input[0]),
     .A1(EE4BEG1_input[1]),
@@ -1385,7 +1339,7 @@ cus_mux81_buf inst_cus_mux81_buf_EE4BEG1 (
 );
 
  //switch matrix multiplexer EE4BEG2 MUX-8
-assign EE4BEG2_input = {J2END_CD_END0,J2MID_GHb_END1,J2MID_EFb_END1,S1END0,E1END0,N1END0,o_6to42,o_6to41};
+assign EE4BEG2_input = {J2END_CD_END0,J2MID_GHb_END1,J2MID_EFb_END1,S1END0,E1END0,N1END0,END_o_6to02,END_o_6to01};
 cus_mux81_buf inst_cus_mux81_buf_EE4BEG2 (
     .A0(EE4BEG2_input[0]),
     .A1(EE4BEG2_input[1]),
@@ -1405,7 +1359,7 @@ cus_mux81_buf inst_cus_mux81_buf_EE4BEG2 (
 );
 
  //switch matrix multiplexer EE4BEG3 MUX-8
-assign EE4BEG3_input = {J2END_AB_END0,J2MID_GHa_END2,J2MID_EFa_END2,S1END1,E1END1,N1END1,o_6to44,o_6to43};
+assign EE4BEG3_input = {J2END_AB_END0,J2MID_GHa_END2,J2MID_EFa_END2,S1END1,E1END1,N1END1,END_o_6to04,END_o_6to03};
 cus_mux81_buf inst_cus_mux81_buf_EE4BEG3 (
     .A0(EE4BEG3_input[0]),
     .A1(EE4BEG3_input[1]),
@@ -1425,7 +1379,7 @@ cus_mux81_buf inst_cus_mux81_buf_EE4BEG3 (
 );
 
  //switch matrix multiplexer E6BEG0 MUX-16
-assign E6BEG0_input = {J2MID_GHb_END1,J2MID_EFb_END1,J2MID_CDb_END1,J2MID_ABb_END1,W1END3,SS4END0,E1END3,NN4END0,o_6to47,o_6to46,o_6to45,o_6to44,o_6to43,o_6to42,o_6to41,o_6to40};
+assign E6BEG0_input = {J2MID_GHb_END1,J2MID_EFb_END1,J2MID_CDb_END1,J2MID_ABb_END1,W1END3,SS4END0,E1END3,NN4END0,END_o_6to07,END_o_6to06,END_o_6to05,END_o_6to04,END_o_6to03,END_o_6to02,END_o_6to01,END_o_6to00};
 cus_mux161_buf inst_cus_mux161_buf_E6BEG0 (
     .A0(E6BEG0_input[0]),
     .A1(E6BEG0_input[1]),
@@ -1455,7 +1409,7 @@ cus_mux161_buf inst_cus_mux161_buf_E6BEG0 (
 );
 
  //switch matrix multiplexer E6BEG1 MUX-16
-assign E6BEG1_input = {J2MID_GHa_END2,J2MID_EFa_END2,J2MID_CDa_END2,J2MID_ABa_END2,W1END2,SS4END3,E1END2,NN4END3,o_6to47,o_6to46,o_6to45,o_6to44,o_6to43,o_6to42,o_6to41,o_6to40};
+assign E6BEG1_input = {J2MID_GHa_END2,J2MID_EFa_END2,J2MID_CDa_END2,J2MID_ABa_END2,W1END2,SS4END3,E1END2,NN4END3,END_o_6to07,END_o_6to06,END_o_6to05,END_o_6to04,END_o_6to03,END_o_6to02,END_o_6to01,END_o_6to00};
 cus_mux161_buf inst_cus_mux161_buf_E6BEG1 (
     .A0(E6BEG1_input[0]),
     .A1(E6BEG1_input[1]),
@@ -1485,7 +1439,7 @@ cus_mux161_buf inst_cus_mux161_buf_E6BEG1 (
 );
 
  //switch matrix multiplexer S1BEG0 MUX-4
-assign S1BEG0_input = {J_l_CD_END1,JE2END3,J2MID_CDb_END3,o_6to44};
+assign S1BEG0_input = {J_l_CD_END1,JE2END3,J2MID_CDb_END3,END_o_6to04};
 cus_mux41_buf inst_cus_mux41_buf_S1BEG0 (
     .A0(S1BEG0_input[0]),
     .A1(S1BEG0_input[1]),
@@ -1499,7 +1453,7 @@ cus_mux41_buf inst_cus_mux41_buf_S1BEG0 (
 );
 
  //switch matrix multiplexer S1BEG1 MUX-4
-assign S1BEG1_input = {J_l_EF_END2,JE2END0,J2MID_EFb_END0,o_6to45};
+assign S1BEG1_input = {J_l_EF_END2,JE2END0,J2MID_EFb_END0,END_o_6to05};
 cus_mux41_buf inst_cus_mux41_buf_S1BEG1 (
     .A0(S1BEG1_input[0]),
     .A1(S1BEG1_input[1]),
@@ -1513,7 +1467,7 @@ cus_mux41_buf inst_cus_mux41_buf_S1BEG1 (
 );
 
  //switch matrix multiplexer S1BEG2 MUX-4
-assign S1BEG2_input = {J_l_GH_END3,JE2END1,J2MID_GHb_END1,o_6to46};
+assign S1BEG2_input = {J_l_GH_END3,JE2END1,J2MID_GHb_END1,END_o_6to06};
 cus_mux41_buf inst_cus_mux41_buf_S1BEG2 (
     .A0(S1BEG2_input[0]),
     .A1(S1BEG2_input[1]),
@@ -1527,7 +1481,7 @@ cus_mux41_buf inst_cus_mux41_buf_S1BEG2 (
 );
 
  //switch matrix multiplexer S1BEG3 MUX-4
-assign S1BEG3_input = {J_l_AB_END0,JE2END2,J2MID_ABb_END2,o_6to47};
+assign S1BEG3_input = {J_l_AB_END0,JE2END2,J2MID_ABb_END2,END_o_6to07};
 cus_mux41_buf inst_cus_mux41_buf_S1BEG3 (
     .A0(S1BEG3_input[0]),
     .A1(S1BEG3_input[1]),
@@ -1589,7 +1543,7 @@ assign S2BEGb6 = S2MID6;
 assign S2BEGb7 = S2MID7;
 
  //switch matrix multiplexer S4BEG0 MUX-4
-assign S4BEG0_input = {S4END1,S2END2,E6END1,o_6to40};
+assign S4BEG0_input = {S4END1,S2END2,E6END1,END_o_6to00};
 cus_mux41_buf inst_cus_mux41_buf_S4BEG0 (
     .A0(S4BEG0_input[0]),
     .A1(S4BEG0_input[1]),
@@ -1603,7 +1557,7 @@ cus_mux41_buf inst_cus_mux41_buf_S4BEG0 (
 );
 
  //switch matrix multiplexer S4BEG1 MUX-4
-assign S4BEG1_input = {S4END2,S2END3,E6END0,o_6to41};
+assign S4BEG1_input = {S4END2,S2END3,E6END0,END_o_6to01};
 cus_mux41_buf inst_cus_mux41_buf_S4BEG1 (
     .A0(S4BEG1_input[0]),
     .A1(S4BEG1_input[1]),
@@ -1617,7 +1571,7 @@ cus_mux41_buf inst_cus_mux41_buf_S4BEG1 (
 );
 
  //switch matrix multiplexer S4BEG2 MUX-4
-assign S4BEG2_input = {W6END1,S4END3,S2END0,o_6to42};
+assign S4BEG2_input = {W6END1,S4END3,S2END0,END_o_6to02};
 cus_mux41_buf inst_cus_mux41_buf_S4BEG2 (
     .A0(S4BEG2_input[0]),
     .A1(S4BEG2_input[1]),
@@ -1631,7 +1585,7 @@ cus_mux41_buf inst_cus_mux41_buf_S4BEG2 (
 );
 
  //switch matrix multiplexer S4BEG3 MUX-4
-assign S4BEG3_input = {W6END0,S4END0,S2END1,o_6to43};
+assign S4BEG3_input = {W6END0,S4END0,S2END1,END_o_6to03};
 cus_mux41_buf inst_cus_mux41_buf_S4BEG3 (
     .A0(S4BEG3_input[0]),
     .A1(S4BEG3_input[1]),
@@ -1645,7 +1599,7 @@ cus_mux41_buf inst_cus_mux41_buf_S4BEG3 (
 );
 
  //switch matrix multiplexer SS4BEG0 MUX-8
-assign SS4BEG0_input = {J2END_GH_END3,J2MID_CDb_END1,J2MID_ABb_END1,W1END2,E1END2,N1END2,o_6to46,o_6to45};
+assign SS4BEG0_input = {J2END_GH_END3,J2MID_CDb_END1,J2MID_ABb_END1,W1END2,E1END2,N1END2,END_o_6to06,END_o_6to05};
 cus_mux81_buf inst_cus_mux81_buf_SS4BEG0 (
     .A0(SS4BEG0_input[0]),
     .A1(SS4BEG0_input[1]),
@@ -1665,7 +1619,7 @@ cus_mux81_buf inst_cus_mux81_buf_SS4BEG0 (
 );
 
  //switch matrix multiplexer SS4BEG1 MUX-8
-assign SS4BEG1_input = {J2END_EF_END3,J2MID_CDa_END2,J2MID_ABa_END2,W1END3,E1END3,N1END3,o_6to47,o_6to40};
+assign SS4BEG1_input = {J2END_EF_END3,J2MID_CDa_END2,J2MID_ABa_END2,W1END3,E1END3,N1END3,END_o_6to07,END_o_6to00};
 cus_mux81_buf inst_cus_mux81_buf_SS4BEG1 (
     .A0(SS4BEG1_input[0]),
     .A1(SS4BEG1_input[1]),
@@ -1685,7 +1639,7 @@ cus_mux81_buf inst_cus_mux81_buf_SS4BEG1 (
 );
 
  //switch matrix multiplexer SS4BEG2 MUX-8
-assign SS4BEG2_input = {J2END_CD_END3,J2MID_GHb_END1,J2MID_EFb_END1,W1END0,E1END0,N1END0,o_6to42,o_6to41};
+assign SS4BEG2_input = {J2END_CD_END3,J2MID_GHb_END1,J2MID_EFb_END1,W1END0,E1END0,N1END0,END_o_6to02,END_o_6to01};
 cus_mux81_buf inst_cus_mux81_buf_SS4BEG2 (
     .A0(SS4BEG2_input[0]),
     .A1(SS4BEG2_input[1]),
@@ -1705,7 +1659,7 @@ cus_mux81_buf inst_cus_mux81_buf_SS4BEG2 (
 );
 
  //switch matrix multiplexer SS4BEG3 MUX-8
-assign SS4BEG3_input = {J2END_AB_END3,J2MID_GHa_END2,J2MID_EFa_END2,W1END1,E1END1,N1END1,o_6to44,o_6to43};
+assign SS4BEG3_input = {J2END_AB_END3,J2MID_GHa_END2,J2MID_EFa_END2,W1END1,E1END1,N1END1,END_o_6to04,END_o_6to03};
 cus_mux81_buf inst_cus_mux81_buf_SS4BEG3 (
     .A0(SS4BEG3_input[0]),
     .A1(SS4BEG3_input[1]),
@@ -1724,44 +1678,8 @@ cus_mux81_buf inst_cus_mux81_buf_SS4BEG3 (
     .X(SS4BEG3)
 );
 
- //switch matrix multiplexer top2bot0 MUX-0
- //WARNING unused multiplexer MUX-top2bot0
- //switch matrix multiplexer top2bot1 MUX-0
- //WARNING unused multiplexer MUX-top2bot1
- //switch matrix multiplexer top2bot2 MUX-0
- //WARNING unused multiplexer MUX-top2bot2
- //switch matrix multiplexer top2bot3 MUX-0
- //WARNING unused multiplexer MUX-top2bot3
- //switch matrix multiplexer top2bot4 MUX-0
- //WARNING unused multiplexer MUX-top2bot4
- //switch matrix multiplexer top2bot5 MUX-0
- //WARNING unused multiplexer MUX-top2bot5
- //switch matrix multiplexer top2bot6 MUX-0
- //WARNING unused multiplexer MUX-top2bot6
- //switch matrix multiplexer top2bot7 MUX-0
- //WARNING unused multiplexer MUX-top2bot7
- //switch matrix multiplexer top2bot8 MUX-0
- //WARNING unused multiplexer MUX-top2bot8
- //switch matrix multiplexer top2bot9 MUX-0
- //WARNING unused multiplexer MUX-top2bot9
- //switch matrix multiplexer top2bot10 MUX-0
- //WARNING unused multiplexer MUX-top2bot10
- //switch matrix multiplexer top2bot11 MUX-0
- //WARNING unused multiplexer MUX-top2bot11
- //switch matrix multiplexer top2bot12 MUX-0
- //WARNING unused multiplexer MUX-top2bot12
- //switch matrix multiplexer top2bot13 MUX-0
- //WARNING unused multiplexer MUX-top2bot13
- //switch matrix multiplexer top2bot14 MUX-0
- //WARNING unused multiplexer MUX-top2bot14
- //switch matrix multiplexer top2bot15 MUX-0
- //WARNING unused multiplexer MUX-top2bot15
- //switch matrix multiplexer top2bot16 MUX-0
- //WARNING unused multiplexer MUX-top2bot16
- //switch matrix multiplexer top2bot17 MUX-0
- //WARNING unused multiplexer MUX-top2bot17
  //switch matrix multiplexer W1BEG0 MUX-4
-assign W1BEG0_input = {J_l_CD_END1,JS2END3,J2MID_CDb_END3,o_6to45};
+assign W1BEG0_input = {J_l_CD_END1,JS2END3,J2MID_CDb_END3,END_o_6to05};
 cus_mux41_buf inst_cus_mux41_buf_W1BEG0 (
     .A0(W1BEG0_input[0]),
     .A1(W1BEG0_input[1]),
@@ -1775,7 +1693,7 @@ cus_mux41_buf inst_cus_mux41_buf_W1BEG0 (
 );
 
  //switch matrix multiplexer W1BEG1 MUX-4
-assign W1BEG1_input = {J_l_EF_END2,JS2END0,J2MID_EFb_END0,o_6to46};
+assign W1BEG1_input = {J_l_EF_END2,JS2END0,J2MID_EFb_END0,END_o_6to06};
 cus_mux41_buf inst_cus_mux41_buf_W1BEG1 (
     .A0(W1BEG1_input[0]),
     .A1(W1BEG1_input[1]),
@@ -1789,7 +1707,7 @@ cus_mux41_buf inst_cus_mux41_buf_W1BEG1 (
 );
 
  //switch matrix multiplexer W1BEG2 MUX-4
-assign W1BEG2_input = {J_l_GH_END3,JS2END1,J2MID_GHb_END1,o_6to47};
+assign W1BEG2_input = {J_l_GH_END3,JS2END1,J2MID_GHb_END1,END_o_6to07};
 cus_mux41_buf inst_cus_mux41_buf_W1BEG2 (
     .A0(W1BEG2_input[0]),
     .A1(W1BEG2_input[1]),
@@ -1803,7 +1721,7 @@ cus_mux41_buf inst_cus_mux41_buf_W1BEG2 (
 );
 
  //switch matrix multiplexer W1BEG3 MUX-4
-assign W1BEG3_input = {J_l_AB_END0,JS2END2,J2MID_ABb_END2,o_6to40};
+assign W1BEG3_input = {J_l_AB_END0,JS2END2,J2MID_ABb_END2,END_o_6to00};
 cus_mux41_buf inst_cus_mux41_buf_W1BEG3 (
     .A0(W1BEG3_input[0]),
     .A1(W1BEG3_input[1]),
@@ -1865,7 +1783,7 @@ assign W2BEGb6 = W2MID6;
 assign W2BEGb7 = W2MID7;
 
  //switch matrix multiplexer WW4BEG0 MUX-8
-assign WW4BEG0_input = {J2END_GH_END2,J2MID_CDb_END1,J2MID_ABb_END1,W1END2,S1END2,N1END2,o_6to46,o_6to45};
+assign WW4BEG0_input = {J2END_GH_END2,J2MID_CDb_END1,J2MID_ABb_END1,W1END2,S1END2,N1END2,END_o_6to06,END_o_6to05};
 cus_mux81_buf inst_cus_mux81_buf_WW4BEG0 (
     .A0(WW4BEG0_input[0]),
     .A1(WW4BEG0_input[1]),
@@ -1885,7 +1803,7 @@ cus_mux81_buf inst_cus_mux81_buf_WW4BEG0 (
 );
 
  //switch matrix multiplexer WW4BEG1 MUX-8
-assign WW4BEG1_input = {J2END_EF_END2,J2MID_CDa_END2,J2MID_ABa_END2,W1END3,S1END3,N1END3,o_6to47,o_6to40};
+assign WW4BEG1_input = {J2END_EF_END2,J2MID_CDa_END2,J2MID_ABa_END2,W1END3,S1END3,N1END3,END_o_6to07,END_o_6to00};
 cus_mux81_buf inst_cus_mux81_buf_WW4BEG1 (
     .A0(WW4BEG1_input[0]),
     .A1(WW4BEG1_input[1]),
@@ -1905,7 +1823,7 @@ cus_mux81_buf inst_cus_mux81_buf_WW4BEG1 (
 );
 
  //switch matrix multiplexer WW4BEG2 MUX-8
-assign WW4BEG2_input = {J2END_CD_END2,J2MID_GHb_END1,J2MID_EFb_END1,W1END0,S1END0,N1END0,o_6to42,o_6to41};
+assign WW4BEG2_input = {J2END_CD_END2,J2MID_GHb_END1,J2MID_EFb_END1,W1END0,S1END0,N1END0,END_o_6to02,END_o_6to01};
 cus_mux81_buf inst_cus_mux81_buf_WW4BEG2 (
     .A0(WW4BEG2_input[0]),
     .A1(WW4BEG2_input[1]),
@@ -1925,7 +1843,7 @@ cus_mux81_buf inst_cus_mux81_buf_WW4BEG2 (
 );
 
  //switch matrix multiplexer WW4BEG3 MUX-8
-assign WW4BEG3_input = {J2END_AB_END2,J2MID_GHa_END2,J2MID_EFa_END2,W1END1,S1END1,N1END1,o_6to44,o_6to43};
+assign WW4BEG3_input = {J2END_AB_END2,J2MID_GHa_END2,J2MID_EFa_END2,W1END1,S1END1,N1END1,END_o_6to04,END_o_6to03};
 cus_mux81_buf inst_cus_mux81_buf_WW4BEG3 (
     .A0(WW4BEG3_input[0]),
     .A1(WW4BEG3_input[1]),
@@ -1945,7 +1863,7 @@ cus_mux81_buf inst_cus_mux81_buf_WW4BEG3 (
 );
 
  //switch matrix multiplexer W6BEG0 MUX-16
-assign W6BEG0_input = {J2MID_GHb_END1,J2MID_EFb_END1,J2MID_CDb_END1,J2MID_ABb_END1,W1END3,SS4END1,E1END3,NN4END1,o_6to47,o_6to46,o_6to45,o_6to44,o_6to43,o_6to42,o_6to41,o_6to40};
+assign W6BEG0_input = {J2MID_GHb_END1,J2MID_EFb_END1,J2MID_CDb_END1,J2MID_ABb_END1,W1END3,SS4END1,E1END3,NN4END1,END_o_6to07,END_o_6to06,END_o_6to05,END_o_6to04,END_o_6to03,END_o_6to02,END_o_6to01,END_o_6to00};
 cus_mux161_buf inst_cus_mux161_buf_W6BEG0 (
     .A0(W6BEG0_input[0]),
     .A1(W6BEG0_input[1]),
@@ -1975,7 +1893,7 @@ cus_mux161_buf inst_cus_mux161_buf_W6BEG0 (
 );
 
  //switch matrix multiplexer W6BEG1 MUX-16
-assign W6BEG1_input = {J2MID_GHa_END2,J2MID_EFa_END2,J2MID_CDa_END2,J2MID_ABa_END2,W1END2,SS4END2,E1END2,NN4END2,o_6to47,o_6to46,o_6to45,o_6to44,o_6to43,o_6to42,o_6to41,o_6to40};
+assign W6BEG1_input = {J2MID_GHa_END2,J2MID_EFa_END2,J2MID_CDa_END2,J2MID_ABa_END2,W1END2,SS4END2,E1END2,NN4END2,END_o_6to07,END_o_6to06,END_o_6to05,END_o_6to04,END_o_6to03,END_o_6to02,END_o_6to01,END_o_6to00};
 cus_mux161_buf inst_cus_mux161_buf_W6BEG1 (
     .A0(W6BEG1_input[0]),
     .A1(W6BEG1_input[1]),
@@ -2677,7 +2595,7 @@ cus_mux41_buf inst_cus_mux41_buf_J2END_GH_BEG3 (
 );
 
  //switch matrix multiplexer JN2BEG0 MUX-16
-assign JN2BEG0_input = {W6END1,W2END1,S2END1,E6END1,EE4END0,E2END1,E1END3,N4END1,N2END1,o_6to47,o_6to46,o_6to45,o_6to44,o_6to43,o_6to42,o_6to41};
+assign JN2BEG0_input = {W6END1,W2END1,S2END1,E6END1,EE4END0,E2END1,E1END3,N4END1,N2END1,END_o_6to07,END_o_6to06,END_o_6to05,END_o_6to04,END_o_6to03,END_o_6to02,END_o_6to01};
 cus_mux161_buf inst_cus_mux161_buf_JN2BEG0 (
     .A0(JN2BEG0_input[0]),
     .A1(JN2BEG0_input[1]),
@@ -2707,7 +2625,7 @@ cus_mux161_buf inst_cus_mux161_buf_JN2BEG0 (
 );
 
  //switch matrix multiplexer JN2BEG1 MUX-16
-assign JN2BEG1_input = {W6END0,W2END2,S2END2,E6END0,EE4END1,E2END2,E1END0,N4END2,N2END2,o_6to47,o_6to46,o_6to45,o_6to44,o_6to43,o_6to42,o_6to40};
+assign JN2BEG1_input = {W6END0,W2END2,S2END2,E6END0,EE4END1,E2END2,E1END0,N4END2,N2END2,END_o_6to07,END_o_6to06,END_o_6to05,END_o_6to04,END_o_6to03,END_o_6to02,END_o_6to00};
 cus_mux161_buf inst_cus_mux161_buf_JN2BEG1 (
     .A0(JN2BEG1_input[0]),
     .A1(JN2BEG1_input[1]),
@@ -2737,7 +2655,7 @@ cus_mux161_buf inst_cus_mux161_buf_JN2BEG1 (
 );
 
  //switch matrix multiplexer JN2BEG2 MUX-16
-assign JN2BEG2_input = {W6END1,WW4END2,W2END3,S2END3,E6END1,E2END3,E1END1,N4END3,N2END3,o_6to47,o_6to46,o_6to45,o_6to44,o_6to43,o_6to41,o_6to40};
+assign JN2BEG2_input = {W6END1,WW4END2,W2END3,S2END3,E6END1,E2END3,E1END1,N4END3,N2END3,END_o_6to07,END_o_6to06,END_o_6to05,END_o_6to04,END_o_6to03,END_o_6to01,END_o_6to00};
 cus_mux161_buf inst_cus_mux161_buf_JN2BEG2 (
     .A0(JN2BEG2_input[0]),
     .A1(JN2BEG2_input[1]),
@@ -2767,7 +2685,7 @@ cus_mux161_buf inst_cus_mux161_buf_JN2BEG2 (
 );
 
  //switch matrix multiplexer JN2BEG3 MUX-16
-assign JN2BEG3_input = {W6END0,WW4END3,W2END4,S2END4,E6END0,E2END4,E1END2,N4END0,N2END4,o_6to47,o_6to46,o_6to45,o_6to44,o_6to42,o_6to41,o_6to40};
+assign JN2BEG3_input = {W6END0,WW4END3,W2END4,S2END4,E6END0,E2END4,E1END2,N4END0,N2END4,END_o_6to07,END_o_6to06,END_o_6to05,END_o_6to04,END_o_6to02,END_o_6to01,END_o_6to00};
 cus_mux161_buf inst_cus_mux161_buf_JN2BEG3 (
     .A0(JN2BEG3_input[0]),
     .A1(JN2BEG3_input[1]),
@@ -2797,7 +2715,7 @@ cus_mux161_buf inst_cus_mux161_buf_JN2BEG3 (
 );
 
  //switch matrix multiplexer JN2BEG4 MUX-16
-assign JN2BEG4_input = {W1END3,W1END1,S2END5,S1END1,E2END5,E1END1,NN4END3,N2END5,N1END1,o_6to47,o_6to46,o_6to45,o_6to43,o_6to42,o_6to41,o_6to40};
+assign JN2BEG4_input = {W1END3,W1END1,S2END5,S1END1,E2END5,E1END1,NN4END3,N2END5,N1END1,END_o_6to07,END_o_6to06,END_o_6to05,END_o_6to03,END_o_6to02,END_o_6to01,END_o_6to00};
 cus_mux161_buf inst_cus_mux161_buf_JN2BEG4 (
     .A0(JN2BEG4_input[0]),
     .A1(JN2BEG4_input[1]),
@@ -2827,7 +2745,7 @@ cus_mux161_buf inst_cus_mux161_buf_JN2BEG4 (
 );
 
  //switch matrix multiplexer JN2BEG5 MUX-16
-assign JN2BEG5_input = {W1END2,W1END0,S2END6,S1END2,E2END6,E1END2,NN4END2,N2END6,N1END2,o_6to47,o_6to46,o_6to44,o_6to43,o_6to42,o_6to41,o_6to40};
+assign JN2BEG5_input = {W1END2,W1END0,S2END6,S1END2,E2END6,E1END2,NN4END2,N2END6,N1END2,END_o_6to07,END_o_6to06,END_o_6to04,END_o_6to03,END_o_6to02,END_o_6to01,END_o_6to00};
 cus_mux161_buf inst_cus_mux161_buf_JN2BEG5 (
     .A0(JN2BEG5_input[0]),
     .A1(JN2BEG5_input[1]),
@@ -2857,7 +2775,7 @@ cus_mux161_buf inst_cus_mux161_buf_JN2BEG5 (
 );
 
  //switch matrix multiplexer JN2BEG6 MUX-16
-assign JN2BEG6_input = {W1END3,W1END1,S2END7,S1END3,E2END7,E1END3,NN4END1,N2END7,N1END3,o_6to47,o_6to45,o_6to44,o_6to43,o_6to42,o_6to41,o_6to40};
+assign JN2BEG6_input = {W1END3,W1END1,S2END7,S1END3,E2END7,E1END3,NN4END1,N2END7,N1END3,END_o_6to07,END_o_6to05,END_o_6to04,END_o_6to03,END_o_6to02,END_o_6to01,END_o_6to00};
 cus_mux161_buf inst_cus_mux161_buf_JN2BEG6 (
     .A0(JN2BEG6_input[0]),
     .A1(JN2BEG6_input[1]),
@@ -2887,7 +2805,7 @@ cus_mux161_buf inst_cus_mux161_buf_JN2BEG6 (
 );
 
  //switch matrix multiplexer JN2BEG7 MUX-16
-assign JN2BEG7_input = {W1END2,W1END0,S2END0,S1END0,E2END0,E1END0,NN4END0,N2END0,N1END0,o_6to46,o_6to45,o_6to44,o_6to43,o_6to42,o_6to41,o_6to40};
+assign JN2BEG7_input = {W1END2,W1END0,S2END0,S1END0,E2END0,E1END0,NN4END0,N2END0,N1END0,END_o_6to06,END_o_6to05,END_o_6to04,END_o_6to03,END_o_6to02,END_o_6to01,END_o_6to00};
 cus_mux161_buf inst_cus_mux161_buf_JN2BEG7 (
     .A0(JN2BEG7_input[0]),
     .A1(JN2BEG7_input[1]),
@@ -2917,7 +2835,7 @@ cus_mux161_buf inst_cus_mux161_buf_JN2BEG7 (
 );
 
  //switch matrix multiplexer JE2BEG0 MUX-16
-assign JE2BEG0_input = {W6END1,W2END1,S2END1,E6END1,E2END1,NN4END0,N4END1,N2END1,N1END3,o_6to47,o_6to46,o_6to45,o_6to44,o_6to43,o_6to42,o_6to41};
+assign JE2BEG0_input = {W6END1,W2END1,S2END1,E6END1,E2END1,NN4END0,N4END1,N2END1,N1END3,END_o_6to07,END_o_6to06,END_o_6to05,END_o_6to04,END_o_6to03,END_o_6to02,END_o_6to01};
 cus_mux161_buf inst_cus_mux161_buf_JE2BEG0 (
     .A0(JE2BEG0_input[0]),
     .A1(JE2BEG0_input[1]),
@@ -2947,7 +2865,7 @@ cus_mux161_buf inst_cus_mux161_buf_JE2BEG0 (
 );
 
  //switch matrix multiplexer JE2BEG1 MUX-16
-assign JE2BEG1_input = {W6END0,W2END2,S2END2,E6END0,E2END2,NN4END1,N4END2,N2END2,N1END0,o_6to47,o_6to46,o_6to45,o_6to44,o_6to43,o_6to42,o_6to40};
+assign JE2BEG1_input = {W6END0,W2END2,S2END2,E6END0,E2END2,NN4END1,N4END2,N2END2,N1END0,END_o_6to07,END_o_6to06,END_o_6to05,END_o_6to04,END_o_6to03,END_o_6to02,END_o_6to00};
 cus_mux161_buf inst_cus_mux161_buf_JE2BEG1 (
     .A0(JE2BEG1_input[0]),
     .A1(JE2BEG1_input[1]),
@@ -2977,7 +2895,7 @@ cus_mux161_buf inst_cus_mux161_buf_JE2BEG1 (
 );
 
  //switch matrix multiplexer JE2BEG2 MUX-16
-assign JE2BEG2_input = {W6END1,W2END3,SS4END2,S2END3,E6END1,E2END3,N4END3,N2END3,N1END1,o_6to47,o_6to46,o_6to45,o_6to44,o_6to43,o_6to41,o_6to40};
+assign JE2BEG2_input = {W6END1,W2END3,SS4END2,S2END3,E6END1,E2END3,N4END3,N2END3,N1END1,END_o_6to07,END_o_6to06,END_o_6to05,END_o_6to04,END_o_6to03,END_o_6to01,END_o_6to00};
 cus_mux161_buf inst_cus_mux161_buf_JE2BEG2 (
     .A0(JE2BEG2_input[0]),
     .A1(JE2BEG2_input[1]),
@@ -3007,7 +2925,7 @@ cus_mux161_buf inst_cus_mux161_buf_JE2BEG2 (
 );
 
  //switch matrix multiplexer JE2BEG3 MUX-16
-assign JE2BEG3_input = {W6END0,W2END4,SS4END3,S2END4,E6END0,E2END4,N4END0,N2END4,N1END2,o_6to47,o_6to46,o_6to45,o_6to44,o_6to42,o_6to41,o_6to40};
+assign JE2BEG3_input = {W6END0,W2END4,SS4END3,S2END4,E6END0,E2END4,N4END0,N2END4,N1END2,END_o_6to07,END_o_6to06,END_o_6to05,END_o_6to04,END_o_6to02,END_o_6to01,END_o_6to00};
 cus_mux161_buf inst_cus_mux161_buf_JE2BEG3 (
     .A0(JE2BEG3_input[0]),
     .A1(JE2BEG3_input[1]),
@@ -3037,7 +2955,7 @@ cus_mux161_buf inst_cus_mux161_buf_JE2BEG3 (
 );
 
  //switch matrix multiplexer JE2BEG4 MUX-16
-assign JE2BEG4_input = {W1END1,S2END5,S1END3,S1END1,EE4END3,E2END5,E1END1,N2END5,N1END1,o_6to47,o_6to46,o_6to45,o_6to43,o_6to42,o_6to41,o_6to40};
+assign JE2BEG4_input = {W1END1,S2END5,S1END3,S1END1,EE4END3,E2END5,E1END1,N2END5,N1END1,END_o_6to07,END_o_6to06,END_o_6to05,END_o_6to03,END_o_6to02,END_o_6to01,END_o_6to00};
 cus_mux161_buf inst_cus_mux161_buf_JE2BEG4 (
     .A0(JE2BEG4_input[0]),
     .A1(JE2BEG4_input[1]),
@@ -3067,7 +2985,7 @@ cus_mux161_buf inst_cus_mux161_buf_JE2BEG4 (
 );
 
  //switch matrix multiplexer JE2BEG5 MUX-16
-assign JE2BEG5_input = {W1END2,S2END6,S1END2,S1END0,EE4END2,E2END6,E1END2,N2END6,N1END2,o_6to47,o_6to46,o_6to44,o_6to43,o_6to42,o_6to41,o_6to40};
+assign JE2BEG5_input = {W1END2,S2END6,S1END2,S1END0,EE4END2,E2END6,E1END2,N2END6,N1END2,END_o_6to07,END_o_6to06,END_o_6to04,END_o_6to03,END_o_6to02,END_o_6to01,END_o_6to00};
 cus_mux161_buf inst_cus_mux161_buf_JE2BEG5 (
     .A0(JE2BEG5_input[0]),
     .A1(JE2BEG5_input[1]),
@@ -3097,7 +3015,7 @@ cus_mux161_buf inst_cus_mux161_buf_JE2BEG5 (
 );
 
  //switch matrix multiplexer JE2BEG6 MUX-16
-assign JE2BEG6_input = {W1END3,S2END7,S1END3,S1END1,EE4END1,E2END7,E1END3,N2END7,N1END3,o_6to47,o_6to45,o_6to44,o_6to43,o_6to42,o_6to41,o_6to40};
+assign JE2BEG6_input = {W1END3,S2END7,S1END3,S1END1,EE4END1,E2END7,E1END3,N2END7,N1END3,END_o_6to07,END_o_6to05,END_o_6to04,END_o_6to03,END_o_6to02,END_o_6to01,END_o_6to00};
 cus_mux161_buf inst_cus_mux161_buf_JE2BEG6 (
     .A0(JE2BEG6_input[0]),
     .A1(JE2BEG6_input[1]),
@@ -3127,7 +3045,7 @@ cus_mux161_buf inst_cus_mux161_buf_JE2BEG6 (
 );
 
  //switch matrix multiplexer JE2BEG7 MUX-16
-assign JE2BEG7_input = {W1END0,S2END0,S1END2,S1END0,EE4END0,E2END0,E1END0,N2END0,N1END0,o_6to46,o_6to45,o_6to44,o_6to43,o_6to42,o_6to41,o_6to40};
+assign JE2BEG7_input = {W1END0,S2END0,S1END2,S1END0,EE4END0,E2END0,E1END0,N2END0,N1END0,END_o_6to06,END_o_6to05,END_o_6to04,END_o_6to03,END_o_6to02,END_o_6to01,END_o_6to00};
 cus_mux161_buf inst_cus_mux161_buf_JE2BEG7 (
     .A0(JE2BEG7_input[0]),
     .A1(JE2BEG7_input[1]),
@@ -3157,7 +3075,7 @@ cus_mux161_buf inst_cus_mux161_buf_JE2BEG7 (
 );
 
  //switch matrix multiplexer JS2BEG0 MUX-16
-assign JS2BEG0_input = {W6END1,WW4END0,W2END1,S4END1,S2END1,E6END1,E2END1,E1END3,N2END1,o_6to47,o_6to46,o_6to45,o_6to44,o_6to43,o_6to42,o_6to41};
+assign JS2BEG0_input = {W6END1,WW4END0,W2END1,S4END1,S2END1,E6END1,E2END1,E1END3,N2END1,END_o_6to07,END_o_6to06,END_o_6to05,END_o_6to04,END_o_6to03,END_o_6to02,END_o_6to01};
 cus_mux161_buf inst_cus_mux161_buf_JS2BEG0 (
     .A0(JS2BEG0_input[0]),
     .A1(JS2BEG0_input[1]),
@@ -3187,7 +3105,7 @@ cus_mux161_buf inst_cus_mux161_buf_JS2BEG0 (
 );
 
  //switch matrix multiplexer JS2BEG1 MUX-16
-assign JS2BEG1_input = {W6END0,WW4END1,W2END2,S4END2,S2END2,E6END0,E2END2,E1END0,N2END2,o_6to47,o_6to46,o_6to45,o_6to44,o_6to43,o_6to42,o_6to40};
+assign JS2BEG1_input = {W6END0,WW4END1,W2END2,S4END2,S2END2,E6END0,E2END2,E1END0,N2END2,END_o_6to07,END_o_6to06,END_o_6to05,END_o_6to04,END_o_6to03,END_o_6to02,END_o_6to00};
 cus_mux161_buf inst_cus_mux161_buf_JS2BEG1 (
     .A0(JS2BEG1_input[0]),
     .A1(JS2BEG1_input[1]),
@@ -3217,7 +3135,7 @@ cus_mux161_buf inst_cus_mux161_buf_JS2BEG1 (
 );
 
  //switch matrix multiplexer JS2BEG2 MUX-16
-assign JS2BEG2_input = {W6END1,W2END3,S4END3,S2END3,E6END1,EE4END2,E2END3,E1END1,N2END3,o_6to47,o_6to46,o_6to45,o_6to44,o_6to43,o_6to41,o_6to40};
+assign JS2BEG2_input = {W6END1,W2END3,S4END3,S2END3,E6END1,EE4END2,E2END3,E1END1,N2END3,END_o_6to07,END_o_6to06,END_o_6to05,END_o_6to04,END_o_6to03,END_o_6to01,END_o_6to00};
 cus_mux161_buf inst_cus_mux161_buf_JS2BEG2 (
     .A0(JS2BEG2_input[0]),
     .A1(JS2BEG2_input[1]),
@@ -3247,7 +3165,7 @@ cus_mux161_buf inst_cus_mux161_buf_JS2BEG2 (
 );
 
  //switch matrix multiplexer JS2BEG3 MUX-16
-assign JS2BEG3_input = {W6END0,W2END4,S4END0,S2END4,E6END0,EE4END3,E2END4,E1END2,N2END4,o_6to47,o_6to46,o_6to45,o_6to44,o_6to42,o_6to41,o_6to40};
+assign JS2BEG3_input = {W6END0,W2END4,S4END0,S2END4,E6END0,EE4END3,E2END4,E1END2,N2END4,END_o_6to07,END_o_6to06,END_o_6to05,END_o_6to04,END_o_6to02,END_o_6to01,END_o_6to00};
 cus_mux161_buf inst_cus_mux161_buf_JS2BEG3 (
     .A0(JS2BEG3_input[0]),
     .A1(JS2BEG3_input[1]),
@@ -3277,7 +3195,7 @@ cus_mux161_buf inst_cus_mux161_buf_JS2BEG3 (
 );
 
  //switch matrix multiplexer JS2BEG4 MUX-16
-assign JS2BEG4_input = {W1END3,W1END1,SS4END3,S2END5,S1END1,E2END5,E1END1,N2END5,N1END1,o_6to47,o_6to46,o_6to45,o_6to43,o_6to42,o_6to41,o_6to40};
+assign JS2BEG4_input = {W1END3,W1END1,SS4END3,S2END5,S1END1,E2END5,E1END1,N2END5,N1END1,END_o_6to07,END_o_6to06,END_o_6to05,END_o_6to03,END_o_6to02,END_o_6to01,END_o_6to00};
 cus_mux161_buf inst_cus_mux161_buf_JS2BEG4 (
     .A0(JS2BEG4_input[0]),
     .A1(JS2BEG4_input[1]),
@@ -3307,7 +3225,7 @@ cus_mux161_buf inst_cus_mux161_buf_JS2BEG4 (
 );
 
  //switch matrix multiplexer JS2BEG5 MUX-16
-assign JS2BEG5_input = {W1END2,W1END0,SS4END2,S2END6,S1END2,E2END6,E1END2,N2END6,N1END2,o_6to47,o_6to46,o_6to44,o_6to43,o_6to42,o_6to41,o_6to40};
+assign JS2BEG5_input = {W1END2,W1END0,SS4END2,S2END6,S1END2,E2END6,E1END2,N2END6,N1END2,END_o_6to07,END_o_6to06,END_o_6to04,END_o_6to03,END_o_6to02,END_o_6to01,END_o_6to00};
 cus_mux161_buf inst_cus_mux161_buf_JS2BEG5 (
     .A0(JS2BEG5_input[0]),
     .A1(JS2BEG5_input[1]),
@@ -3337,7 +3255,7 @@ cus_mux161_buf inst_cus_mux161_buf_JS2BEG5 (
 );
 
  //switch matrix multiplexer JS2BEG6 MUX-16
-assign JS2BEG6_input = {W1END3,W1END1,SS4END1,S2END7,S1END3,E2END7,E1END3,N2END7,N1END3,o_6to47,o_6to45,o_6to44,o_6to43,o_6to42,o_6to41,o_6to40};
+assign JS2BEG6_input = {W1END3,W1END1,SS4END1,S2END7,S1END3,E2END7,E1END3,N2END7,N1END3,END_o_6to07,END_o_6to05,END_o_6to04,END_o_6to03,END_o_6to02,END_o_6to01,END_o_6to00};
 cus_mux161_buf inst_cus_mux161_buf_JS2BEG6 (
     .A0(JS2BEG6_input[0]),
     .A1(JS2BEG6_input[1]),
@@ -3367,7 +3285,7 @@ cus_mux161_buf inst_cus_mux161_buf_JS2BEG6 (
 );
 
  //switch matrix multiplexer JS2BEG7 MUX-16
-assign JS2BEG7_input = {W1END2,W1END0,SS4END0,S2END0,S1END0,E2END0,E1END0,N2END0,N1END0,o_6to46,o_6to45,o_6to44,o_6to43,o_6to42,o_6to41,o_6to40};
+assign JS2BEG7_input = {W1END2,W1END0,SS4END0,S2END0,S1END0,E2END0,E1END0,N2END0,N1END0,END_o_6to06,END_o_6to05,END_o_6to04,END_o_6to03,END_o_6to02,END_o_6to01,END_o_6to00};
 cus_mux161_buf inst_cus_mux161_buf_JS2BEG7 (
     .A0(JS2BEG7_input[0]),
     .A1(JS2BEG7_input[1]),
@@ -3397,7 +3315,7 @@ cus_mux161_buf inst_cus_mux161_buf_JS2BEG7 (
 );
 
  //switch matrix multiplexer JW2BEG0 MUX-16
-assign JW2BEG0_input = {W6END1,W2END1,SS4END0,S4END1,S2END1,E6END1,E2END1,N2END1,N1END3,o_6to47,o_6to46,o_6to45,o_6to44,o_6to43,o_6to42,o_6to41};
+assign JW2BEG0_input = {W6END1,W2END1,SS4END0,S4END1,S2END1,E6END1,E2END1,N2END1,N1END3,END_o_6to07,END_o_6to06,END_o_6to05,END_o_6to04,END_o_6to03,END_o_6to02,END_o_6to01};
 cus_mux161_buf inst_cus_mux161_buf_JW2BEG0 (
     .A0(JW2BEG0_input[0]),
     .A1(JW2BEG0_input[1]),
@@ -3427,7 +3345,7 @@ cus_mux161_buf inst_cus_mux161_buf_JW2BEG0 (
 );
 
  //switch matrix multiplexer JW2BEG1 MUX-16
-assign JW2BEG1_input = {W6END0,W2END2,SS4END1,S4END2,S2END2,E6END0,E2END2,N2END2,N1END0,o_6to47,o_6to46,o_6to45,o_6to44,o_6to43,o_6to42,o_6to40};
+assign JW2BEG1_input = {W6END0,W2END2,SS4END1,S4END2,S2END2,E6END0,E2END2,N2END2,N1END0,END_o_6to07,END_o_6to06,END_o_6to05,END_o_6to04,END_o_6to03,END_o_6to02,END_o_6to00};
 cus_mux161_buf inst_cus_mux161_buf_JW2BEG1 (
     .A0(JW2BEG1_input[0]),
     .A1(JW2BEG1_input[1]),
@@ -3457,7 +3375,7 @@ cus_mux161_buf inst_cus_mux161_buf_JW2BEG1 (
 );
 
  //switch matrix multiplexer JW2BEG2 MUX-16
-assign JW2BEG2_input = {W6END1,W2END3,S4END3,S2END3,E6END1,E2END3,NN4END2,N2END3,N1END1,o_6to47,o_6to46,o_6to45,o_6to44,o_6to43,o_6to41,o_6to40};
+assign JW2BEG2_input = {W6END1,W2END3,S4END3,S2END3,E6END1,E2END3,NN4END2,N2END3,N1END1,END_o_6to07,END_o_6to06,END_o_6to05,END_o_6to04,END_o_6to03,END_o_6to01,END_o_6to00};
 cus_mux161_buf inst_cus_mux161_buf_JW2BEG2 (
     .A0(JW2BEG2_input[0]),
     .A1(JW2BEG2_input[1]),
@@ -3487,7 +3405,7 @@ cus_mux161_buf inst_cus_mux161_buf_JW2BEG2 (
 );
 
  //switch matrix multiplexer JW2BEG3 MUX-16
-assign JW2BEG3_input = {W6END0,W2END4,S4END0,S2END4,E6END0,E2END4,NN4END3,N2END4,N1END2,o_6to47,o_6to46,o_6to45,o_6to44,o_6to42,o_6to41,o_6to40};
+assign JW2BEG3_input = {W6END0,W2END4,S4END0,S2END4,E6END0,E2END4,NN4END3,N2END4,N1END2,END_o_6to07,END_o_6to06,END_o_6to05,END_o_6to04,END_o_6to02,END_o_6to01,END_o_6to00};
 cus_mux161_buf inst_cus_mux161_buf_JW2BEG3 (
     .A0(JW2BEG3_input[0]),
     .A1(JW2BEG3_input[1]),
@@ -3517,7 +3435,7 @@ cus_mux161_buf inst_cus_mux161_buf_JW2BEG3 (
 );
 
  //switch matrix multiplexer JW2BEG4 MUX-16
-assign JW2BEG4_input = {WW4END3,W1END1,S2END5,S1END3,S1END1,E2END5,E1END1,N2END5,N1END1,o_6to47,o_6to46,o_6to45,o_6to43,o_6to42,o_6to41,o_6to40};
+assign JW2BEG4_input = {WW4END3,W1END1,S2END5,S1END3,S1END1,E2END5,E1END1,N2END5,N1END1,END_o_6to07,END_o_6to06,END_o_6to05,END_o_6to03,END_o_6to02,END_o_6to01,END_o_6to00};
 cus_mux161_buf inst_cus_mux161_buf_JW2BEG4 (
     .A0(JW2BEG4_input[0]),
     .A1(JW2BEG4_input[1]),
@@ -3547,7 +3465,7 @@ cus_mux161_buf inst_cus_mux161_buf_JW2BEG4 (
 );
 
  //switch matrix multiplexer JW2BEG5 MUX-16
-assign JW2BEG5_input = {WW4END2,W1END2,S2END6,S1END2,S1END0,E2END6,E1END2,N2END6,N1END2,o_6to47,o_6to46,o_6to44,o_6to43,o_6to42,o_6to41,o_6to40};
+assign JW2BEG5_input = {WW4END2,W1END2,S2END6,S1END2,S1END0,E2END6,E1END2,N2END6,N1END2,END_o_6to07,END_o_6to06,END_o_6to04,END_o_6to03,END_o_6to02,END_o_6to01,END_o_6to00};
 cus_mux161_buf inst_cus_mux161_buf_JW2BEG5 (
     .A0(JW2BEG5_input[0]),
     .A1(JW2BEG5_input[1]),
@@ -3577,7 +3495,7 @@ cus_mux161_buf inst_cus_mux161_buf_JW2BEG5 (
 );
 
  //switch matrix multiplexer JW2BEG6 MUX-16
-assign JW2BEG6_input = {WW4END1,W1END3,S2END7,S1END3,S1END1,E2END7,E1END3,N2END7,N1END3,o_6to47,o_6to45,o_6to44,o_6to43,o_6to42,o_6to41,o_6to40};
+assign JW2BEG6_input = {WW4END1,W1END3,S2END7,S1END3,S1END1,E2END7,E1END3,N2END7,N1END3,END_o_6to07,END_o_6to05,END_o_6to04,END_o_6to03,END_o_6to02,END_o_6to01,END_o_6to00};
 cus_mux161_buf inst_cus_mux161_buf_JW2BEG6 (
     .A0(JW2BEG6_input[0]),
     .A1(JW2BEG6_input[1]),
@@ -3607,7 +3525,7 @@ cus_mux161_buf inst_cus_mux161_buf_JW2BEG6 (
 );
 
  //switch matrix multiplexer JW2BEG7 MUX-16
-assign JW2BEG7_input = {WW4END0,W1END0,S2END0,S1END2,S1END0,E2END0,E1END0,N2END0,N1END0,o_6to46,o_6to45,o_6to44,o_6to43,o_6to42,o_6to41,o_6to40};
+assign JW2BEG7_input = {WW4END0,W1END0,S2END0,S1END2,S1END0,E2END0,E1END0,N2END0,N1END0,END_o_6to06,END_o_6to05,END_o_6to04,END_o_6to03,END_o_6to02,END_o_6to01,END_o_6to00};
 cus_mux161_buf inst_cus_mux161_buf_JW2BEG7 (
     .A0(JW2BEG7_input[0]),
     .A1(JW2BEG7_input[1]),
@@ -3861,14 +3779,14 @@ cus_mux41_buf inst_cus_mux41_buf_J_l_GH_BEG3 (
 );
 
 
-assign DEBUG_select_i_4to60         = ConfigBits[1:0];
-assign DEBUG_select_i_4to61         = ConfigBits[3:2];
-assign DEBUG_select_i_4to62         = ConfigBits[5:4];
-assign DEBUG_select_i_4to63         = ConfigBits[7:6];
-assign DEBUG_select_i_4to64         = ConfigBits[9:8];
-assign DEBUG_select_i_4to65         = ConfigBits[11:10];
-assign DEBUG_select_i_4to66         = ConfigBits[13:12];
-assign DEBUG_select_i_4to67         = ConfigBits[15:14];
+assign DEBUG_select_BEG_i_0to60     = ConfigBits[1:0];
+assign DEBUG_select_BEG_i_0to61     = ConfigBits[3:2];
+assign DEBUG_select_BEG_i_0to62     = ConfigBits[5:4];
+assign DEBUG_select_BEG_i_0to63     = ConfigBits[7:6];
+assign DEBUG_select_BEG_i_0to64     = ConfigBits[9:8];
+assign DEBUG_select_BEG_i_0to65     = ConfigBits[11:10];
+assign DEBUG_select_BEG_i_0to66     = ConfigBits[13:12];
+assign DEBUG_select_BEG_i_0to67     = ConfigBits[15:14];
 assign DEBUG_select_N1BEG0          = ConfigBits[17:16];
 assign DEBUG_select_N1BEG1          = ConfigBits[19:18];
 assign DEBUG_select_N1BEG2          = ConfigBits[21:20];

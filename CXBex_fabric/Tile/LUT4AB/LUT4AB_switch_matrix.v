@@ -1965,7 +1965,7 @@ assign LA_Ci = Ci0;
 
  //switch matrix multiplexer LA_EN MUX-2
 assign LA_EN_input = {J_EN_END0,VCC0};
-my_mux2 inst_my_mux2_LA_EN (
+cus_mux21 inst_cus_mux21_LA_EN (
     .A0(LA_EN_input[0]),
     .A1(LA_EN_input[1]),
     .S(ConfigBits[112+0]),
@@ -2030,7 +2030,7 @@ cus_mux41_buf inst_cus_mux41_buf_LA_I3 (
 
  //switch matrix multiplexer LA_SR MUX-2
 assign LA_SR_input = {J_SR_END0,GND0};
-my_mux2 inst_my_mux2_LA_SR (
+cus_mux21 inst_cus_mux21_LA_SR (
     .A0(LA_SR_input[0]),
     .A1(LA_SR_input[1]),
     .S(ConfigBits[121+0]),
@@ -2042,7 +2042,7 @@ assign LB_Ci = LA_Co;
 
  //switch matrix multiplexer LB_EN MUX-2
 assign LB_EN_input = {J_EN_END0,VCC0};
-my_mux2 inst_my_mux2_LB_EN (
+cus_mux21 inst_cus_mux21_LB_EN (
     .A0(LB_EN_input[0]),
     .A1(LB_EN_input[1]),
     .S(ConfigBits[122+0]),
@@ -2107,7 +2107,7 @@ cus_mux41_buf inst_cus_mux41_buf_LB_I3 (
 
  //switch matrix multiplexer LB_SR MUX-2
 assign LB_SR_input = {J_SR_END0,GND0};
-my_mux2 inst_my_mux2_LB_SR (
+cus_mux21 inst_cus_mux21_LB_SR (
     .A0(LB_SR_input[0]),
     .A1(LB_SR_input[1]),
     .S(ConfigBits[131+0]),
@@ -2119,7 +2119,7 @@ assign LC_Ci = LB_Co;
 
  //switch matrix multiplexer LC_EN MUX-2
 assign LC_EN_input = {J_EN_END0,VCC0};
-my_mux2 inst_my_mux2_LC_EN (
+cus_mux21 inst_cus_mux21_LC_EN (
     .A0(LC_EN_input[0]),
     .A1(LC_EN_input[1]),
     .S(ConfigBits[132+0]),
@@ -2184,7 +2184,7 @@ cus_mux41_buf inst_cus_mux41_buf_LC_I3 (
 
  //switch matrix multiplexer LC_SR MUX-2
 assign LC_SR_input = {J_SR_END0,GND0};
-my_mux2 inst_my_mux2_LC_SR (
+cus_mux21 inst_cus_mux21_LC_SR (
     .A0(LC_SR_input[0]),
     .A1(LC_SR_input[1]),
     .S(ConfigBits[141+0]),
@@ -2196,7 +2196,7 @@ assign LD_Ci = LC_Co;
 
  //switch matrix multiplexer LD_EN MUX-2
 assign LD_EN_input = {J_EN_END0,VCC0};
-my_mux2 inst_my_mux2_LD_EN (
+cus_mux21 inst_cus_mux21_LD_EN (
     .A0(LD_EN_input[0]),
     .A1(LD_EN_input[1]),
     .S(ConfigBits[142+0]),
@@ -2261,7 +2261,7 @@ cus_mux41_buf inst_cus_mux41_buf_LD_I3 (
 
  //switch matrix multiplexer LD_SR MUX-2
 assign LD_SR_input = {J_SR_END0,GND0};
-my_mux2 inst_my_mux2_LD_SR (
+cus_mux21 inst_cus_mux21_LD_SR (
     .A0(LD_SR_input[0]),
     .A1(LD_SR_input[1]),
     .S(ConfigBits[151+0]),
@@ -2273,7 +2273,7 @@ assign LE_Ci = LD_Co;
 
  //switch matrix multiplexer LE_EN MUX-2
 assign LE_EN_input = {J_EN_END0,VCC0};
-my_mux2 inst_my_mux2_LE_EN (
+cus_mux21 inst_cus_mux21_LE_EN (
     .A0(LE_EN_input[0]),
     .A1(LE_EN_input[1]),
     .S(ConfigBits[152+0]),
@@ -2338,7 +2338,7 @@ cus_mux41_buf inst_cus_mux41_buf_LE_I3 (
 
  //switch matrix multiplexer LE_SR MUX-2
 assign LE_SR_input = {J_SR_END0,GND0};
-my_mux2 inst_my_mux2_LE_SR (
+cus_mux21 inst_cus_mux21_LE_SR (
     .A0(LE_SR_input[0]),
     .A1(LE_SR_input[1]),
     .S(ConfigBits[161+0]),
@@ -2350,7 +2350,7 @@ assign LF_Ci = LE_Co;
 
  //switch matrix multiplexer LF_EN MUX-2
 assign LF_EN_input = {J_EN_END0,VCC0};
-my_mux2 inst_my_mux2_LF_EN (
+cus_mux21 inst_cus_mux21_LF_EN (
     .A0(LF_EN_input[0]),
     .A1(LF_EN_input[1]),
     .S(ConfigBits[162+0]),
@@ -2415,7 +2415,7 @@ cus_mux41_buf inst_cus_mux41_buf_LF_I3 (
 
  //switch matrix multiplexer LF_SR MUX-2
 assign LF_SR_input = {J_SR_END0,GND0};
-my_mux2 inst_my_mux2_LF_SR (
+cus_mux21 inst_cus_mux21_LF_SR (
     .A0(LF_SR_input[0]),
     .A1(LF_SR_input[1]),
     .S(ConfigBits[171+0]),
@@ -2427,7 +2427,7 @@ assign LG_Ci = LF_Co;
 
  //switch matrix multiplexer LG_EN MUX-2
 assign LG_EN_input = {J_EN_END0,VCC0};
-my_mux2 inst_my_mux2_LG_EN (
+cus_mux21 inst_cus_mux21_LG_EN (
     .A0(LG_EN_input[0]),
     .A1(LG_EN_input[1]),
     .S(ConfigBits[172+0]),
@@ -2492,7 +2492,7 @@ cus_mux41_buf inst_cus_mux41_buf_LG_I3 (
 
  //switch matrix multiplexer LG_SR MUX-2
 assign LG_SR_input = {J_SR_END0,GND0};
-my_mux2 inst_my_mux2_LG_SR (
+cus_mux21 inst_cus_mux21_LG_SR (
     .A0(LG_SR_input[0]),
     .A1(LG_SR_input[1]),
     .S(ConfigBits[181+0]),
@@ -2504,7 +2504,7 @@ assign LH_Ci = LG_Co;
 
  //switch matrix multiplexer LH_EN MUX-2
 assign LH_EN_input = {J_EN_END0,VCC0};
-my_mux2 inst_my_mux2_LH_EN (
+cus_mux21 inst_cus_mux21_LH_EN (
     .A0(LH_EN_input[0]),
     .A1(LH_EN_input[1]),
     .S(ConfigBits[182+0]),
@@ -2569,7 +2569,7 @@ cus_mux41_buf inst_cus_mux41_buf_LH_I3 (
 
  //switch matrix multiplexer LH_SR MUX-2
 assign LH_SR_input = {J_SR_END0,GND0};
-my_mux2 inst_my_mux2_LH_SR (
+cus_mux21 inst_cus_mux21_LH_SR (
     .A0(LH_SR_input[0]),
     .A1(LH_SR_input[1]),
     .S(ConfigBits[191+0]),

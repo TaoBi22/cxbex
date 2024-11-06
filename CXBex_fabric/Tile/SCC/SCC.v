@@ -176,6 +176,8 @@ module SCC
         input [15:0] Tile_X1Y5_WW4END, //Port(Name=WW4END, IO=INPUT, XOffset=-4, YOffset=0, WireCount=4, Side=EAST)
         input [11:0] Tile_X1Y5_W6END, //Port(Name=W6END, IO=INPUT, XOffset=-6, YOffset=0, WireCount=2, Side=EAST)
     //Tile_X0Y6_Direction.NORTH
+        input [47:0] Tile_X0Y6_END_o_6to0, //Port(Name=END_o_6to0, IO=INPUT, XOffset=0, YOffset=-6, WireCount=8, Side=SOUTH)
+        output [47:0] Tile_X0Y6_BEG_i_0to6, //Port(Name=BEG_i_0to6, IO=OUTPUT, XOffset=0, YOffset=6, WireCount=8, Side=SOUTH)
         input [3:0] Tile_X0Y6_N1END, //Port(Name=N1END, IO=INPUT, XOffset=0, YOffset=-1, WireCount=4, Side=SOUTH)
         input [7:0] Tile_X0Y6_N2MID, //Port(Name=N2MID, IO=INPUT, XOffset=0, YOffset=-1, WireCount=8, Side=SOUTH)
         input [7:0] Tile_X0Y6_N2END, //Port(Name=N2END, IO=INPUT, XOffset=0, YOffset=-1, WireCount=8, Side=SOUTH)
@@ -252,14 +254,14 @@ module SCC
     wire[15:0] Tile_X0Y0_EE4BEG; //Port(Name=EE4BEG, IO=OUTPUT, XOffset=4, YOffset=0, WireCount=4, Side=EAST)
     wire[11:0] Tile_X0Y0_E6BEG; //Port(Name=E6BEG, IO=OUTPUT, XOffset=6, YOffset=0, WireCount=2, Side=EAST)
  //Tile_X0Y0_Direction.NORTH
-    wire[47:0] Tile_X0Y0_i_0to6; //Port(Name=i_0to6, IO=OUTPUT, XOffset=0, YOffset=6, WireCount=8, Side=SOUTH)
+    wire[47:0] Tile_X0Y0_BEG_i_0to6; //Port(Name=BEG_i_0to6, IO=OUTPUT, XOffset=0, YOffset=6, WireCount=8, Side=SOUTH)
     wire[3:0] Tile_X0Y0_S1BEG; //Port(Name=S1BEG, IO=OUTPUT, XOffset=0, YOffset=1, WireCount=4, Side=SOUTH)
     wire[7:0] Tile_X0Y0_S2BEG; //Port(Name=S2BEG, IO=OUTPUT, XOffset=0, YOffset=1, WireCount=8, Side=SOUTH)
     wire[7:0] Tile_X0Y0_S2BEGb; //Port(Name=S2BEGb, IO=OUTPUT, XOffset=0, YOffset=1, WireCount=8, Side=SOUTH)
     wire[15:0] Tile_X0Y0_S4BEG; //Port(Name=S4BEG, IO=OUTPUT, XOffset=0, YOffset=4, WireCount=4, Side=SOUTH)
     wire[15:0] Tile_X0Y0_SS4BEG; //Port(Name=SS4BEG, IO=OUTPUT, XOffset=0, YOffset=4, WireCount=4, Side=SOUTH)
  //Tile_X1Y0_Direction.NORTH
-    wire[47:0] Tile_X1Y0_i_0to6; //Port(Name=i_0to6, IO=OUTPUT, XOffset=0, YOffset=6, WireCount=8, Side=SOUTH)
+    wire[47:0] Tile_X1Y0_BEG_i_0to6; //Port(Name=BEG_i_0to6, IO=OUTPUT, XOffset=0, YOffset=6, WireCount=8, Side=SOUTH)
     wire[3:0] Tile_X1Y0_S1BEG; //Port(Name=S1BEG, IO=OUTPUT, XOffset=0, YOffset=1, WireCount=4, Side=SOUTH)
     wire[7:0] Tile_X1Y0_S2BEG; //Port(Name=S2BEG, IO=OUTPUT, XOffset=0, YOffset=1, WireCount=8, Side=SOUTH)
     wire[7:0] Tile_X1Y0_S2BEGb; //Port(Name=S2BEGb, IO=OUTPUT, XOffset=0, YOffset=1, WireCount=8, Side=SOUTH)
@@ -272,6 +274,7 @@ module SCC
     wire[15:0] Tile_X1Y0_WW4BEG; //Port(Name=WW4BEG, IO=OUTPUT, XOffset=-4, YOffset=0, WireCount=4, Side=WEST)
     wire[11:0] Tile_X1Y0_W6BEG; //Port(Name=W6BEG, IO=OUTPUT, XOffset=-6, YOffset=0, WireCount=2, Side=WEST)
  //Tile_X0Y1_Direction.NORTH
+    wire[47:0] Tile_X0Y1_BEG_o_6to0; //Port(Name=BEG_o_6to0, IO=OUTPUT, XOffset=0, YOffset=-6, WireCount=8, Side=NORTH)
     wire[3:0] Tile_X0Y1_N1BEG; //Port(Name=N1BEG, IO=OUTPUT, XOffset=0, YOffset=-1, WireCount=4, Side=NORTH)
     wire[7:0] Tile_X0Y1_N2BEG; //Port(Name=N2BEG, IO=OUTPUT, XOffset=0, YOffset=-1, WireCount=8, Side=NORTH)
     wire[7:0] Tile_X0Y1_N2BEGb; //Port(Name=N2BEGb, IO=OUTPUT, XOffset=0, YOffset=-1, WireCount=8, Side=NORTH)
@@ -284,27 +287,26 @@ module SCC
     wire[15:0] Tile_X0Y1_EE4BEG; //Port(Name=EE4BEG, IO=OUTPUT, XOffset=4, YOffset=0, WireCount=4, Side=EAST)
     wire[11:0] Tile_X0Y1_E6BEG; //Port(Name=E6BEG, IO=OUTPUT, XOffset=6, YOffset=0, WireCount=2, Side=EAST)
  //Tile_X0Y1_Direction.NORTH
-    wire[39:0] Tile_X0Y1_i_1to6; //Port(Name=i_1to6, IO=OUTPUT, XOffset=0, YOffset=5, WireCount=8, Side=SOUTH)
+    wire[47:0] Tile_X0Y1_BEG_i_0to6; //Port(Name=BEG_i_0to6, IO=OUTPUT, XOffset=0, YOffset=6, WireCount=8, Side=SOUTH)
     wire[3:0] Tile_X0Y1_S1BEG; //Port(Name=S1BEG, IO=OUTPUT, XOffset=0, YOffset=1, WireCount=4, Side=SOUTH)
     wire[7:0] Tile_X0Y1_S2BEG; //Port(Name=S2BEG, IO=OUTPUT, XOffset=0, YOffset=1, WireCount=8, Side=SOUTH)
     wire[7:0] Tile_X0Y1_S2BEGb; //Port(Name=S2BEGb, IO=OUTPUT, XOffset=0, YOffset=1, WireCount=8, Side=SOUTH)
     wire[15:0] Tile_X0Y1_S4BEG; //Port(Name=S4BEG, IO=OUTPUT, XOffset=0, YOffset=4, WireCount=4, Side=SOUTH)
     wire[15:0] Tile_X0Y1_SS4BEG; //Port(Name=SS4BEG, IO=OUTPUT, XOffset=0, YOffset=4, WireCount=4, Side=SOUTH)
-    wire[17:0] Tile_X0Y1_top2bot; //Port(Name=top2bot, IO=OUTPUT, XOffset=0, YOffset=1, WireCount=18, Side=SOUTH)
  //Tile_X1Y1_Direction.NORTH
+    wire[47:0] Tile_X1Y1_BEG_o_6to0; //Port(Name=BEG_o_6to0, IO=OUTPUT, XOffset=0, YOffset=-6, WireCount=8, Side=NORTH)
     wire[3:0] Tile_X1Y1_N1BEG; //Port(Name=N1BEG, IO=OUTPUT, XOffset=0, YOffset=-1, WireCount=4, Side=NORTH)
     wire[7:0] Tile_X1Y1_N2BEG; //Port(Name=N2BEG, IO=OUTPUT, XOffset=0, YOffset=-1, WireCount=8, Side=NORTH)
     wire[7:0] Tile_X1Y1_N2BEGb; //Port(Name=N2BEGb, IO=OUTPUT, XOffset=0, YOffset=-1, WireCount=8, Side=NORTH)
     wire[15:0] Tile_X1Y1_N4BEG; //Port(Name=N4BEG, IO=OUTPUT, XOffset=0, YOffset=-4, WireCount=4, Side=NORTH)
     wire[15:0] Tile_X1Y1_NN4BEG; //Port(Name=NN4BEG, IO=OUTPUT, XOffset=0, YOffset=-4, WireCount=4, Side=NORTH)
  //Tile_X1Y1_Direction.NORTH
-    wire[39:0] Tile_X1Y1_i_1to6; //Port(Name=i_1to6, IO=OUTPUT, XOffset=0, YOffset=5, WireCount=8, Side=SOUTH)
+    wire[47:0] Tile_X1Y1_BEG_i_0to6; //Port(Name=BEG_i_0to6, IO=OUTPUT, XOffset=0, YOffset=6, WireCount=8, Side=SOUTH)
     wire[3:0] Tile_X1Y1_S1BEG; //Port(Name=S1BEG, IO=OUTPUT, XOffset=0, YOffset=1, WireCount=4, Side=SOUTH)
     wire[7:0] Tile_X1Y1_S2BEG; //Port(Name=S2BEG, IO=OUTPUT, XOffset=0, YOffset=1, WireCount=8, Side=SOUTH)
     wire[7:0] Tile_X1Y1_S2BEGb; //Port(Name=S2BEGb, IO=OUTPUT, XOffset=0, YOffset=1, WireCount=8, Side=SOUTH)
     wire[15:0] Tile_X1Y1_S4BEG; //Port(Name=S4BEG, IO=OUTPUT, XOffset=0, YOffset=4, WireCount=4, Side=SOUTH)
     wire[15:0] Tile_X1Y1_SS4BEG; //Port(Name=SS4BEG, IO=OUTPUT, XOffset=0, YOffset=4, WireCount=4, Side=SOUTH)
-    wire[17:0] Tile_X1Y1_top2bot; //Port(Name=top2bot, IO=OUTPUT, XOffset=0, YOffset=1, WireCount=18, Side=SOUTH)
  //Tile_X1Y1_Direction.EAST
     wire[3:0] Tile_X1Y1_W1BEG; //Port(Name=W1BEG, IO=OUTPUT, XOffset=-1, YOffset=0, WireCount=4, Side=WEST)
     wire[7:0] Tile_X1Y1_W2BEG; //Port(Name=W2BEG, IO=OUTPUT, XOffset=-1, YOffset=0, WireCount=8, Side=WEST)
@@ -312,6 +314,7 @@ module SCC
     wire[15:0] Tile_X1Y1_WW4BEG; //Port(Name=WW4BEG, IO=OUTPUT, XOffset=-4, YOffset=0, WireCount=4, Side=WEST)
     wire[11:0] Tile_X1Y1_W6BEG; //Port(Name=W6BEG, IO=OUTPUT, XOffset=-6, YOffset=0, WireCount=2, Side=WEST)
  //Tile_X0Y2_Direction.NORTH
+    wire[47:0] Tile_X0Y2_BEG_o_6to0; //Port(Name=BEG_o_6to0, IO=OUTPUT, XOffset=0, YOffset=-6, WireCount=8, Side=NORTH)
     wire[3:0] Tile_X0Y2_N1BEG; //Port(Name=N1BEG, IO=OUTPUT, XOffset=0, YOffset=-1, WireCount=4, Side=NORTH)
     wire[7:0] Tile_X0Y2_N2BEG; //Port(Name=N2BEG, IO=OUTPUT, XOffset=0, YOffset=-1, WireCount=8, Side=NORTH)
     wire[7:0] Tile_X0Y2_N2BEGb; //Port(Name=N2BEGb, IO=OUTPUT, XOffset=0, YOffset=-1, WireCount=8, Side=NORTH)
@@ -324,27 +327,26 @@ module SCC
     wire[15:0] Tile_X0Y2_EE4BEG; //Port(Name=EE4BEG, IO=OUTPUT, XOffset=4, YOffset=0, WireCount=4, Side=EAST)
     wire[11:0] Tile_X0Y2_E6BEG; //Port(Name=E6BEG, IO=OUTPUT, XOffset=6, YOffset=0, WireCount=2, Side=EAST)
  //Tile_X0Y2_Direction.NORTH
-    wire[31:0] Tile_X0Y2_i_2to6; //Port(Name=i_2to6, IO=OUTPUT, XOffset=0, YOffset=4, WireCount=8, Side=SOUTH)
+    wire[47:0] Tile_X0Y2_BEG_i_0to6; //Port(Name=BEG_i_0to6, IO=OUTPUT, XOffset=0, YOffset=6, WireCount=8, Side=SOUTH)
     wire[3:0] Tile_X0Y2_S1BEG; //Port(Name=S1BEG, IO=OUTPUT, XOffset=0, YOffset=1, WireCount=4, Side=SOUTH)
     wire[7:0] Tile_X0Y2_S2BEG; //Port(Name=S2BEG, IO=OUTPUT, XOffset=0, YOffset=1, WireCount=8, Side=SOUTH)
     wire[7:0] Tile_X0Y2_S2BEGb; //Port(Name=S2BEGb, IO=OUTPUT, XOffset=0, YOffset=1, WireCount=8, Side=SOUTH)
     wire[15:0] Tile_X0Y2_S4BEG; //Port(Name=S4BEG, IO=OUTPUT, XOffset=0, YOffset=4, WireCount=4, Side=SOUTH)
     wire[15:0] Tile_X0Y2_SS4BEG; //Port(Name=SS4BEG, IO=OUTPUT, XOffset=0, YOffset=4, WireCount=4, Side=SOUTH)
-    wire[17:0] Tile_X0Y2_top2bot; //Port(Name=top2bot, IO=OUTPUT, XOffset=0, YOffset=1, WireCount=18, Side=SOUTH)
  //Tile_X1Y2_Direction.NORTH
+    wire[47:0] Tile_X1Y2_BEG_o_6to0; //Port(Name=BEG_o_6to0, IO=OUTPUT, XOffset=0, YOffset=-6, WireCount=8, Side=NORTH)
     wire[3:0] Tile_X1Y2_N1BEG; //Port(Name=N1BEG, IO=OUTPUT, XOffset=0, YOffset=-1, WireCount=4, Side=NORTH)
     wire[7:0] Tile_X1Y2_N2BEG; //Port(Name=N2BEG, IO=OUTPUT, XOffset=0, YOffset=-1, WireCount=8, Side=NORTH)
     wire[7:0] Tile_X1Y2_N2BEGb; //Port(Name=N2BEGb, IO=OUTPUT, XOffset=0, YOffset=-1, WireCount=8, Side=NORTH)
     wire[15:0] Tile_X1Y2_N4BEG; //Port(Name=N4BEG, IO=OUTPUT, XOffset=0, YOffset=-4, WireCount=4, Side=NORTH)
     wire[15:0] Tile_X1Y2_NN4BEG; //Port(Name=NN4BEG, IO=OUTPUT, XOffset=0, YOffset=-4, WireCount=4, Side=NORTH)
  //Tile_X1Y2_Direction.NORTH
-    wire[31:0] Tile_X1Y2_i_2to6; //Port(Name=i_2to6, IO=OUTPUT, XOffset=0, YOffset=4, WireCount=8, Side=SOUTH)
+    wire[47:0] Tile_X1Y2_BEG_i_0to6; //Port(Name=BEG_i_0to6, IO=OUTPUT, XOffset=0, YOffset=6, WireCount=8, Side=SOUTH)
     wire[3:0] Tile_X1Y2_S1BEG; //Port(Name=S1BEG, IO=OUTPUT, XOffset=0, YOffset=1, WireCount=4, Side=SOUTH)
     wire[7:0] Tile_X1Y2_S2BEG; //Port(Name=S2BEG, IO=OUTPUT, XOffset=0, YOffset=1, WireCount=8, Side=SOUTH)
     wire[7:0] Tile_X1Y2_S2BEGb; //Port(Name=S2BEGb, IO=OUTPUT, XOffset=0, YOffset=1, WireCount=8, Side=SOUTH)
     wire[15:0] Tile_X1Y2_S4BEG; //Port(Name=S4BEG, IO=OUTPUT, XOffset=0, YOffset=4, WireCount=4, Side=SOUTH)
     wire[15:0] Tile_X1Y2_SS4BEG; //Port(Name=SS4BEG, IO=OUTPUT, XOffset=0, YOffset=4, WireCount=4, Side=SOUTH)
-    wire[17:0] Tile_X1Y2_top2bot; //Port(Name=top2bot, IO=OUTPUT, XOffset=0, YOffset=1, WireCount=18, Side=SOUTH)
  //Tile_X1Y2_Direction.EAST
     wire[3:0] Tile_X1Y2_W1BEG; //Port(Name=W1BEG, IO=OUTPUT, XOffset=-1, YOffset=0, WireCount=4, Side=WEST)
     wire[7:0] Tile_X1Y2_W2BEG; //Port(Name=W2BEG, IO=OUTPUT, XOffset=-1, YOffset=0, WireCount=8, Side=WEST)
@@ -352,6 +354,7 @@ module SCC
     wire[15:0] Tile_X1Y2_WW4BEG; //Port(Name=WW4BEG, IO=OUTPUT, XOffset=-4, YOffset=0, WireCount=4, Side=WEST)
     wire[11:0] Tile_X1Y2_W6BEG; //Port(Name=W6BEG, IO=OUTPUT, XOffset=-6, YOffset=0, WireCount=2, Side=WEST)
  //Tile_X0Y3_Direction.NORTH
+    wire[47:0] Tile_X0Y3_BEG_o_6to0; //Port(Name=BEG_o_6to0, IO=OUTPUT, XOffset=0, YOffset=-6, WireCount=8, Side=NORTH)
     wire[3:0] Tile_X0Y3_N1BEG; //Port(Name=N1BEG, IO=OUTPUT, XOffset=0, YOffset=-1, WireCount=4, Side=NORTH)
     wire[7:0] Tile_X0Y3_N2BEG; //Port(Name=N2BEG, IO=OUTPUT, XOffset=0, YOffset=-1, WireCount=8, Side=NORTH)
     wire[7:0] Tile_X0Y3_N2BEGb; //Port(Name=N2BEGb, IO=OUTPUT, XOffset=0, YOffset=-1, WireCount=8, Side=NORTH)
@@ -364,27 +367,26 @@ module SCC
     wire[15:0] Tile_X0Y3_EE4BEG; //Port(Name=EE4BEG, IO=OUTPUT, XOffset=4, YOffset=0, WireCount=4, Side=EAST)
     wire[11:0] Tile_X0Y3_E6BEG; //Port(Name=E6BEG, IO=OUTPUT, XOffset=6, YOffset=0, WireCount=2, Side=EAST)
  //Tile_X0Y3_Direction.NORTH
-    wire[23:0] Tile_X0Y3_i_3to6; //Port(Name=i_3to6, IO=OUTPUT, XOffset=0, YOffset=3, WireCount=8, Side=SOUTH)
+    wire[47:0] Tile_X0Y3_BEG_i_0to6; //Port(Name=BEG_i_0to6, IO=OUTPUT, XOffset=0, YOffset=6, WireCount=8, Side=SOUTH)
     wire[3:0] Tile_X0Y3_S1BEG; //Port(Name=S1BEG, IO=OUTPUT, XOffset=0, YOffset=1, WireCount=4, Side=SOUTH)
     wire[7:0] Tile_X0Y3_S2BEG; //Port(Name=S2BEG, IO=OUTPUT, XOffset=0, YOffset=1, WireCount=8, Side=SOUTH)
     wire[7:0] Tile_X0Y3_S2BEGb; //Port(Name=S2BEGb, IO=OUTPUT, XOffset=0, YOffset=1, WireCount=8, Side=SOUTH)
     wire[15:0] Tile_X0Y3_S4BEG; //Port(Name=S4BEG, IO=OUTPUT, XOffset=0, YOffset=4, WireCount=4, Side=SOUTH)
     wire[15:0] Tile_X0Y3_SS4BEG; //Port(Name=SS4BEG, IO=OUTPUT, XOffset=0, YOffset=4, WireCount=4, Side=SOUTH)
-    wire[17:0] Tile_X0Y3_top2bot; //Port(Name=top2bot, IO=OUTPUT, XOffset=0, YOffset=1, WireCount=18, Side=SOUTH)
  //Tile_X1Y3_Direction.NORTH
+    wire[47:0] Tile_X1Y3_BEG_o_6to0; //Port(Name=BEG_o_6to0, IO=OUTPUT, XOffset=0, YOffset=-6, WireCount=8, Side=NORTH)
     wire[3:0] Tile_X1Y3_N1BEG; //Port(Name=N1BEG, IO=OUTPUT, XOffset=0, YOffset=-1, WireCount=4, Side=NORTH)
     wire[7:0] Tile_X1Y3_N2BEG; //Port(Name=N2BEG, IO=OUTPUT, XOffset=0, YOffset=-1, WireCount=8, Side=NORTH)
     wire[7:0] Tile_X1Y3_N2BEGb; //Port(Name=N2BEGb, IO=OUTPUT, XOffset=0, YOffset=-1, WireCount=8, Side=NORTH)
     wire[15:0] Tile_X1Y3_N4BEG; //Port(Name=N4BEG, IO=OUTPUT, XOffset=0, YOffset=-4, WireCount=4, Side=NORTH)
     wire[15:0] Tile_X1Y3_NN4BEG; //Port(Name=NN4BEG, IO=OUTPUT, XOffset=0, YOffset=-4, WireCount=4, Side=NORTH)
  //Tile_X1Y3_Direction.NORTH
-    wire[23:0] Tile_X1Y3_i_3to6; //Port(Name=i_3to6, IO=OUTPUT, XOffset=0, YOffset=3, WireCount=8, Side=SOUTH)
+    wire[47:0] Tile_X1Y3_BEG_i_0to6; //Port(Name=BEG_i_0to6, IO=OUTPUT, XOffset=0, YOffset=6, WireCount=8, Side=SOUTH)
     wire[3:0] Tile_X1Y3_S1BEG; //Port(Name=S1BEG, IO=OUTPUT, XOffset=0, YOffset=1, WireCount=4, Side=SOUTH)
     wire[7:0] Tile_X1Y3_S2BEG; //Port(Name=S2BEG, IO=OUTPUT, XOffset=0, YOffset=1, WireCount=8, Side=SOUTH)
     wire[7:0] Tile_X1Y3_S2BEGb; //Port(Name=S2BEGb, IO=OUTPUT, XOffset=0, YOffset=1, WireCount=8, Side=SOUTH)
     wire[15:0] Tile_X1Y3_S4BEG; //Port(Name=S4BEG, IO=OUTPUT, XOffset=0, YOffset=4, WireCount=4, Side=SOUTH)
     wire[15:0] Tile_X1Y3_SS4BEG; //Port(Name=SS4BEG, IO=OUTPUT, XOffset=0, YOffset=4, WireCount=4, Side=SOUTH)
-    wire[17:0] Tile_X1Y3_top2bot; //Port(Name=top2bot, IO=OUTPUT, XOffset=0, YOffset=1, WireCount=18, Side=SOUTH)
  //Tile_X1Y3_Direction.EAST
     wire[3:0] Tile_X1Y3_W1BEG; //Port(Name=W1BEG, IO=OUTPUT, XOffset=-1, YOffset=0, WireCount=4, Side=WEST)
     wire[7:0] Tile_X1Y3_W2BEG; //Port(Name=W2BEG, IO=OUTPUT, XOffset=-1, YOffset=0, WireCount=8, Side=WEST)
@@ -392,6 +394,7 @@ module SCC
     wire[15:0] Tile_X1Y3_WW4BEG; //Port(Name=WW4BEG, IO=OUTPUT, XOffset=-4, YOffset=0, WireCount=4, Side=WEST)
     wire[11:0] Tile_X1Y3_W6BEG; //Port(Name=W6BEG, IO=OUTPUT, XOffset=-6, YOffset=0, WireCount=2, Side=WEST)
  //Tile_X0Y4_Direction.NORTH
+    wire[47:0] Tile_X0Y4_BEG_o_6to0; //Port(Name=BEG_o_6to0, IO=OUTPUT, XOffset=0, YOffset=-6, WireCount=8, Side=NORTH)
     wire[3:0] Tile_X0Y4_N1BEG; //Port(Name=N1BEG, IO=OUTPUT, XOffset=0, YOffset=-1, WireCount=4, Side=NORTH)
     wire[7:0] Tile_X0Y4_N2BEG; //Port(Name=N2BEG, IO=OUTPUT, XOffset=0, YOffset=-1, WireCount=8, Side=NORTH)
     wire[7:0] Tile_X0Y4_N2BEGb; //Port(Name=N2BEGb, IO=OUTPUT, XOffset=0, YOffset=-1, WireCount=8, Side=NORTH)
@@ -404,27 +407,26 @@ module SCC
     wire[15:0] Tile_X0Y4_EE4BEG; //Port(Name=EE4BEG, IO=OUTPUT, XOffset=4, YOffset=0, WireCount=4, Side=EAST)
     wire[11:0] Tile_X0Y4_E6BEG; //Port(Name=E6BEG, IO=OUTPUT, XOffset=6, YOffset=0, WireCount=2, Side=EAST)
  //Tile_X0Y4_Direction.NORTH
-    wire[15:0] Tile_X0Y4_i_4to6; //Port(Name=i_4to6, IO=OUTPUT, XOffset=0, YOffset=2, WireCount=8, Side=SOUTH)
+    wire[47:0] Tile_X0Y4_BEG_i_0to6; //Port(Name=BEG_i_0to6, IO=OUTPUT, XOffset=0, YOffset=6, WireCount=8, Side=SOUTH)
     wire[3:0] Tile_X0Y4_S1BEG; //Port(Name=S1BEG, IO=OUTPUT, XOffset=0, YOffset=1, WireCount=4, Side=SOUTH)
     wire[7:0] Tile_X0Y4_S2BEG; //Port(Name=S2BEG, IO=OUTPUT, XOffset=0, YOffset=1, WireCount=8, Side=SOUTH)
     wire[7:0] Tile_X0Y4_S2BEGb; //Port(Name=S2BEGb, IO=OUTPUT, XOffset=0, YOffset=1, WireCount=8, Side=SOUTH)
     wire[15:0] Tile_X0Y4_S4BEG; //Port(Name=S4BEG, IO=OUTPUT, XOffset=0, YOffset=4, WireCount=4, Side=SOUTH)
     wire[15:0] Tile_X0Y4_SS4BEG; //Port(Name=SS4BEG, IO=OUTPUT, XOffset=0, YOffset=4, WireCount=4, Side=SOUTH)
-    wire[17:0] Tile_X0Y4_top2bot; //Port(Name=top2bot, IO=OUTPUT, XOffset=0, YOffset=1, WireCount=18, Side=SOUTH)
  //Tile_X1Y4_Direction.NORTH
+    wire[47:0] Tile_X1Y4_BEG_o_6to0; //Port(Name=BEG_o_6to0, IO=OUTPUT, XOffset=0, YOffset=-6, WireCount=8, Side=NORTH)
     wire[3:0] Tile_X1Y4_N1BEG; //Port(Name=N1BEG, IO=OUTPUT, XOffset=0, YOffset=-1, WireCount=4, Side=NORTH)
     wire[7:0] Tile_X1Y4_N2BEG; //Port(Name=N2BEG, IO=OUTPUT, XOffset=0, YOffset=-1, WireCount=8, Side=NORTH)
     wire[7:0] Tile_X1Y4_N2BEGb; //Port(Name=N2BEGb, IO=OUTPUT, XOffset=0, YOffset=-1, WireCount=8, Side=NORTH)
     wire[15:0] Tile_X1Y4_N4BEG; //Port(Name=N4BEG, IO=OUTPUT, XOffset=0, YOffset=-4, WireCount=4, Side=NORTH)
     wire[15:0] Tile_X1Y4_NN4BEG; //Port(Name=NN4BEG, IO=OUTPUT, XOffset=0, YOffset=-4, WireCount=4, Side=NORTH)
  //Tile_X1Y4_Direction.NORTH
-    wire[15:0] Tile_X1Y4_i_4to6; //Port(Name=i_4to6, IO=OUTPUT, XOffset=0, YOffset=2, WireCount=8, Side=SOUTH)
+    wire[47:0] Tile_X1Y4_BEG_i_0to6; //Port(Name=BEG_i_0to6, IO=OUTPUT, XOffset=0, YOffset=6, WireCount=8, Side=SOUTH)
     wire[3:0] Tile_X1Y4_S1BEG; //Port(Name=S1BEG, IO=OUTPUT, XOffset=0, YOffset=1, WireCount=4, Side=SOUTH)
     wire[7:0] Tile_X1Y4_S2BEG; //Port(Name=S2BEG, IO=OUTPUT, XOffset=0, YOffset=1, WireCount=8, Side=SOUTH)
     wire[7:0] Tile_X1Y4_S2BEGb; //Port(Name=S2BEGb, IO=OUTPUT, XOffset=0, YOffset=1, WireCount=8, Side=SOUTH)
     wire[15:0] Tile_X1Y4_S4BEG; //Port(Name=S4BEG, IO=OUTPUT, XOffset=0, YOffset=4, WireCount=4, Side=SOUTH)
     wire[15:0] Tile_X1Y4_SS4BEG; //Port(Name=SS4BEG, IO=OUTPUT, XOffset=0, YOffset=4, WireCount=4, Side=SOUTH)
-    wire[17:0] Tile_X1Y4_top2bot; //Port(Name=top2bot, IO=OUTPUT, XOffset=0, YOffset=1, WireCount=18, Side=SOUTH)
  //Tile_X1Y4_Direction.EAST
     wire[3:0] Tile_X1Y4_W1BEG; //Port(Name=W1BEG, IO=OUTPUT, XOffset=-1, YOffset=0, WireCount=4, Side=WEST)
     wire[7:0] Tile_X1Y4_W2BEG; //Port(Name=W2BEG, IO=OUTPUT, XOffset=-1, YOffset=0, WireCount=8, Side=WEST)
@@ -432,6 +434,7 @@ module SCC
     wire[15:0] Tile_X1Y4_WW4BEG; //Port(Name=WW4BEG, IO=OUTPUT, XOffset=-4, YOffset=0, WireCount=4, Side=WEST)
     wire[11:0] Tile_X1Y4_W6BEG; //Port(Name=W6BEG, IO=OUTPUT, XOffset=-6, YOffset=0, WireCount=2, Side=WEST)
  //Tile_X0Y5_Direction.NORTH
+    wire[47:0] Tile_X0Y5_BEG_o_6to0; //Port(Name=BEG_o_6to0, IO=OUTPUT, XOffset=0, YOffset=-6, WireCount=8, Side=NORTH)
     wire[3:0] Tile_X0Y5_N1BEG; //Port(Name=N1BEG, IO=OUTPUT, XOffset=0, YOffset=-1, WireCount=4, Side=NORTH)
     wire[7:0] Tile_X0Y5_N2BEG; //Port(Name=N2BEG, IO=OUTPUT, XOffset=0, YOffset=-1, WireCount=8, Side=NORTH)
     wire[7:0] Tile_X0Y5_N2BEGb; //Port(Name=N2BEGb, IO=OUTPUT, XOffset=0, YOffset=-1, WireCount=8, Side=NORTH)
@@ -444,20 +447,21 @@ module SCC
     wire[15:0] Tile_X0Y5_EE4BEG; //Port(Name=EE4BEG, IO=OUTPUT, XOffset=4, YOffset=0, WireCount=4, Side=EAST)
     wire[11:0] Tile_X0Y5_E6BEG; //Port(Name=E6BEG, IO=OUTPUT, XOffset=6, YOffset=0, WireCount=2, Side=EAST)
  //Tile_X0Y5_Direction.NORTH
-    wire[7:0] Tile_X0Y5_i_5to6; //Port(Name=i_5to6, IO=OUTPUT, XOffset=0, YOffset=1, WireCount=8, Side=SOUTH)
+    wire[47:0] Tile_X0Y5_BEG_i_0to6; //Port(Name=BEG_i_0to6, IO=OUTPUT, XOffset=0, YOffset=6, WireCount=8, Side=SOUTH)
     wire[3:0] Tile_X0Y5_S1BEG; //Port(Name=S1BEG, IO=OUTPUT, XOffset=0, YOffset=1, WireCount=4, Side=SOUTH)
     wire[7:0] Tile_X0Y5_S2BEG; //Port(Name=S2BEG, IO=OUTPUT, XOffset=0, YOffset=1, WireCount=8, Side=SOUTH)
     wire[7:0] Tile_X0Y5_S2BEGb; //Port(Name=S2BEGb, IO=OUTPUT, XOffset=0, YOffset=1, WireCount=8, Side=SOUTH)
     wire[15:0] Tile_X0Y5_S4BEG; //Port(Name=S4BEG, IO=OUTPUT, XOffset=0, YOffset=4, WireCount=4, Side=SOUTH)
     wire[15:0] Tile_X0Y5_SS4BEG; //Port(Name=SS4BEG, IO=OUTPUT, XOffset=0, YOffset=4, WireCount=4, Side=SOUTH)
  //Tile_X1Y5_Direction.NORTH
+    wire[47:0] Tile_X1Y5_BEG_o_6to0; //Port(Name=BEG_o_6to0, IO=OUTPUT, XOffset=0, YOffset=-6, WireCount=8, Side=NORTH)
     wire[3:0] Tile_X1Y5_N1BEG; //Port(Name=N1BEG, IO=OUTPUT, XOffset=0, YOffset=-1, WireCount=4, Side=NORTH)
     wire[7:0] Tile_X1Y5_N2BEG; //Port(Name=N2BEG, IO=OUTPUT, XOffset=0, YOffset=-1, WireCount=8, Side=NORTH)
     wire[7:0] Tile_X1Y5_N2BEGb; //Port(Name=N2BEGb, IO=OUTPUT, XOffset=0, YOffset=-1, WireCount=8, Side=NORTH)
     wire[15:0] Tile_X1Y5_N4BEG; //Port(Name=N4BEG, IO=OUTPUT, XOffset=0, YOffset=-4, WireCount=4, Side=NORTH)
     wire[15:0] Tile_X1Y5_NN4BEG; //Port(Name=NN4BEG, IO=OUTPUT, XOffset=0, YOffset=-4, WireCount=4, Side=NORTH)
  //Tile_X1Y5_Direction.NORTH
-    wire[7:0] Tile_X1Y5_i_5to6; //Port(Name=i_5to6, IO=OUTPUT, XOffset=0, YOffset=1, WireCount=8, Side=SOUTH)
+    wire[47:0] Tile_X1Y5_BEG_i_0to6; //Port(Name=BEG_i_0to6, IO=OUTPUT, XOffset=0, YOffset=6, WireCount=8, Side=SOUTH)
     wire[3:0] Tile_X1Y5_S1BEG; //Port(Name=S1BEG, IO=OUTPUT, XOffset=0, YOffset=1, WireCount=4, Side=SOUTH)
     wire[7:0] Tile_X1Y5_S2BEG; //Port(Name=S2BEG, IO=OUTPUT, XOffset=0, YOffset=1, WireCount=8, Side=SOUTH)
     wire[7:0] Tile_X1Y5_S2BEGb; //Port(Name=S2BEGb, IO=OUTPUT, XOffset=0, YOffset=1, WireCount=8, Side=SOUTH)
@@ -470,12 +474,7 @@ module SCC
     wire[15:0] Tile_X1Y5_WW4BEG; //Port(Name=WW4BEG, IO=OUTPUT, XOffset=-4, YOffset=0, WireCount=4, Side=WEST)
     wire[11:0] Tile_X1Y5_W6BEG; //Port(Name=W6BEG, IO=OUTPUT, XOffset=-6, YOffset=0, WireCount=2, Side=WEST)
  //Tile_X0Y6_Direction.NORTH
-    wire[47:0] Tile_X0Y6_o_6to0; //Port(Name=o_6to0, IO=OUTPUT, XOffset=0, YOffset=-6, WireCount=8, Side=NORTH)
-    wire[39:0] Tile_X0Y6_o_6to1; //Port(Name=o_6to1, IO=OUTPUT, XOffset=0, YOffset=-5, WireCount=8, Side=NORTH)
-    wire[31:0] Tile_X0Y6_o_6to2; //Port(Name=o_6to2, IO=OUTPUT, XOffset=0, YOffset=-4, WireCount=8, Side=NORTH)
-    wire[23:0] Tile_X0Y6_o_6to3; //Port(Name=o_6to3, IO=OUTPUT, XOffset=0, YOffset=-3, WireCount=8, Side=NORTH)
-    wire[15:0] Tile_X0Y6_o_6to4; //Port(Name=o_6to4, IO=OUTPUT, XOffset=0, YOffset=-2, WireCount=8, Side=NORTH)
-    wire[7:0] Tile_X0Y6_o_6to5; //Port(Name=o_6to5, IO=OUTPUT, XOffset=0, YOffset=-1, WireCount=8, Side=NORTH)
+    wire[47:0] Tile_X0Y6_BEG_o_6to0; //Port(Name=BEG_o_6to0, IO=OUTPUT, XOffset=0, YOffset=-6, WireCount=8, Side=NORTH)
     wire[3:0] Tile_X0Y6_N1BEG; //Port(Name=N1BEG, IO=OUTPUT, XOffset=0, YOffset=-1, WireCount=4, Side=NORTH)
     wire[7:0] Tile_X0Y6_N2BEG; //Port(Name=N2BEG, IO=OUTPUT, XOffset=0, YOffset=-1, WireCount=8, Side=NORTH)
     wire[7:0] Tile_X0Y6_N2BEGb; //Port(Name=N2BEGb, IO=OUTPUT, XOffset=0, YOffset=-1, WireCount=8, Side=NORTH)
@@ -489,12 +488,7 @@ module SCC
     wire[15:0] Tile_X0Y6_EE4BEG; //Port(Name=EE4BEG, IO=OUTPUT, XOffset=4, YOffset=0, WireCount=4, Side=EAST)
     wire[11:0] Tile_X0Y6_E6BEG; //Port(Name=E6BEG, IO=OUTPUT, XOffset=6, YOffset=0, WireCount=2, Side=EAST)
  //Tile_X1Y6_Direction.NORTH
-    wire[47:0] Tile_X1Y6_o_6to0; //Port(Name=o_6to0, IO=OUTPUT, XOffset=0, YOffset=-6, WireCount=8, Side=NORTH)
-    wire[39:0] Tile_X1Y6_o_6to1; //Port(Name=o_6to1, IO=OUTPUT, XOffset=0, YOffset=-5, WireCount=8, Side=NORTH)
-    wire[31:0] Tile_X1Y6_o_6to2; //Port(Name=o_6to2, IO=OUTPUT, XOffset=0, YOffset=-4, WireCount=8, Side=NORTH)
-    wire[23:0] Tile_X1Y6_o_6to3; //Port(Name=o_6to3, IO=OUTPUT, XOffset=0, YOffset=-3, WireCount=8, Side=NORTH)
-    wire[15:0] Tile_X1Y6_o_6to4; //Port(Name=o_6to4, IO=OUTPUT, XOffset=0, YOffset=-2, WireCount=8, Side=NORTH)
-    wire[7:0] Tile_X1Y6_o_6to5; //Port(Name=o_6to5, IO=OUTPUT, XOffset=0, YOffset=-1, WireCount=8, Side=NORTH)
+    wire[47:0] Tile_X1Y6_BEG_o_6to0; //Port(Name=BEG_o_6to0, IO=OUTPUT, XOffset=0, YOffset=-6, WireCount=8, Side=NORTH)
     wire[3:0] Tile_X1Y6_N1BEG; //Port(Name=N1BEG, IO=OUTPUT, XOffset=0, YOffset=-1, WireCount=4, Side=NORTH)
     wire[7:0] Tile_X1Y6_N2BEG; //Port(Name=N2BEG, IO=OUTPUT, XOffset=0, YOffset=-1, WireCount=8, Side=NORTH)
     wire[7:0] Tile_X1Y6_N2BEGb; //Port(Name=N2BEGb, IO=OUTPUT, XOffset=0, YOffset=-1, WireCount=8, Side=NORTH)
@@ -547,11 +541,12 @@ SCC0
 `endif
     Tile_X0Y0_SCC0
     (
-    .o_6to0(Tile_X0Y1_N1BEG),
-    .N1END(Tile_X0Y1_N2BEG),
-    .N2MID(Tile_X0Y1_N2BEGb),
-    .N2END(Tile_X0Y1_N4BEG),
-    .N4END(Tile_X0Y1_NN4BEG),
+    .END_o_6to0(Tile_X0Y1_BEG_o_6to0),
+    .N1END(Tile_X0Y1_N1BEG),
+    .N2MID(Tile_X0Y1_N2BEG),
+    .N2END(Tile_X0Y1_N2BEGb),
+    .N4END(Tile_X0Y1_N4BEG),
+    .NN4END(Tile_X0Y1_NN4BEG),
     .E1END(Tile_X0Y0_E1END),
     .E2MID(Tile_X0Y0_E2MID),
     .E2END(Tile_X0Y0_E2END),
@@ -577,7 +572,7 @@ SCC0
     .E2BEGb(Tile_X0Y0_E2BEGb),
     .EE4BEG(Tile_X0Y0_EE4BEG),
     .E6BEG(Tile_X0Y0_E6BEG),
-    .i_0to6(Tile_X0Y0_i_0to6),
+    .BEG_i_0to6(Tile_X0Y0_BEG_i_0to6),
     .S1BEG(Tile_X0Y0_S1BEG),
     .S2BEG(Tile_X0Y0_S2BEG),
     .S2BEGb(Tile_X0Y0_S2BEGb),
@@ -604,11 +599,12 @@ SCC0_e
 `endif
     Tile_X1Y0_SCC0_e
     (
-    .o_6to0(Tile_X1Y1_N1BEG),
-    .N1END(Tile_X1Y1_N2BEG),
-    .N2MID(Tile_X1Y1_N2BEGb),
-    .N2END(Tile_X1Y1_N4BEG),
-    .N4END(Tile_X1Y1_NN4BEG),
+    .END_o_6to0(Tile_X1Y1_BEG_o_6to0),
+    .N1END(Tile_X1Y1_N1BEG),
+    .N2MID(Tile_X1Y1_N2BEG),
+    .N2END(Tile_X1Y1_N2BEGb),
+    .N4END(Tile_X1Y1_N4BEG),
+    .NN4END(Tile_X1Y1_NN4BEG),
     .E1END(Tile_X0Y0_E1BEG),
     .E2MID(Tile_X0Y0_E2BEG),
     .E2END(Tile_X0Y0_E2BEGb),
@@ -634,7 +630,7 @@ SCC0_e
     .E2BEGb(Tile_X1Y0_E2BEGb),
     .EE4BEG(Tile_X1Y0_EE4BEG),
     .E6BEG(Tile_X1Y0_E6BEG),
-    .i_0to6(Tile_X1Y0_i_0to6),
+    .BEG_i_0to6(Tile_X1Y0_BEG_i_0to6),
     .S1BEG(Tile_X1Y0_S1BEG),
     .S2BEG(Tile_X1Y0_S2BEG),
     .S2BEGb(Tile_X1Y0_S2BEGb),
@@ -661,26 +657,29 @@ SCC1
 `endif
     Tile_X0Y1_SCC1
     (
-    .o_6to1(Tile_X0Y2_N1BEG),
-    .N1END(Tile_X0Y2_N2BEG),
-    .N2MID(Tile_X0Y2_N2BEGb),
-    .N2END(Tile_X0Y2_N4BEG),
-    .N4END(Tile_X0Y2_NN4BEG),
+    .END_o_6to0(Tile_X0Y2_BEG_o_6to0),
+    .N1END(Tile_X0Y2_N1BEG),
+    .N2MID(Tile_X0Y2_N2BEG),
+    .N2END(Tile_X0Y2_N2BEGb),
+    .N4END(Tile_X0Y2_N4BEG),
+    .NN4END(Tile_X0Y2_NN4BEG),
     .E1END(Tile_X0Y1_E1END),
     .E2MID(Tile_X0Y1_E2MID),
     .E2END(Tile_X0Y1_E2END),
     .EE4END(Tile_X0Y1_EE4END),
     .E6END(Tile_X0Y1_E6END),
-    .S1END(Tile_X0Y0_i_0to6),
-    .S2MID(Tile_X0Y0_S1BEG),
-    .S2END(Tile_X0Y0_S2BEG),
-    .S4END(Tile_X0Y0_S2BEGb),
-    .SS4END(Tile_X0Y0_S4BEG),
+    .END_i_0to6(Tile_X0Y0_BEG_i_0to6),
+    .S1END(Tile_X0Y0_S1BEG),
+    .S2MID(Tile_X0Y0_S2BEG),
+    .S2END(Tile_X0Y0_S2BEGb),
+    .S4END(Tile_X0Y0_S4BEG),
+    .SS4END(Tile_X0Y0_SS4BEG),
     .W1END(Tile_X1Y1_W1BEG),
     .W2MID(Tile_X1Y1_W2BEG),
     .W2END(Tile_X1Y1_W2BEGb),
     .WW4END(Tile_X1Y1_WW4BEG),
     .W6END(Tile_X1Y1_W6BEG),
+    .BEG_o_6to0(Tile_X0Y1_BEG_o_6to0),
     .N1BEG(Tile_X0Y1_N1BEG),
     .N2BEG(Tile_X0Y1_N2BEG),
     .N2BEGb(Tile_X0Y1_N2BEGb),
@@ -691,13 +690,12 @@ SCC1
     .E2BEGb(Tile_X0Y1_E2BEGb),
     .EE4BEG(Tile_X0Y1_EE4BEG),
     .E6BEG(Tile_X0Y1_E6BEG),
-    .i_1to6(Tile_X0Y1_i_1to6),
+    .BEG_i_0to6(Tile_X0Y1_BEG_i_0to6),
     .S1BEG(Tile_X0Y1_S1BEG),
     .S2BEG(Tile_X0Y1_S2BEG),
     .S2BEGb(Tile_X0Y1_S2BEGb),
     .S4BEG(Tile_X0Y1_S4BEG),
     .SS4BEG(Tile_X0Y1_SS4BEG),
-    .top2bot(Tile_X0Y1_top2bot),
     .W1BEG(Tile_X0Y1_W1BEG),
     .W2BEG(Tile_X0Y1_W2BEG),
     .W2BEGb(Tile_X0Y1_W2BEGb),
@@ -719,26 +717,29 @@ SCC1_e
 `endif
     Tile_X1Y1_SCC1_e
     (
-    .o_6to1(Tile_X1Y2_N1BEG),
-    .N1END(Tile_X1Y2_N2BEG),
-    .N2MID(Tile_X1Y2_N2BEGb),
-    .N2END(Tile_X1Y2_N4BEG),
-    .N4END(Tile_X1Y2_NN4BEG),
+    .END_o_6to0(Tile_X1Y2_BEG_o_6to0),
+    .N1END(Tile_X1Y2_N1BEG),
+    .N2MID(Tile_X1Y2_N2BEG),
+    .N2END(Tile_X1Y2_N2BEGb),
+    .N4END(Tile_X1Y2_N4BEG),
+    .NN4END(Tile_X1Y2_NN4BEG),
     .E1END(Tile_X0Y1_E1BEG),
     .E2MID(Tile_X0Y1_E2BEG),
     .E2END(Tile_X0Y1_E2BEGb),
     .EE4END(Tile_X0Y1_EE4BEG),
     .E6END(Tile_X0Y1_E6BEG),
-    .S1END(Tile_X1Y0_i_0to6),
-    .S2MID(Tile_X1Y0_S1BEG),
-    .S2END(Tile_X1Y0_S2BEG),
-    .S4END(Tile_X1Y0_S2BEGb),
-    .SS4END(Tile_X1Y0_S4BEG),
+    .END_i_0to6(Tile_X1Y0_BEG_i_0to6),
+    .S1END(Tile_X1Y0_S1BEG),
+    .S2MID(Tile_X1Y0_S2BEG),
+    .S2END(Tile_X1Y0_S2BEGb),
+    .S4END(Tile_X1Y0_S4BEG),
+    .SS4END(Tile_X1Y0_SS4BEG),
     .W1END(Tile_X1Y1_W1END),
     .W2MID(Tile_X1Y1_W2MID),
     .W2END(Tile_X1Y1_W2END),
     .WW4END(Tile_X1Y1_WW4END),
     .W6END(Tile_X1Y1_W6END),
+    .BEG_o_6to0(Tile_X1Y1_BEG_o_6to0),
     .N1BEG(Tile_X1Y1_N1BEG),
     .N2BEG(Tile_X1Y1_N2BEG),
     .N2BEGb(Tile_X1Y1_N2BEGb),
@@ -749,13 +750,12 @@ SCC1_e
     .E2BEGb(Tile_X1Y1_E2BEGb),
     .EE4BEG(Tile_X1Y1_EE4BEG),
     .E6BEG(Tile_X1Y1_E6BEG),
-    .i_1to6(Tile_X1Y1_i_1to6),
+    .BEG_i_0to6(Tile_X1Y1_BEG_i_0to6),
     .S1BEG(Tile_X1Y1_S1BEG),
     .S2BEG(Tile_X1Y1_S2BEG),
     .S2BEGb(Tile_X1Y1_S2BEGb),
     .S4BEG(Tile_X1Y1_S4BEG),
     .SS4BEG(Tile_X1Y1_SS4BEG),
-    .top2bot(Tile_X1Y1_top2bot),
     .W1BEG(Tile_X1Y1_W1BEG),
     .W2BEG(Tile_X1Y1_W2BEG),
     .W2BEGb(Tile_X1Y1_W2BEGb),
@@ -777,26 +777,29 @@ SCC2
 `endif
     Tile_X0Y2_SCC2
     (
-    .o_6to2(Tile_X0Y3_N1BEG),
-    .N1END(Tile_X0Y3_N2BEG),
-    .N2MID(Tile_X0Y3_N2BEGb),
-    .N2END(Tile_X0Y3_N4BEG),
-    .N4END(Tile_X0Y3_NN4BEG),
+    .END_o_6to0(Tile_X0Y3_BEG_o_6to0),
+    .N1END(Tile_X0Y3_N1BEG),
+    .N2MID(Tile_X0Y3_N2BEG),
+    .N2END(Tile_X0Y3_N2BEGb),
+    .N4END(Tile_X0Y3_N4BEG),
+    .NN4END(Tile_X0Y3_NN4BEG),
     .E1END(Tile_X0Y2_E1END),
     .E2MID(Tile_X0Y2_E2MID),
     .E2END(Tile_X0Y2_E2END),
     .EE4END(Tile_X0Y2_EE4END),
     .E6END(Tile_X0Y2_E6END),
-    .S1END(Tile_X0Y1_i_1to6),
-    .S2MID(Tile_X0Y1_S1BEG),
-    .S2END(Tile_X0Y1_S2BEG),
-    .S4END(Tile_X0Y1_S2BEGb),
-    .SS4END(Tile_X0Y1_S4BEG),
+    .END_i_0to6(Tile_X0Y1_BEG_i_0to6),
+    .S1END(Tile_X0Y1_S1BEG),
+    .S2MID(Tile_X0Y1_S2BEG),
+    .S2END(Tile_X0Y1_S2BEGb),
+    .S4END(Tile_X0Y1_S4BEG),
+    .SS4END(Tile_X0Y1_SS4BEG),
     .W1END(Tile_X1Y2_W1BEG),
     .W2MID(Tile_X1Y2_W2BEG),
     .W2END(Tile_X1Y2_W2BEGb),
     .WW4END(Tile_X1Y2_WW4BEG),
     .W6END(Tile_X1Y2_W6BEG),
+    .BEG_o_6to0(Tile_X0Y2_BEG_o_6to0),
     .N1BEG(Tile_X0Y2_N1BEG),
     .N2BEG(Tile_X0Y2_N2BEG),
     .N2BEGb(Tile_X0Y2_N2BEGb),
@@ -807,13 +810,12 @@ SCC2
     .E2BEGb(Tile_X0Y2_E2BEGb),
     .EE4BEG(Tile_X0Y2_EE4BEG),
     .E6BEG(Tile_X0Y2_E6BEG),
-    .i_2to6(Tile_X0Y2_i_2to6),
+    .BEG_i_0to6(Tile_X0Y2_BEG_i_0to6),
     .S1BEG(Tile_X0Y2_S1BEG),
     .S2BEG(Tile_X0Y2_S2BEG),
     .S2BEGb(Tile_X0Y2_S2BEGb),
     .S4BEG(Tile_X0Y2_S4BEG),
     .SS4BEG(Tile_X0Y2_SS4BEG),
-    .top2bot(Tile_X0Y2_top2bot),
     .W1BEG(Tile_X0Y2_W1BEG),
     .W2BEG(Tile_X0Y2_W2BEG),
     .W2BEGb(Tile_X0Y2_W2BEGb),
@@ -835,26 +837,29 @@ SCC2_e
 `endif
     Tile_X1Y2_SCC2_e
     (
-    .o_6to2(Tile_X1Y3_N1BEG),
-    .N1END(Tile_X1Y3_N2BEG),
-    .N2MID(Tile_X1Y3_N2BEGb),
-    .N2END(Tile_X1Y3_N4BEG),
-    .N4END(Tile_X1Y3_NN4BEG),
+    .END_o_6to0(Tile_X1Y3_BEG_o_6to0),
+    .N1END(Tile_X1Y3_N1BEG),
+    .N2MID(Tile_X1Y3_N2BEG),
+    .N2END(Tile_X1Y3_N2BEGb),
+    .N4END(Tile_X1Y3_N4BEG),
+    .NN4END(Tile_X1Y3_NN4BEG),
     .E1END(Tile_X0Y2_E1BEG),
     .E2MID(Tile_X0Y2_E2BEG),
     .E2END(Tile_X0Y2_E2BEGb),
     .EE4END(Tile_X0Y2_EE4BEG),
     .E6END(Tile_X0Y2_E6BEG),
-    .S1END(Tile_X1Y1_i_1to6),
-    .S2MID(Tile_X1Y1_S1BEG),
-    .S2END(Tile_X1Y1_S2BEG),
-    .S4END(Tile_X1Y1_S2BEGb),
-    .SS4END(Tile_X1Y1_S4BEG),
+    .END_i_0to6(Tile_X1Y1_BEG_i_0to6),
+    .S1END(Tile_X1Y1_S1BEG),
+    .S2MID(Tile_X1Y1_S2BEG),
+    .S2END(Tile_X1Y1_S2BEGb),
+    .S4END(Tile_X1Y1_S4BEG),
+    .SS4END(Tile_X1Y1_SS4BEG),
     .W1END(Tile_X1Y2_W1END),
     .W2MID(Tile_X1Y2_W2MID),
     .W2END(Tile_X1Y2_W2END),
     .WW4END(Tile_X1Y2_WW4END),
     .W6END(Tile_X1Y2_W6END),
+    .BEG_o_6to0(Tile_X1Y2_BEG_o_6to0),
     .N1BEG(Tile_X1Y2_N1BEG),
     .N2BEG(Tile_X1Y2_N2BEG),
     .N2BEGb(Tile_X1Y2_N2BEGb),
@@ -865,13 +870,12 @@ SCC2_e
     .E2BEGb(Tile_X1Y2_E2BEGb),
     .EE4BEG(Tile_X1Y2_EE4BEG),
     .E6BEG(Tile_X1Y2_E6BEG),
-    .i_2to6(Tile_X1Y2_i_2to6),
+    .BEG_i_0to6(Tile_X1Y2_BEG_i_0to6),
     .S1BEG(Tile_X1Y2_S1BEG),
     .S2BEG(Tile_X1Y2_S2BEG),
     .S2BEGb(Tile_X1Y2_S2BEGb),
     .S4BEG(Tile_X1Y2_S4BEG),
     .SS4BEG(Tile_X1Y2_SS4BEG),
-    .top2bot(Tile_X1Y2_top2bot),
     .W1BEG(Tile_X1Y2_W1BEG),
     .W2BEG(Tile_X1Y2_W2BEG),
     .W2BEGb(Tile_X1Y2_W2BEGb),
@@ -893,26 +897,29 @@ SCC3
 `endif
     Tile_X0Y3_SCC3
     (
-    .o_6to3(Tile_X0Y4_N1BEG),
-    .N1END(Tile_X0Y4_N2BEG),
-    .N2MID(Tile_X0Y4_N2BEGb),
-    .N2END(Tile_X0Y4_N4BEG),
-    .N4END(Tile_X0Y4_NN4BEG),
+    .END_o_6to0(Tile_X0Y4_BEG_o_6to0),
+    .N1END(Tile_X0Y4_N1BEG),
+    .N2MID(Tile_X0Y4_N2BEG),
+    .N2END(Tile_X0Y4_N2BEGb),
+    .N4END(Tile_X0Y4_N4BEG),
+    .NN4END(Tile_X0Y4_NN4BEG),
     .E1END(Tile_X0Y3_E1END),
     .E2MID(Tile_X0Y3_E2MID),
     .E2END(Tile_X0Y3_E2END),
     .EE4END(Tile_X0Y3_EE4END),
     .E6END(Tile_X0Y3_E6END),
-    .S1END(Tile_X0Y2_i_2to6),
-    .S2MID(Tile_X0Y2_S1BEG),
-    .S2END(Tile_X0Y2_S2BEG),
-    .S4END(Tile_X0Y2_S2BEGb),
-    .SS4END(Tile_X0Y2_S4BEG),
+    .END_i_0to6(Tile_X0Y2_BEG_i_0to6),
+    .S1END(Tile_X0Y2_S1BEG),
+    .S2MID(Tile_X0Y2_S2BEG),
+    .S2END(Tile_X0Y2_S2BEGb),
+    .S4END(Tile_X0Y2_S4BEG),
+    .SS4END(Tile_X0Y2_SS4BEG),
     .W1END(Tile_X1Y3_W1BEG),
     .W2MID(Tile_X1Y3_W2BEG),
     .W2END(Tile_X1Y3_W2BEGb),
     .WW4END(Tile_X1Y3_WW4BEG),
     .W6END(Tile_X1Y3_W6BEG),
+    .BEG_o_6to0(Tile_X0Y3_BEG_o_6to0),
     .N1BEG(Tile_X0Y3_N1BEG),
     .N2BEG(Tile_X0Y3_N2BEG),
     .N2BEGb(Tile_X0Y3_N2BEGb),
@@ -923,13 +930,12 @@ SCC3
     .E2BEGb(Tile_X0Y3_E2BEGb),
     .EE4BEG(Tile_X0Y3_EE4BEG),
     .E6BEG(Tile_X0Y3_E6BEG),
-    .i_3to6(Tile_X0Y3_i_3to6),
+    .BEG_i_0to6(Tile_X0Y3_BEG_i_0to6),
     .S1BEG(Tile_X0Y3_S1BEG),
     .S2BEG(Tile_X0Y3_S2BEG),
     .S2BEGb(Tile_X0Y3_S2BEGb),
     .S4BEG(Tile_X0Y3_S4BEG),
     .SS4BEG(Tile_X0Y3_SS4BEG),
-    .top2bot(Tile_X0Y3_top2bot),
     .W1BEG(Tile_X0Y3_W1BEG),
     .W2BEG(Tile_X0Y3_W2BEG),
     .W2BEGb(Tile_X0Y3_W2BEGb),
@@ -951,26 +957,29 @@ SCC3_e
 `endif
     Tile_X1Y3_SCC3_e
     (
-    .o_6to3(Tile_X1Y4_N1BEG),
-    .N1END(Tile_X1Y4_N2BEG),
-    .N2MID(Tile_X1Y4_N2BEGb),
-    .N2END(Tile_X1Y4_N4BEG),
-    .N4END(Tile_X1Y4_NN4BEG),
+    .END_o_6to0(Tile_X1Y4_BEG_o_6to0),
+    .N1END(Tile_X1Y4_N1BEG),
+    .N2MID(Tile_X1Y4_N2BEG),
+    .N2END(Tile_X1Y4_N2BEGb),
+    .N4END(Tile_X1Y4_N4BEG),
+    .NN4END(Tile_X1Y4_NN4BEG),
     .E1END(Tile_X0Y3_E1BEG),
     .E2MID(Tile_X0Y3_E2BEG),
     .E2END(Tile_X0Y3_E2BEGb),
     .EE4END(Tile_X0Y3_EE4BEG),
     .E6END(Tile_X0Y3_E6BEG),
-    .S1END(Tile_X1Y2_i_2to6),
-    .S2MID(Tile_X1Y2_S1BEG),
-    .S2END(Tile_X1Y2_S2BEG),
-    .S4END(Tile_X1Y2_S2BEGb),
-    .SS4END(Tile_X1Y2_S4BEG),
+    .END_i_0to6(Tile_X1Y2_BEG_i_0to6),
+    .S1END(Tile_X1Y2_S1BEG),
+    .S2MID(Tile_X1Y2_S2BEG),
+    .S2END(Tile_X1Y2_S2BEGb),
+    .S4END(Tile_X1Y2_S4BEG),
+    .SS4END(Tile_X1Y2_SS4BEG),
     .W1END(Tile_X1Y3_W1END),
     .W2MID(Tile_X1Y3_W2MID),
     .W2END(Tile_X1Y3_W2END),
     .WW4END(Tile_X1Y3_WW4END),
     .W6END(Tile_X1Y3_W6END),
+    .BEG_o_6to0(Tile_X1Y3_BEG_o_6to0),
     .N1BEG(Tile_X1Y3_N1BEG),
     .N2BEG(Tile_X1Y3_N2BEG),
     .N2BEGb(Tile_X1Y3_N2BEGb),
@@ -981,13 +990,12 @@ SCC3_e
     .E2BEGb(Tile_X1Y3_E2BEGb),
     .EE4BEG(Tile_X1Y3_EE4BEG),
     .E6BEG(Tile_X1Y3_E6BEG),
-    .i_3to6(Tile_X1Y3_i_3to6),
+    .BEG_i_0to6(Tile_X1Y3_BEG_i_0to6),
     .S1BEG(Tile_X1Y3_S1BEG),
     .S2BEG(Tile_X1Y3_S2BEG),
     .S2BEGb(Tile_X1Y3_S2BEGb),
     .S4BEG(Tile_X1Y3_S4BEG),
     .SS4BEG(Tile_X1Y3_SS4BEG),
-    .top2bot(Tile_X1Y3_top2bot),
     .W1BEG(Tile_X1Y3_W1BEG),
     .W2BEG(Tile_X1Y3_W2BEG),
     .W2BEGb(Tile_X1Y3_W2BEGb),
@@ -1009,26 +1017,29 @@ SCC4
 `endif
     Tile_X0Y4_SCC4
     (
-    .o_6to4(Tile_X0Y5_N1BEG),
-    .N1END(Tile_X0Y5_N2BEG),
-    .N2MID(Tile_X0Y5_N2BEGb),
-    .N2END(Tile_X0Y5_N4BEG),
-    .N4END(Tile_X0Y5_NN4BEG),
+    .END_o_6to0(Tile_X0Y5_BEG_o_6to0),
+    .N1END(Tile_X0Y5_N1BEG),
+    .N2MID(Tile_X0Y5_N2BEG),
+    .N2END(Tile_X0Y5_N2BEGb),
+    .N4END(Tile_X0Y5_N4BEG),
+    .NN4END(Tile_X0Y5_NN4BEG),
     .E1END(Tile_X0Y4_E1END),
     .E2MID(Tile_X0Y4_E2MID),
     .E2END(Tile_X0Y4_E2END),
     .EE4END(Tile_X0Y4_EE4END),
     .E6END(Tile_X0Y4_E6END),
-    .S1END(Tile_X0Y3_i_3to6),
-    .S2MID(Tile_X0Y3_S1BEG),
-    .S2END(Tile_X0Y3_S2BEG),
-    .S4END(Tile_X0Y3_S2BEGb),
-    .SS4END(Tile_X0Y3_S4BEG),
+    .END_i_0to6(Tile_X0Y3_BEG_i_0to6),
+    .S1END(Tile_X0Y3_S1BEG),
+    .S2MID(Tile_X0Y3_S2BEG),
+    .S2END(Tile_X0Y3_S2BEGb),
+    .S4END(Tile_X0Y3_S4BEG),
+    .SS4END(Tile_X0Y3_SS4BEG),
     .W1END(Tile_X1Y4_W1BEG),
     .W2MID(Tile_X1Y4_W2BEG),
     .W2END(Tile_X1Y4_W2BEGb),
     .WW4END(Tile_X1Y4_WW4BEG),
     .W6END(Tile_X1Y4_W6BEG),
+    .BEG_o_6to0(Tile_X0Y4_BEG_o_6to0),
     .N1BEG(Tile_X0Y4_N1BEG),
     .N2BEG(Tile_X0Y4_N2BEG),
     .N2BEGb(Tile_X0Y4_N2BEGb),
@@ -1039,13 +1050,12 @@ SCC4
     .E2BEGb(Tile_X0Y4_E2BEGb),
     .EE4BEG(Tile_X0Y4_EE4BEG),
     .E6BEG(Tile_X0Y4_E6BEG),
-    .i_4to6(Tile_X0Y4_i_4to6),
+    .BEG_i_0to6(Tile_X0Y4_BEG_i_0to6),
     .S1BEG(Tile_X0Y4_S1BEG),
     .S2BEG(Tile_X0Y4_S2BEG),
     .S2BEGb(Tile_X0Y4_S2BEGb),
     .S4BEG(Tile_X0Y4_S4BEG),
     .SS4BEG(Tile_X0Y4_SS4BEG),
-    .top2bot(Tile_X0Y4_top2bot),
     .W1BEG(Tile_X0Y4_W1BEG),
     .W2BEG(Tile_X0Y4_W2BEG),
     .W2BEGb(Tile_X0Y4_W2BEGb),
@@ -1067,26 +1077,29 @@ SCC4_e
 `endif
     Tile_X1Y4_SCC4_e
     (
-    .o_6to4(Tile_X1Y5_N1BEG),
-    .N1END(Tile_X1Y5_N2BEG),
-    .N2MID(Tile_X1Y5_N2BEGb),
-    .N2END(Tile_X1Y5_N4BEG),
-    .N4END(Tile_X1Y5_NN4BEG),
+    .END_o_6to0(Tile_X1Y5_BEG_o_6to0),
+    .N1END(Tile_X1Y5_N1BEG),
+    .N2MID(Tile_X1Y5_N2BEG),
+    .N2END(Tile_X1Y5_N2BEGb),
+    .N4END(Tile_X1Y5_N4BEG),
+    .NN4END(Tile_X1Y5_NN4BEG),
     .E1END(Tile_X0Y4_E1BEG),
     .E2MID(Tile_X0Y4_E2BEG),
     .E2END(Tile_X0Y4_E2BEGb),
     .EE4END(Tile_X0Y4_EE4BEG),
     .E6END(Tile_X0Y4_E6BEG),
-    .S1END(Tile_X1Y3_i_3to6),
-    .S2MID(Tile_X1Y3_S1BEG),
-    .S2END(Tile_X1Y3_S2BEG),
-    .S4END(Tile_X1Y3_S2BEGb),
-    .SS4END(Tile_X1Y3_S4BEG),
+    .END_i_0to6(Tile_X1Y3_BEG_i_0to6),
+    .S1END(Tile_X1Y3_S1BEG),
+    .S2MID(Tile_X1Y3_S2BEG),
+    .S2END(Tile_X1Y3_S2BEGb),
+    .S4END(Tile_X1Y3_S4BEG),
+    .SS4END(Tile_X1Y3_SS4BEG),
     .W1END(Tile_X1Y4_W1END),
     .W2MID(Tile_X1Y4_W2MID),
     .W2END(Tile_X1Y4_W2END),
     .WW4END(Tile_X1Y4_WW4END),
     .W6END(Tile_X1Y4_W6END),
+    .BEG_o_6to0(Tile_X1Y4_BEG_o_6to0),
     .N1BEG(Tile_X1Y4_N1BEG),
     .N2BEG(Tile_X1Y4_N2BEG),
     .N2BEGb(Tile_X1Y4_N2BEGb),
@@ -1097,13 +1110,12 @@ SCC4_e
     .E2BEGb(Tile_X1Y4_E2BEGb),
     .EE4BEG(Tile_X1Y4_EE4BEG),
     .E6BEG(Tile_X1Y4_E6BEG),
-    .i_4to6(Tile_X1Y4_i_4to6),
+    .BEG_i_0to6(Tile_X1Y4_BEG_i_0to6),
     .S1BEG(Tile_X1Y4_S1BEG),
     .S2BEG(Tile_X1Y4_S2BEG),
     .S2BEGb(Tile_X1Y4_S2BEGb),
     .S4BEG(Tile_X1Y4_S4BEG),
     .SS4BEG(Tile_X1Y4_SS4BEG),
-    .top2bot(Tile_X1Y4_top2bot),
     .W1BEG(Tile_X1Y4_W1BEG),
     .W2BEG(Tile_X1Y4_W2BEG),
     .W2BEGb(Tile_X1Y4_W2BEGb),
@@ -1125,27 +1137,29 @@ SCC5
 `endif
     Tile_X0Y5_SCC5
     (
-    .o_6to5(Tile_X0Y6_o_6to0),
-    .N1END(Tile_X0Y6_o_6to1),
-    .N2MID(Tile_X0Y6_o_6to2),
-    .N2END(Tile_X0Y6_o_6to3),
-    .N4END(Tile_X0Y6_o_6to4),
-    .NN4END(Tile_X0Y6_o_6to5),
+    .END_o_6to0(Tile_X0Y6_BEG_o_6to0),
+    .N1END(Tile_X0Y6_N1BEG),
+    .N2MID(Tile_X0Y6_N2BEG),
+    .N2END(Tile_X0Y6_N2BEGb),
+    .N4END(Tile_X0Y6_N4BEG),
+    .NN4END(Tile_X0Y6_NN4BEG),
     .E1END(Tile_X0Y5_E1END),
     .E2MID(Tile_X0Y5_E2MID),
     .E2END(Tile_X0Y5_E2END),
     .EE4END(Tile_X0Y5_EE4END),
     .E6END(Tile_X0Y5_E6END),
-    .S1END(Tile_X0Y4_i_4to6),
-    .S2MID(Tile_X0Y4_S1BEG),
-    .S2END(Tile_X0Y4_S2BEG),
-    .S4END(Tile_X0Y4_S2BEGb),
-    .SS4END(Tile_X0Y4_S4BEG),
+    .END_i_0to6(Tile_X0Y4_BEG_i_0to6),
+    .S1END(Tile_X0Y4_S1BEG),
+    .S2MID(Tile_X0Y4_S2BEG),
+    .S2END(Tile_X0Y4_S2BEGb),
+    .S4END(Tile_X0Y4_S4BEG),
+    .SS4END(Tile_X0Y4_SS4BEG),
     .W1END(Tile_X1Y5_W1BEG),
     .W2MID(Tile_X1Y5_W2BEG),
     .W2END(Tile_X1Y5_W2BEGb),
     .WW4END(Tile_X1Y5_WW4BEG),
     .W6END(Tile_X1Y5_W6BEG),
+    .BEG_o_6to0(Tile_X0Y5_BEG_o_6to0),
     .N1BEG(Tile_X0Y5_N1BEG),
     .N2BEG(Tile_X0Y5_N2BEG),
     .N2BEGb(Tile_X0Y5_N2BEGb),
@@ -1156,7 +1170,7 @@ SCC5
     .E2BEGb(Tile_X0Y5_E2BEGb),
     .EE4BEG(Tile_X0Y5_EE4BEG),
     .E6BEG(Tile_X0Y5_E6BEG),
-    .i_5to6(Tile_X0Y5_i_5to6),
+    .BEG_i_0to6(Tile_X0Y5_BEG_i_0to6),
     .S1BEG(Tile_X0Y5_S1BEG),
     .S2BEG(Tile_X0Y5_S2BEG),
     .S2BEGb(Tile_X0Y5_S2BEGb),
@@ -1183,27 +1197,29 @@ SCC5_e
 `endif
     Tile_X1Y5_SCC5_e
     (
-    .o_6to5(Tile_X1Y6_o_6to0),
-    .N1END(Tile_X1Y6_o_6to1),
-    .N2MID(Tile_X1Y6_o_6to2),
-    .N2END(Tile_X1Y6_o_6to3),
-    .N4END(Tile_X1Y6_o_6to4),
-    .NN4END(Tile_X1Y6_o_6to5),
+    .END_o_6to0(Tile_X1Y6_BEG_o_6to0),
+    .N1END(Tile_X1Y6_N1BEG),
+    .N2MID(Tile_X1Y6_N2BEG),
+    .N2END(Tile_X1Y6_N2BEGb),
+    .N4END(Tile_X1Y6_N4BEG),
+    .NN4END(Tile_X1Y6_NN4BEG),
     .E1END(Tile_X0Y5_E1BEG),
     .E2MID(Tile_X0Y5_E2BEG),
     .E2END(Tile_X0Y5_E2BEGb),
     .EE4END(Tile_X0Y5_EE4BEG),
     .E6END(Tile_X0Y5_E6BEG),
-    .S1END(Tile_X1Y4_i_4to6),
-    .S2MID(Tile_X1Y4_S1BEG),
-    .S2END(Tile_X1Y4_S2BEG),
-    .S4END(Tile_X1Y4_S2BEGb),
-    .SS4END(Tile_X1Y4_S4BEG),
+    .END_i_0to6(Tile_X1Y4_BEG_i_0to6),
+    .S1END(Tile_X1Y4_S1BEG),
+    .S2MID(Tile_X1Y4_S2BEG),
+    .S2END(Tile_X1Y4_S2BEGb),
+    .S4END(Tile_X1Y4_S4BEG),
+    .SS4END(Tile_X1Y4_SS4BEG),
     .W1END(Tile_X1Y5_W1END),
     .W2MID(Tile_X1Y5_W2MID),
     .W2END(Tile_X1Y5_W2END),
     .WW4END(Tile_X1Y5_WW4END),
     .W6END(Tile_X1Y5_W6END),
+    .BEG_o_6to0(Tile_X1Y5_BEG_o_6to0),
     .N1BEG(Tile_X1Y5_N1BEG),
     .N2BEG(Tile_X1Y5_N2BEG),
     .N2BEGb(Tile_X1Y5_N2BEGb),
@@ -1214,7 +1230,7 @@ SCC5_e
     .E2BEGb(Tile_X1Y5_E2BEGb),
     .EE4BEG(Tile_X1Y5_EE4BEG),
     .E6BEG(Tile_X1Y5_E6BEG),
-    .i_5to6(Tile_X1Y5_i_5to6),
+    .BEG_i_0to6(Tile_X1Y5_BEG_i_0to6),
     .S1BEG(Tile_X1Y5_S1BEG),
     .S2BEG(Tile_X1Y5_S2BEG),
     .S2BEGb(Tile_X1Y5_S2BEGb),
@@ -1241,6 +1257,7 @@ SCC6
 `endif
     Tile_X0Y6_SCC6
     (
+    .END_o_6to0(Tile_X0Y6_END_o_6to0),
     .N1END(Tile_X0Y6_N1END),
     .N2MID(Tile_X0Y6_N2MID),
     .N2END(Tile_X0Y6_N2END),
@@ -1251,24 +1268,19 @@ SCC6
     .E2END(Tile_X0Y6_E2END),
     .EE4END(Tile_X0Y6_EE4END),
     .E6END(Tile_X0Y6_E6END),
-    .i_0to6(Tile_X0Y5_i_5to6),
-    .i_1to6(Tile_X0Y5_S1BEG),
-    .i_2to6(Tile_X0Y5_S2BEG),
-    .i_3to6(Tile_X0Y5_S2BEGb),
-    .i_4to6(Tile_X0Y5_S4BEG),
-    .i_5to6(Tile_X0Y5_SS4BEG),
+    .END_i_0to6(Tile_X0Y5_BEG_i_0to6),
+    .S1END(Tile_X0Y5_S1BEG),
+    .S2MID(Tile_X0Y5_S2BEG),
+    .S2END(Tile_X0Y5_S2BEGb),
+    .S4END(Tile_X0Y5_S4BEG),
+    .SS4END(Tile_X0Y5_SS4BEG),
     .i_w2e(Tile_X1Y6_i_w2e),
     .W1END(Tile_X1Y6_W1BEG),
     .W2MID(Tile_X1Y6_W2BEG),
     .W2END(Tile_X1Y6_W2BEGb),
     .WW4END(Tile_X1Y6_WW4BEG),
     .W6END(Tile_X1Y6_W6BEG),
-    .o_6to0(Tile_X0Y6_o_6to0),
-    .o_6to1(Tile_X0Y6_o_6to1),
-    .o_6to2(Tile_X0Y6_o_6to2),
-    .o_6to3(Tile_X0Y6_o_6to3),
-    .o_6to4(Tile_X0Y6_o_6to4),
-    .o_6to5(Tile_X0Y6_o_6to5),
+    .BEG_o_6to0(Tile_X0Y6_BEG_o_6to0),
     .N1BEG(Tile_X0Y6_N1BEG),
     .N2BEG(Tile_X0Y6_N2BEG),
     .N2BEGb(Tile_X0Y6_N2BEGb),
@@ -1280,6 +1292,7 @@ SCC6
     .E2BEGb(Tile_X0Y6_E2BEGb),
     .EE4BEG(Tile_X0Y6_EE4BEG),
     .E6BEG(Tile_X0Y6_E6BEG),
+    .BEG_i_0to6(Tile_X0Y6_BEG_i_0to6),
     .S1BEG(Tile_X0Y6_S1BEG),
     .S2BEG(Tile_X0Y6_S2BEG),
     .S2BEGb(Tile_X0Y6_S2BEGb),
@@ -1317,23 +1330,18 @@ SCC6_e
     .E2END(Tile_X0Y6_E2BEGb),
     .EE4END(Tile_X0Y6_EE4BEG),
     .E6END(Tile_X0Y6_E6BEG),
-    .i_0to6(Tile_X1Y5_i_5to6),
-    .i_1to6(Tile_X1Y5_S1BEG),
-    .i_2to6(Tile_X1Y5_S2BEG),
-    .i_3to6(Tile_X1Y5_S2BEGb),
-    .i_4to6(Tile_X1Y5_S4BEG),
-    .i_5to6(Tile_X1Y5_SS4BEG),
+    .END_i_0to6(Tile_X1Y5_BEG_i_0to6),
+    .S1END(Tile_X1Y5_S1BEG),
+    .S2MID(Tile_X1Y5_S2BEG),
+    .S2END(Tile_X1Y5_S2BEGb),
+    .S4END(Tile_X1Y5_S4BEG),
+    .SS4END(Tile_X1Y5_SS4BEG),
     .W1END(Tile_X1Y6_W1END),
     .W2MID(Tile_X1Y6_W2MID),
     .W2END(Tile_X1Y6_W2END),
     .WW4END(Tile_X1Y6_WW4END),
     .W6END(Tile_X1Y6_W6END),
-    .o_6to0(Tile_X1Y6_o_6to0),
-    .o_6to1(Tile_X1Y6_o_6to1),
-    .o_6to2(Tile_X1Y6_o_6to2),
-    .o_6to3(Tile_X1Y6_o_6to3),
-    .o_6to4(Tile_X1Y6_o_6to4),
-    .o_6to5(Tile_X1Y6_o_6to5),
+    .BEG_o_6to0(Tile_X1Y6_BEG_o_6to0),
     .N1BEG(Tile_X1Y6_N1BEG),
     .N2BEG(Tile_X1Y6_N2BEG),
     .N2BEGb(Tile_X1Y6_N2BEGb),

@@ -9,6 +9,8 @@ module SCC5_e
     )
     (
  //Side.NORTH
+        output [47:0] BEG_o_6to0,        //Port(Name=BEG_o_6to0, IO=OUTPUT, XOffset=0, YOffset=-6, WireCount=8, Side=NORTH)
+        input [47:0] END_i_0to6,        //Port(Name=END_i_0to6, IO=INPUT, XOffset=0, YOffset=6, WireCount=8, Side=NORTH)
         output [3:0] N1BEG,        //Port(Name=N1BEG, IO=OUTPUT, XOffset=0, YOffset=-1, WireCount=4, Side=NORTH)
         output [7:0] N2BEG,        //Port(Name=N2BEG, IO=OUTPUT, XOffset=0, YOffset=-1, WireCount=8, Side=NORTH)
         output [7:0] N2BEGb,        //Port(Name=N2BEGb, IO=OUTPUT, XOffset=0, YOffset=-1, WireCount=8, Side=NORTH)
@@ -42,8 +44,8 @@ module SCC5_e
         output [15:0] WW4BEG,        //Port(Name=WW4BEG, IO=OUTPUT, XOffset=-4, YOffset=0, WireCount=4, Side=WEST)
         output [11:0] W6BEG,        //Port(Name=W6BEG, IO=OUTPUT, XOffset=-6, YOffset=0, WireCount=2, Side=WEST)
  //Side.SOUTH
-        input [7:0] o_6to5,        //Port(Name=o_6to5, IO=INPUT, XOffset=0, YOffset=-1, WireCount=8, Side=SOUTH)
-        output [7:0] i_5to6,        //Port(Name=i_5to6, IO=OUTPUT, XOffset=0, YOffset=1, WireCount=8, Side=SOUTH)
+        input [47:0] END_o_6to0,        //Port(Name=END_o_6to0, IO=INPUT, XOffset=0, YOffset=-6, WireCount=8, Side=SOUTH)
+        output [47:0] BEG_i_0to6,        //Port(Name=BEG_i_0to6, IO=OUTPUT, XOffset=0, YOffset=6, WireCount=8, Side=SOUTH)
         input [3:0] N1END,        //Port(Name=N1END, IO=INPUT, XOffset=0, YOffset=-1, WireCount=4, Side=SOUTH)
         input [7:0] N2MID,        //Port(Name=N2MID, IO=INPUT, XOffset=0, YOffset=-1, WireCount=8, Side=SOUTH)
         input [7:0] N2END,        //Port(Name=N2END, IO=INPUT, XOffset=0, YOffset=-1, WireCount=8, Side=SOUTH)
@@ -95,6 +97,10 @@ wire[FrameBitsPerRow-1:0] FrameData_i;
 wire[FrameBitsPerRow-1:0] FrameData_O_i;
 wire[MaxFramesPerCol-1:0] FrameStrobe_i;
 wire[MaxFramesPerCol-1:0] FrameStrobe_O_i;
+wire[47:0] END_o_6to0_i;
+wire[39:0] BEG_o_6to0_i;
+wire[47:0] END_i_0to6_i;
+wire[39:0] BEG_i_0to6_i;
 wire[15:0] N4END_i;
 wire[11:0] N4BEG_i;
 wire[15:0] NN4END_i;
@@ -634,6 +640,810 @@ my_buf strobe_outbuf_18 (
 my_buf strobe_outbuf_19 (
     .A(FrameStrobe_O_i[19]),
     .X(FrameStrobe_O[19])
+);
+
+assign BEG_o_6to0_i[47-8:0] = END_o_6to0_i[47:8];
+
+my_buf END_o_6to0_inbuf_0 (
+    .A(END_o_6to0[8]),
+    .X(END_o_6to0_i[8])
+);
+
+my_buf END_o_6to0_inbuf_1 (
+    .A(END_o_6to0[9]),
+    .X(END_o_6to0_i[9])
+);
+
+my_buf END_o_6to0_inbuf_2 (
+    .A(END_o_6to0[10]),
+    .X(END_o_6to0_i[10])
+);
+
+my_buf END_o_6to0_inbuf_3 (
+    .A(END_o_6to0[11]),
+    .X(END_o_6to0_i[11])
+);
+
+my_buf END_o_6to0_inbuf_4 (
+    .A(END_o_6to0[12]),
+    .X(END_o_6to0_i[12])
+);
+
+my_buf END_o_6to0_inbuf_5 (
+    .A(END_o_6to0[13]),
+    .X(END_o_6to0_i[13])
+);
+
+my_buf END_o_6to0_inbuf_6 (
+    .A(END_o_6to0[14]),
+    .X(END_o_6to0_i[14])
+);
+
+my_buf END_o_6to0_inbuf_7 (
+    .A(END_o_6to0[15]),
+    .X(END_o_6to0_i[15])
+);
+
+my_buf END_o_6to0_inbuf_8 (
+    .A(END_o_6to0[16]),
+    .X(END_o_6to0_i[16])
+);
+
+my_buf END_o_6to0_inbuf_9 (
+    .A(END_o_6to0[17]),
+    .X(END_o_6to0_i[17])
+);
+
+my_buf END_o_6to0_inbuf_10 (
+    .A(END_o_6to0[18]),
+    .X(END_o_6to0_i[18])
+);
+
+my_buf END_o_6to0_inbuf_11 (
+    .A(END_o_6to0[19]),
+    .X(END_o_6to0_i[19])
+);
+
+my_buf END_o_6to0_inbuf_12 (
+    .A(END_o_6to0[20]),
+    .X(END_o_6to0_i[20])
+);
+
+my_buf END_o_6to0_inbuf_13 (
+    .A(END_o_6to0[21]),
+    .X(END_o_6to0_i[21])
+);
+
+my_buf END_o_6to0_inbuf_14 (
+    .A(END_o_6to0[22]),
+    .X(END_o_6to0_i[22])
+);
+
+my_buf END_o_6to0_inbuf_15 (
+    .A(END_o_6to0[23]),
+    .X(END_o_6to0_i[23])
+);
+
+my_buf END_o_6to0_inbuf_16 (
+    .A(END_o_6to0[24]),
+    .X(END_o_6to0_i[24])
+);
+
+my_buf END_o_6to0_inbuf_17 (
+    .A(END_o_6to0[25]),
+    .X(END_o_6to0_i[25])
+);
+
+my_buf END_o_6to0_inbuf_18 (
+    .A(END_o_6to0[26]),
+    .X(END_o_6to0_i[26])
+);
+
+my_buf END_o_6to0_inbuf_19 (
+    .A(END_o_6to0[27]),
+    .X(END_o_6to0_i[27])
+);
+
+my_buf END_o_6to0_inbuf_20 (
+    .A(END_o_6to0[28]),
+    .X(END_o_6to0_i[28])
+);
+
+my_buf END_o_6to0_inbuf_21 (
+    .A(END_o_6to0[29]),
+    .X(END_o_6to0_i[29])
+);
+
+my_buf END_o_6to0_inbuf_22 (
+    .A(END_o_6to0[30]),
+    .X(END_o_6to0_i[30])
+);
+
+my_buf END_o_6to0_inbuf_23 (
+    .A(END_o_6to0[31]),
+    .X(END_o_6to0_i[31])
+);
+
+my_buf END_o_6to0_inbuf_24 (
+    .A(END_o_6to0[32]),
+    .X(END_o_6to0_i[32])
+);
+
+my_buf END_o_6to0_inbuf_25 (
+    .A(END_o_6to0[33]),
+    .X(END_o_6to0_i[33])
+);
+
+my_buf END_o_6to0_inbuf_26 (
+    .A(END_o_6to0[34]),
+    .X(END_o_6to0_i[34])
+);
+
+my_buf END_o_6to0_inbuf_27 (
+    .A(END_o_6to0[35]),
+    .X(END_o_6to0_i[35])
+);
+
+my_buf END_o_6to0_inbuf_28 (
+    .A(END_o_6to0[36]),
+    .X(END_o_6to0_i[36])
+);
+
+my_buf END_o_6to0_inbuf_29 (
+    .A(END_o_6to0[37]),
+    .X(END_o_6to0_i[37])
+);
+
+my_buf END_o_6to0_inbuf_30 (
+    .A(END_o_6to0[38]),
+    .X(END_o_6to0_i[38])
+);
+
+my_buf END_o_6to0_inbuf_31 (
+    .A(END_o_6to0[39]),
+    .X(END_o_6to0_i[39])
+);
+
+my_buf END_o_6to0_inbuf_32 (
+    .A(END_o_6to0[40]),
+    .X(END_o_6to0_i[40])
+);
+
+my_buf END_o_6to0_inbuf_33 (
+    .A(END_o_6to0[41]),
+    .X(END_o_6to0_i[41])
+);
+
+my_buf END_o_6to0_inbuf_34 (
+    .A(END_o_6to0[42]),
+    .X(END_o_6to0_i[42])
+);
+
+my_buf END_o_6to0_inbuf_35 (
+    .A(END_o_6to0[43]),
+    .X(END_o_6to0_i[43])
+);
+
+my_buf END_o_6to0_inbuf_36 (
+    .A(END_o_6to0[44]),
+    .X(END_o_6to0_i[44])
+);
+
+my_buf END_o_6to0_inbuf_37 (
+    .A(END_o_6to0[45]),
+    .X(END_o_6to0_i[45])
+);
+
+my_buf END_o_6to0_inbuf_38 (
+    .A(END_o_6to0[46]),
+    .X(END_o_6to0_i[46])
+);
+
+my_buf END_o_6to0_inbuf_39 (
+    .A(END_o_6to0[47]),
+    .X(END_o_6to0_i[47])
+);
+
+my_buf BEG_o_6to0_outbuf_0 (
+    .A(BEG_o_6to0_i[0]),
+    .X(BEG_o_6to0[0])
+);
+
+my_buf BEG_o_6to0_outbuf_1 (
+    .A(BEG_o_6to0_i[1]),
+    .X(BEG_o_6to0[1])
+);
+
+my_buf BEG_o_6to0_outbuf_2 (
+    .A(BEG_o_6to0_i[2]),
+    .X(BEG_o_6to0[2])
+);
+
+my_buf BEG_o_6to0_outbuf_3 (
+    .A(BEG_o_6to0_i[3]),
+    .X(BEG_o_6to0[3])
+);
+
+my_buf BEG_o_6to0_outbuf_4 (
+    .A(BEG_o_6to0_i[4]),
+    .X(BEG_o_6to0[4])
+);
+
+my_buf BEG_o_6to0_outbuf_5 (
+    .A(BEG_o_6to0_i[5]),
+    .X(BEG_o_6to0[5])
+);
+
+my_buf BEG_o_6to0_outbuf_6 (
+    .A(BEG_o_6to0_i[6]),
+    .X(BEG_o_6to0[6])
+);
+
+my_buf BEG_o_6to0_outbuf_7 (
+    .A(BEG_o_6to0_i[7]),
+    .X(BEG_o_6to0[7])
+);
+
+my_buf BEG_o_6to0_outbuf_8 (
+    .A(BEG_o_6to0_i[8]),
+    .X(BEG_o_6to0[8])
+);
+
+my_buf BEG_o_6to0_outbuf_9 (
+    .A(BEG_o_6to0_i[9]),
+    .X(BEG_o_6to0[9])
+);
+
+my_buf BEG_o_6to0_outbuf_10 (
+    .A(BEG_o_6to0_i[10]),
+    .X(BEG_o_6to0[10])
+);
+
+my_buf BEG_o_6to0_outbuf_11 (
+    .A(BEG_o_6to0_i[11]),
+    .X(BEG_o_6to0[11])
+);
+
+my_buf BEG_o_6to0_outbuf_12 (
+    .A(BEG_o_6to0_i[12]),
+    .X(BEG_o_6to0[12])
+);
+
+my_buf BEG_o_6to0_outbuf_13 (
+    .A(BEG_o_6to0_i[13]),
+    .X(BEG_o_6to0[13])
+);
+
+my_buf BEG_o_6to0_outbuf_14 (
+    .A(BEG_o_6to0_i[14]),
+    .X(BEG_o_6to0[14])
+);
+
+my_buf BEG_o_6to0_outbuf_15 (
+    .A(BEG_o_6to0_i[15]),
+    .X(BEG_o_6to0[15])
+);
+
+my_buf BEG_o_6to0_outbuf_16 (
+    .A(BEG_o_6to0_i[16]),
+    .X(BEG_o_6to0[16])
+);
+
+my_buf BEG_o_6to0_outbuf_17 (
+    .A(BEG_o_6to0_i[17]),
+    .X(BEG_o_6to0[17])
+);
+
+my_buf BEG_o_6to0_outbuf_18 (
+    .A(BEG_o_6to0_i[18]),
+    .X(BEG_o_6to0[18])
+);
+
+my_buf BEG_o_6to0_outbuf_19 (
+    .A(BEG_o_6to0_i[19]),
+    .X(BEG_o_6to0[19])
+);
+
+my_buf BEG_o_6to0_outbuf_20 (
+    .A(BEG_o_6to0_i[20]),
+    .X(BEG_o_6to0[20])
+);
+
+my_buf BEG_o_6to0_outbuf_21 (
+    .A(BEG_o_6to0_i[21]),
+    .X(BEG_o_6to0[21])
+);
+
+my_buf BEG_o_6to0_outbuf_22 (
+    .A(BEG_o_6to0_i[22]),
+    .X(BEG_o_6to0[22])
+);
+
+my_buf BEG_o_6to0_outbuf_23 (
+    .A(BEG_o_6to0_i[23]),
+    .X(BEG_o_6to0[23])
+);
+
+my_buf BEG_o_6to0_outbuf_24 (
+    .A(BEG_o_6to0_i[24]),
+    .X(BEG_o_6to0[24])
+);
+
+my_buf BEG_o_6to0_outbuf_25 (
+    .A(BEG_o_6to0_i[25]),
+    .X(BEG_o_6to0[25])
+);
+
+my_buf BEG_o_6to0_outbuf_26 (
+    .A(BEG_o_6to0_i[26]),
+    .X(BEG_o_6to0[26])
+);
+
+my_buf BEG_o_6to0_outbuf_27 (
+    .A(BEG_o_6to0_i[27]),
+    .X(BEG_o_6to0[27])
+);
+
+my_buf BEG_o_6to0_outbuf_28 (
+    .A(BEG_o_6to0_i[28]),
+    .X(BEG_o_6to0[28])
+);
+
+my_buf BEG_o_6to0_outbuf_29 (
+    .A(BEG_o_6to0_i[29]),
+    .X(BEG_o_6to0[29])
+);
+
+my_buf BEG_o_6to0_outbuf_30 (
+    .A(BEG_o_6to0_i[30]),
+    .X(BEG_o_6to0[30])
+);
+
+my_buf BEG_o_6to0_outbuf_31 (
+    .A(BEG_o_6to0_i[31]),
+    .X(BEG_o_6to0[31])
+);
+
+my_buf BEG_o_6to0_outbuf_32 (
+    .A(BEG_o_6to0_i[32]),
+    .X(BEG_o_6to0[32])
+);
+
+my_buf BEG_o_6to0_outbuf_33 (
+    .A(BEG_o_6to0_i[33]),
+    .X(BEG_o_6to0[33])
+);
+
+my_buf BEG_o_6to0_outbuf_34 (
+    .A(BEG_o_6to0_i[34]),
+    .X(BEG_o_6to0[34])
+);
+
+my_buf BEG_o_6to0_outbuf_35 (
+    .A(BEG_o_6to0_i[35]),
+    .X(BEG_o_6to0[35])
+);
+
+my_buf BEG_o_6to0_outbuf_36 (
+    .A(BEG_o_6to0_i[36]),
+    .X(BEG_o_6to0[36])
+);
+
+my_buf BEG_o_6to0_outbuf_37 (
+    .A(BEG_o_6to0_i[37]),
+    .X(BEG_o_6to0[37])
+);
+
+my_buf BEG_o_6to0_outbuf_38 (
+    .A(BEG_o_6to0_i[38]),
+    .X(BEG_o_6to0[38])
+);
+
+my_buf BEG_o_6to0_outbuf_39 (
+    .A(BEG_o_6to0_i[39]),
+    .X(BEG_o_6to0[39])
+);
+
+assign BEG_i_0to6_i[47-8:0] = END_i_0to6_i[47:8];
+
+my_buf END_i_0to6_inbuf_0 (
+    .A(END_i_0to6[8]),
+    .X(END_i_0to6_i[8])
+);
+
+my_buf END_i_0to6_inbuf_1 (
+    .A(END_i_0to6[9]),
+    .X(END_i_0to6_i[9])
+);
+
+my_buf END_i_0to6_inbuf_2 (
+    .A(END_i_0to6[10]),
+    .X(END_i_0to6_i[10])
+);
+
+my_buf END_i_0to6_inbuf_3 (
+    .A(END_i_0to6[11]),
+    .X(END_i_0to6_i[11])
+);
+
+my_buf END_i_0to6_inbuf_4 (
+    .A(END_i_0to6[12]),
+    .X(END_i_0to6_i[12])
+);
+
+my_buf END_i_0to6_inbuf_5 (
+    .A(END_i_0to6[13]),
+    .X(END_i_0to6_i[13])
+);
+
+my_buf END_i_0to6_inbuf_6 (
+    .A(END_i_0to6[14]),
+    .X(END_i_0to6_i[14])
+);
+
+my_buf END_i_0to6_inbuf_7 (
+    .A(END_i_0to6[15]),
+    .X(END_i_0to6_i[15])
+);
+
+my_buf END_i_0to6_inbuf_8 (
+    .A(END_i_0to6[16]),
+    .X(END_i_0to6_i[16])
+);
+
+my_buf END_i_0to6_inbuf_9 (
+    .A(END_i_0to6[17]),
+    .X(END_i_0to6_i[17])
+);
+
+my_buf END_i_0to6_inbuf_10 (
+    .A(END_i_0to6[18]),
+    .X(END_i_0to6_i[18])
+);
+
+my_buf END_i_0to6_inbuf_11 (
+    .A(END_i_0to6[19]),
+    .X(END_i_0to6_i[19])
+);
+
+my_buf END_i_0to6_inbuf_12 (
+    .A(END_i_0to6[20]),
+    .X(END_i_0to6_i[20])
+);
+
+my_buf END_i_0to6_inbuf_13 (
+    .A(END_i_0to6[21]),
+    .X(END_i_0to6_i[21])
+);
+
+my_buf END_i_0to6_inbuf_14 (
+    .A(END_i_0to6[22]),
+    .X(END_i_0to6_i[22])
+);
+
+my_buf END_i_0to6_inbuf_15 (
+    .A(END_i_0to6[23]),
+    .X(END_i_0to6_i[23])
+);
+
+my_buf END_i_0to6_inbuf_16 (
+    .A(END_i_0to6[24]),
+    .X(END_i_0to6_i[24])
+);
+
+my_buf END_i_0to6_inbuf_17 (
+    .A(END_i_0to6[25]),
+    .X(END_i_0to6_i[25])
+);
+
+my_buf END_i_0to6_inbuf_18 (
+    .A(END_i_0to6[26]),
+    .X(END_i_0to6_i[26])
+);
+
+my_buf END_i_0to6_inbuf_19 (
+    .A(END_i_0to6[27]),
+    .X(END_i_0to6_i[27])
+);
+
+my_buf END_i_0to6_inbuf_20 (
+    .A(END_i_0to6[28]),
+    .X(END_i_0to6_i[28])
+);
+
+my_buf END_i_0to6_inbuf_21 (
+    .A(END_i_0to6[29]),
+    .X(END_i_0to6_i[29])
+);
+
+my_buf END_i_0to6_inbuf_22 (
+    .A(END_i_0to6[30]),
+    .X(END_i_0to6_i[30])
+);
+
+my_buf END_i_0to6_inbuf_23 (
+    .A(END_i_0to6[31]),
+    .X(END_i_0to6_i[31])
+);
+
+my_buf END_i_0to6_inbuf_24 (
+    .A(END_i_0to6[32]),
+    .X(END_i_0to6_i[32])
+);
+
+my_buf END_i_0to6_inbuf_25 (
+    .A(END_i_0to6[33]),
+    .X(END_i_0to6_i[33])
+);
+
+my_buf END_i_0to6_inbuf_26 (
+    .A(END_i_0to6[34]),
+    .X(END_i_0to6_i[34])
+);
+
+my_buf END_i_0to6_inbuf_27 (
+    .A(END_i_0to6[35]),
+    .X(END_i_0to6_i[35])
+);
+
+my_buf END_i_0to6_inbuf_28 (
+    .A(END_i_0to6[36]),
+    .X(END_i_0to6_i[36])
+);
+
+my_buf END_i_0to6_inbuf_29 (
+    .A(END_i_0to6[37]),
+    .X(END_i_0to6_i[37])
+);
+
+my_buf END_i_0to6_inbuf_30 (
+    .A(END_i_0to6[38]),
+    .X(END_i_0to6_i[38])
+);
+
+my_buf END_i_0to6_inbuf_31 (
+    .A(END_i_0to6[39]),
+    .X(END_i_0to6_i[39])
+);
+
+my_buf END_i_0to6_inbuf_32 (
+    .A(END_i_0to6[40]),
+    .X(END_i_0to6_i[40])
+);
+
+my_buf END_i_0to6_inbuf_33 (
+    .A(END_i_0to6[41]),
+    .X(END_i_0to6_i[41])
+);
+
+my_buf END_i_0to6_inbuf_34 (
+    .A(END_i_0to6[42]),
+    .X(END_i_0to6_i[42])
+);
+
+my_buf END_i_0to6_inbuf_35 (
+    .A(END_i_0to6[43]),
+    .X(END_i_0to6_i[43])
+);
+
+my_buf END_i_0to6_inbuf_36 (
+    .A(END_i_0to6[44]),
+    .X(END_i_0to6_i[44])
+);
+
+my_buf END_i_0to6_inbuf_37 (
+    .A(END_i_0to6[45]),
+    .X(END_i_0to6_i[45])
+);
+
+my_buf END_i_0to6_inbuf_38 (
+    .A(END_i_0to6[46]),
+    .X(END_i_0to6_i[46])
+);
+
+my_buf END_i_0to6_inbuf_39 (
+    .A(END_i_0to6[47]),
+    .X(END_i_0to6_i[47])
+);
+
+my_buf BEG_i_0to6_outbuf_0 (
+    .A(BEG_i_0to6_i[0]),
+    .X(BEG_i_0to6[0])
+);
+
+my_buf BEG_i_0to6_outbuf_1 (
+    .A(BEG_i_0to6_i[1]),
+    .X(BEG_i_0to6[1])
+);
+
+my_buf BEG_i_0to6_outbuf_2 (
+    .A(BEG_i_0to6_i[2]),
+    .X(BEG_i_0to6[2])
+);
+
+my_buf BEG_i_0to6_outbuf_3 (
+    .A(BEG_i_0to6_i[3]),
+    .X(BEG_i_0to6[3])
+);
+
+my_buf BEG_i_0to6_outbuf_4 (
+    .A(BEG_i_0to6_i[4]),
+    .X(BEG_i_0to6[4])
+);
+
+my_buf BEG_i_0to6_outbuf_5 (
+    .A(BEG_i_0to6_i[5]),
+    .X(BEG_i_0to6[5])
+);
+
+my_buf BEG_i_0to6_outbuf_6 (
+    .A(BEG_i_0to6_i[6]),
+    .X(BEG_i_0to6[6])
+);
+
+my_buf BEG_i_0to6_outbuf_7 (
+    .A(BEG_i_0to6_i[7]),
+    .X(BEG_i_0to6[7])
+);
+
+my_buf BEG_i_0to6_outbuf_8 (
+    .A(BEG_i_0to6_i[8]),
+    .X(BEG_i_0to6[8])
+);
+
+my_buf BEG_i_0to6_outbuf_9 (
+    .A(BEG_i_0to6_i[9]),
+    .X(BEG_i_0to6[9])
+);
+
+my_buf BEG_i_0to6_outbuf_10 (
+    .A(BEG_i_0to6_i[10]),
+    .X(BEG_i_0to6[10])
+);
+
+my_buf BEG_i_0to6_outbuf_11 (
+    .A(BEG_i_0to6_i[11]),
+    .X(BEG_i_0to6[11])
+);
+
+my_buf BEG_i_0to6_outbuf_12 (
+    .A(BEG_i_0to6_i[12]),
+    .X(BEG_i_0to6[12])
+);
+
+my_buf BEG_i_0to6_outbuf_13 (
+    .A(BEG_i_0to6_i[13]),
+    .X(BEG_i_0to6[13])
+);
+
+my_buf BEG_i_0to6_outbuf_14 (
+    .A(BEG_i_0to6_i[14]),
+    .X(BEG_i_0to6[14])
+);
+
+my_buf BEG_i_0to6_outbuf_15 (
+    .A(BEG_i_0to6_i[15]),
+    .X(BEG_i_0to6[15])
+);
+
+my_buf BEG_i_0to6_outbuf_16 (
+    .A(BEG_i_0to6_i[16]),
+    .X(BEG_i_0to6[16])
+);
+
+my_buf BEG_i_0to6_outbuf_17 (
+    .A(BEG_i_0to6_i[17]),
+    .X(BEG_i_0to6[17])
+);
+
+my_buf BEG_i_0to6_outbuf_18 (
+    .A(BEG_i_0to6_i[18]),
+    .X(BEG_i_0to6[18])
+);
+
+my_buf BEG_i_0to6_outbuf_19 (
+    .A(BEG_i_0to6_i[19]),
+    .X(BEG_i_0to6[19])
+);
+
+my_buf BEG_i_0to6_outbuf_20 (
+    .A(BEG_i_0to6_i[20]),
+    .X(BEG_i_0to6[20])
+);
+
+my_buf BEG_i_0to6_outbuf_21 (
+    .A(BEG_i_0to6_i[21]),
+    .X(BEG_i_0to6[21])
+);
+
+my_buf BEG_i_0to6_outbuf_22 (
+    .A(BEG_i_0to6_i[22]),
+    .X(BEG_i_0to6[22])
+);
+
+my_buf BEG_i_0to6_outbuf_23 (
+    .A(BEG_i_0to6_i[23]),
+    .X(BEG_i_0to6[23])
+);
+
+my_buf BEG_i_0to6_outbuf_24 (
+    .A(BEG_i_0to6_i[24]),
+    .X(BEG_i_0to6[24])
+);
+
+my_buf BEG_i_0to6_outbuf_25 (
+    .A(BEG_i_0to6_i[25]),
+    .X(BEG_i_0to6[25])
+);
+
+my_buf BEG_i_0to6_outbuf_26 (
+    .A(BEG_i_0to6_i[26]),
+    .X(BEG_i_0to6[26])
+);
+
+my_buf BEG_i_0to6_outbuf_27 (
+    .A(BEG_i_0to6_i[27]),
+    .X(BEG_i_0to6[27])
+);
+
+my_buf BEG_i_0to6_outbuf_28 (
+    .A(BEG_i_0to6_i[28]),
+    .X(BEG_i_0to6[28])
+);
+
+my_buf BEG_i_0to6_outbuf_29 (
+    .A(BEG_i_0to6_i[29]),
+    .X(BEG_i_0to6[29])
+);
+
+my_buf BEG_i_0to6_outbuf_30 (
+    .A(BEG_i_0to6_i[30]),
+    .X(BEG_i_0to6[30])
+);
+
+my_buf BEG_i_0to6_outbuf_31 (
+    .A(BEG_i_0to6_i[31]),
+    .X(BEG_i_0to6[31])
+);
+
+my_buf BEG_i_0to6_outbuf_32 (
+    .A(BEG_i_0to6_i[32]),
+    .X(BEG_i_0to6[32])
+);
+
+my_buf BEG_i_0to6_outbuf_33 (
+    .A(BEG_i_0to6_i[33]),
+    .X(BEG_i_0to6[33])
+);
+
+my_buf BEG_i_0to6_outbuf_34 (
+    .A(BEG_i_0to6_i[34]),
+    .X(BEG_i_0to6[34])
+);
+
+my_buf BEG_i_0to6_outbuf_35 (
+    .A(BEG_i_0to6_i[35]),
+    .X(BEG_i_0to6[35])
+);
+
+my_buf BEG_i_0to6_outbuf_36 (
+    .A(BEG_i_0to6_i[36]),
+    .X(BEG_i_0to6[36])
+);
+
+my_buf BEG_i_0to6_outbuf_37 (
+    .A(BEG_i_0to6_i[37]),
+    .X(BEG_i_0to6[37])
+);
+
+my_buf BEG_i_0to6_outbuf_38 (
+    .A(BEG_i_0to6_i[38]),
+    .X(BEG_i_0to6[38])
+);
+
+my_buf BEG_i_0to6_outbuf_39 (
+    .A(BEG_i_0to6_i[39]),
+    .X(BEG_i_0to6[39])
 );
 
 assign N4BEG_i[15-4:0] = N4END_i[15:4];
@@ -1595,14 +2405,22 @@ SCC5_e_ConfigMem
 
  //BEL component instantiations
 SCC5_e_switch_matrix Inst_SCC5_e_switch_matrix (
-    .o_6to50(o_6to5[0]),
-    .o_6to51(o_6to5[1]),
-    .o_6to52(o_6to5[2]),
-    .o_6to53(o_6to5[3]),
-    .o_6to54(o_6to5[4]),
-    .o_6to55(o_6to5[5]),
-    .o_6to56(o_6to5[6]),
-    .o_6to57(o_6to5[7]),
+    .END_o_6to00(END_o_6to0[0]),
+    .END_o_6to01(END_o_6to0[1]),
+    .END_o_6to02(END_o_6to0[2]),
+    .END_o_6to03(END_o_6to0[3]),
+    .END_o_6to04(END_o_6to0[4]),
+    .END_o_6to05(END_o_6to0[5]),
+    .END_o_6to06(END_o_6to0[6]),
+    .END_o_6to07(END_o_6to0[7]),
+    .END_i_0to60(END_i_0to6[0]),
+    .END_i_0to61(END_i_0to6[1]),
+    .END_i_0to62(END_i_0to6[2]),
+    .END_i_0to63(END_i_0to6[3]),
+    .END_i_0to64(END_i_0to6[4]),
+    .END_i_0to65(END_i_0to6[5]),
+    .END_i_0to66(END_i_0to6[6]),
+    .END_i_0to67(END_i_0to6[7]),
     .N1END0(N1END[0]),
     .N1END1(N1END[1]),
     .N1END2(N1END[2]),
@@ -1807,14 +2625,22 @@ SCC5_e_switch_matrix Inst_SCC5_e_switch_matrix (
     .J_l_GH_END1(J_l_GH_BEG[1]),
     .J_l_GH_END2(J_l_GH_BEG[2]),
     .J_l_GH_END3(J_l_GH_BEG[3]),
-    .i_5to60(i_5to6[0]),
-    .i_5to61(i_5to6[1]),
-    .i_5to62(i_5to6[2]),
-    .i_5to63(i_5to6[3]),
-    .i_5to64(i_5to6[4]),
-    .i_5to65(i_5to6[5]),
-    .i_5to66(i_5to6[6]),
-    .i_5to67(i_5to6[7]),
+    .BEG_o_6to00(BEG_o_6to0[40]),
+    .BEG_o_6to01(BEG_o_6to0[41]),
+    .BEG_o_6to02(BEG_o_6to0[42]),
+    .BEG_o_6to03(BEG_o_6to0[43]),
+    .BEG_o_6to04(BEG_o_6to0[44]),
+    .BEG_o_6to05(BEG_o_6to0[45]),
+    .BEG_o_6to06(BEG_o_6to0[46]),
+    .BEG_o_6to07(BEG_o_6to0[47]),
+    .BEG_i_0to60(BEG_i_0to6[40]),
+    .BEG_i_0to61(BEG_i_0to6[41]),
+    .BEG_i_0to62(BEG_i_0to6[42]),
+    .BEG_i_0to63(BEG_i_0to6[43]),
+    .BEG_i_0to64(BEG_i_0to6[44]),
+    .BEG_i_0to65(BEG_i_0to6[45]),
+    .BEG_i_0to66(BEG_i_0to6[46]),
+    .BEG_i_0to67(BEG_i_0to6[47]),
     .N1BEG0(N1BEG[0]),
     .N1BEG1(N1BEG[1]),
     .N1BEG2(N1BEG[2]),

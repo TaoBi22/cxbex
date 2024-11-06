@@ -228,7 +228,7 @@ wire[3-1:0] DEBUG_select_B_T;
  //This shift register is padded to an even number of flops/latches
  //switch matrix multiplexer E1BEG0 MUX-2
 assign E1BEG0_input = {A_O,W1END3};
-my_mux2 inst_my_mux2_E1BEG0 (
+cus_mux21 inst_cus_mux21_E1BEG0 (
     .A0(E1BEG0_input[0]),
     .A1(E1BEG0_input[1]),
     .S(ConfigBits[0+0]),
@@ -237,7 +237,7 @@ my_mux2 inst_my_mux2_E1BEG0 (
 
  //switch matrix multiplexer E1BEG1 MUX-2
 assign E1BEG1_input = {A_Q,W1END2};
-my_mux2 inst_my_mux2_E1BEG1 (
+cus_mux21 inst_cus_mux21_E1BEG1 (
     .A0(E1BEG1_input[0]),
     .A1(E1BEG1_input[1]),
     .S(ConfigBits[1+0]),
@@ -246,7 +246,7 @@ my_mux2 inst_my_mux2_E1BEG1 (
 
  //switch matrix multiplexer E1BEG2 MUX-2
 assign E1BEG2_input = {B_O,W1END1};
-my_mux2 inst_my_mux2_E1BEG2 (
+cus_mux21 inst_cus_mux21_E1BEG2 (
     .A0(E1BEG2_input[0]),
     .A1(E1BEG2_input[1]),
     .S(ConfigBits[2+0]),
@@ -255,7 +255,7 @@ my_mux2 inst_my_mux2_E1BEG2 (
 
  //switch matrix multiplexer E1BEG3 MUX-2
 assign E1BEG3_input = {B_Q,W1END0};
-my_mux2 inst_my_mux2_E1BEG3 (
+cus_mux21 inst_cus_mux21_E1BEG3 (
     .A0(E1BEG3_input[0]),
     .A1(E1BEG3_input[1]),
     .S(ConfigBits[3+0]),
