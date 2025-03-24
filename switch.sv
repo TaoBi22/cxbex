@@ -76,6 +76,7 @@ module switch #(parameter N_CXU = 4) (
                 end
             end
             AWAIT_RESP: begin
+                // TODO: return status bits
                 cx_req_ready = 1'b0;
                 cx_resp_valid = 1'b1;
                 cx_resp_data = cxu_response;
