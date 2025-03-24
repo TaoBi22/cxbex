@@ -1,0 +1,354 @@
+{
+  "creator": "Yosys 0.43 (git sha1 ead4718e5, g++ 14.2.1 -march=x86-64 -mtune=generic -O2 -fno-plt -fexceptions -fstack-clash-protection -fcf-protection -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -ffile-prefix-map=/build/yosys/src=/usr/src/debug/yosys -fPIC -Os)",
+  "modules": {
+    "InPass4_frame_config_mux": {
+      "attributes": {
+        "I3_reg": 3,
+        "I2_reg": 2,
+        "I1_reg": 1,
+        "I0_reg": 0,
+        "BelMap": 1,
+        "FABulous": 1,
+        "dynports": 1,
+        "cells_not_processed": 1,
+        "src": "CXBex/Tile/RAM_IO/InPass4_frame_config_mux.v:22.1-85.10"
+      },
+      "parameter_default_values": {
+        "NoConfigBits": 4
+      },
+      "ports": {
+        "I0": {
+          "direction": "input",
+          "bits": [ 2 ]
+        },
+        "I1": {
+          "direction": "input",
+          "bits": [ 3 ]
+        },
+        "I2": {
+          "direction": "input",
+          "bits": [ 4 ]
+        },
+        "I3": {
+          "direction": "input",
+          "bits": [ 5 ]
+        },
+        "O0": {
+          "direction": "output",
+          "bits": [ 6 ]
+        },
+        "O1": {
+          "direction": "output",
+          "bits": [ 7 ]
+        },
+        "O2": {
+          "direction": "output",
+          "bits": [ 8 ]
+        },
+        "O3": {
+          "direction": "output",
+          "bits": [ 9 ]
+        },
+        "UserCLK": {
+          "direction": "input",
+          "bits": [ 10 ]
+        },
+        "ConfigBits": {
+          "direction": "input",
+          "bits": [ 11, 12, 13, 14 ]
+        }
+      },
+      "cells": {
+        "$procdff$2": {
+          "hide_name": 1,
+          "type": "$dff",
+          "parameters": {
+            "CLK_POLARITY": 1,
+            "WIDTH": 1
+          },
+          "attributes": {
+            "src": "CXBex/Tile/RAM_IO/InPass4_frame_config_mux.v:45.2-51.5"
+          },
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "CLK": [ 10 ],
+            "D": [ 2 ],
+            "Q": [ 15 ]
+          }
+        },
+        "$procdff$3": {
+          "hide_name": 1,
+          "type": "$dff",
+          "parameters": {
+            "CLK_POLARITY": 1,
+            "WIDTH": 1
+          },
+          "attributes": {
+            "src": "CXBex/Tile/RAM_IO/InPass4_frame_config_mux.v:45.2-51.5"
+          },
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "CLK": [ 10 ],
+            "D": [ 3 ],
+            "Q": [ 16 ]
+          }
+        },
+        "$procdff$4": {
+          "hide_name": 1,
+          "type": "$dff",
+          "parameters": {
+            "CLK_POLARITY": 1,
+            "WIDTH": 1
+          },
+          "attributes": {
+            "src": "CXBex/Tile/RAM_IO/InPass4_frame_config_mux.v:45.2-51.5"
+          },
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "CLK": [ 10 ],
+            "D": [ 4 ],
+            "Q": [ 17 ]
+          }
+        },
+        "$procdff$5": {
+          "hide_name": 1,
+          "type": "$dff",
+          "parameters": {
+            "CLK_POLARITY": 1,
+            "WIDTH": 1
+          },
+          "attributes": {
+            "src": "CXBex/Tile/RAM_IO/InPass4_frame_config_mux.v:45.2-51.5"
+          },
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "CLK": [ 10 ],
+            "D": [ 5 ],
+            "Q": [ 18 ]
+          }
+        },
+        "my_mux2_inst0": {
+          "hide_name": 0,
+          "type": "my_mux2",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": 1,
+            "src": "CXBex/Tile/RAM_IO/InPass4_frame_config_mux.v:58.13-63.6"
+          },
+          "connections": {
+            "A0": [ 2 ],
+            "A1": [ 15 ],
+            "S": [ 11 ],
+            "X": [ 6 ]
+          }
+        },
+        "my_mux2_inst1": {
+          "hide_name": 0,
+          "type": "my_mux2",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": 1,
+            "src": "CXBex/Tile/RAM_IO/InPass4_frame_config_mux.v:65.13-70.6"
+          },
+          "connections": {
+            "A0": [ 3 ],
+            "A1": [ 16 ],
+            "S": [ 12 ],
+            "X": [ 7 ]
+          }
+        },
+        "my_mux2_inst2": {
+          "hide_name": 0,
+          "type": "my_mux2",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": 1,
+            "src": "CXBex/Tile/RAM_IO/InPass4_frame_config_mux.v:72.13-77.6"
+          },
+          "connections": {
+            "A0": [ 4 ],
+            "A1": [ 17 ],
+            "S": [ 13 ],
+            "X": [ 8 ]
+          }
+        },
+        "my_mux2_inst3": {
+          "hide_name": 0,
+          "type": "my_mux2",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": 1,
+            "src": "CXBex/Tile/RAM_IO/InPass4_frame_config_mux.v:79.13-84.6"
+          },
+          "connections": {
+            "A0": [ 5 ],
+            "A1": [ 18 ],
+            "S": [ 14 ],
+            "X": [ 9 ]
+          }
+        }
+      },
+      "netnames": {
+        "$0\\Q0[0:0]": {
+          "hide_name": 1,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "CXBex/Tile/RAM_IO/InPass4_frame_config_mux.v:45.2-51.5"
+          }
+        },
+        "$0\\Q1[0:0]": {
+          "hide_name": 1,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "CXBex/Tile/RAM_IO/InPass4_frame_config_mux.v:45.2-51.5"
+          }
+        },
+        "$0\\Q2[0:0]": {
+          "hide_name": 1,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "CXBex/Tile/RAM_IO/InPass4_frame_config_mux.v:45.2-51.5"
+          }
+        },
+        "$0\\Q3[0:0]": {
+          "hide_name": 1,
+          "bits": [ 5 ],
+          "attributes": {
+            "src": "CXBex/Tile/RAM_IO/InPass4_frame_config_mux.v:45.2-51.5"
+          }
+        },
+        "ConfigBits": {
+          "hide_name": 0,
+          "bits": [ 11, 12, 13, 14 ],
+          "attributes": {
+            "FABulous": 1,
+            "GLOBAL": 1,
+            "src": "CXBex/Tile/RAM_IO/InPass4_frame_config_mux.v:36.54-36.64"
+          }
+        },
+        "I0": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "EXTERNAL": 1,
+            "FABulous": 1,
+            "src": "CXBex/Tile/RAM_IO/InPass4_frame_config_mux.v:25.33-25.35"
+          }
+        },
+        "I1": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "EXTERNAL": 1,
+            "FABulous": 1,
+            "src": "CXBex/Tile/RAM_IO/InPass4_frame_config_mux.v:26.33-26.35"
+          }
+        },
+        "I2": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "EXTERNAL": 1,
+            "FABulous": 1,
+            "src": "CXBex/Tile/RAM_IO/InPass4_frame_config_mux.v:27.33-27.35"
+          }
+        },
+        "I3": {
+          "hide_name": 0,
+          "bits": [ 5 ],
+          "attributes": {
+            "EXTERNAL": 1,
+            "FABulous": 1,
+            "src": "CXBex/Tile/RAM_IO/InPass4_frame_config_mux.v:28.33-28.35"
+          }
+        },
+        "O0": {
+          "hide_name": 0,
+          "bits": [ 6 ],
+          "attributes": {
+            "src": "CXBex/Tile/RAM_IO/InPass4_frame_config_mux.v:29.9-29.11"
+          }
+        },
+        "O1": {
+          "hide_name": 0,
+          "bits": [ 7 ],
+          "attributes": {
+            "src": "CXBex/Tile/RAM_IO/InPass4_frame_config_mux.v:30.9-30.11"
+          }
+        },
+        "O2": {
+          "hide_name": 0,
+          "bits": [ 8 ],
+          "attributes": {
+            "src": "CXBex/Tile/RAM_IO/InPass4_frame_config_mux.v:31.9-31.11"
+          }
+        },
+        "O3": {
+          "hide_name": 0,
+          "bits": [ 9 ],
+          "attributes": {
+            "src": "CXBex/Tile/RAM_IO/InPass4_frame_config_mux.v:32.9-32.11"
+          }
+        },
+        "Q0": {
+          "hide_name": 0,
+          "bits": [ 15 ],
+          "attributes": {
+            "src": "CXBex/Tile/RAM_IO/InPass4_frame_config_mux.v:43.6-43.8"
+          }
+        },
+        "Q1": {
+          "hide_name": 0,
+          "bits": [ 16 ],
+          "attributes": {
+            "src": "CXBex/Tile/RAM_IO/InPass4_frame_config_mux.v:43.10-43.12"
+          }
+        },
+        "Q2": {
+          "hide_name": 0,
+          "bits": [ 17 ],
+          "attributes": {
+            "src": "CXBex/Tile/RAM_IO/InPass4_frame_config_mux.v:43.14-43.16"
+          }
+        },
+        "Q3": {
+          "hide_name": 0,
+          "bits": [ 18 ],
+          "attributes": {
+            "src": "CXBex/Tile/RAM_IO/InPass4_frame_config_mux.v:43.18-43.20"
+          }
+        },
+        "UserCLK": {
+          "hide_name": 0,
+          "bits": [ 10 ],
+          "attributes": {
+            "EXTERNAL": 1,
+            "FABulous": 1,
+            "SHARED_PORT": 1,
+            "src": "CXBex/Tile/RAM_IO/InPass4_frame_config_mux.v:34.46-34.53"
+          }
+        }
+      }
+    }
+  }
+}
