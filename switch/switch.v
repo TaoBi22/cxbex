@@ -71,10 +71,10 @@ module switch #(parameter N_CXU = 4) (
             end
             `REQ_IN_PROGRESS: begin
                 cx_req_ready = 1'b0;
-                cx_resp_valid = 1'b1;
+                cx_resp_valid = 1'b0;
                 cxu_valids = 4'b1 << cx_cxu_id;
                 if (cxu_readys[cx_cxu_id]) begin
-                    switch_state_n = `AWAIT_REQ;
+                    switch_state_n = `AWAIT_RESP;
                     cxu_response_n = (cxu_responses >> (cx_cxu_id * 32));
                     cxu_status_n = (cxu_statuses >> (cx_cxu_id * 4));
                 end
@@ -95,7 +95,7 @@ module switch #(parameter N_CXU = 4) (
     end
 
     always @(posedge clk) begin
-        if (!rst) begin
+        if (rst) begin
             switch_state_c <= `AWAIT_REQ;
         end else begin
             switch_state_c <= switch_state_n;
