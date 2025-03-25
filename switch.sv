@@ -26,6 +26,7 @@ module switch #(parameter N_CXU = 4) (
     // Interfaces with CXUs
     input wire [32 * N_CXU - 1:0] cxu_responses,
     input wire [N_CXU - 1:0] cxu_readys,
+    input wire [4 * N_CXU - 1:0] cxu_statuses,
     output wire [N_CXU - 1:0] cxu_valids,
     // no point replicating these for each CXU
     output wire [31:0] cxu_data0,
@@ -45,11 +46,13 @@ module switch #(parameter N_CXU = 4) (
     } switch_state;
     switch_state switch_state_c, switch_state_n;
 
-    reg[31:0] cxu_response;
-    wire[31:0] cxu_response_c;
+    reg[31:0] cxu_response_c;
+    wire[31:0] cxu_response_n;
+
+    reg[3:0] cxu_status_c;
+    wire[3:0] cxu_status_n;
 
     always_comb begin 
-        // TODO: set defaults
         cx_req_ready = 1'b0;
         cx_resp_valid = 1'b0;
         cx_resp_state = 1'b0;
@@ -57,7 +60,8 @@ module switch #(parameter N_CXU = 4) (
         cx_resp_data = 32'h0;
         cxu_valids = 4'b0;
         switch_state_n = switch_state_c;
-        cxu_response_c = 32'h0;
+        cxu_response_n = cxu_response_c;
+        cxu_status_n = cxu_status_c;
         case (switch_state_c)
             AWAIT_REQ: begin
                 cx_req_ready = 1'b1;
@@ -72,7 +76,8 @@ module switch #(parameter N_CXU = 4) (
                 cxu_valids = 4'b1 << cx_cxu_id;
                 if (cxu_readys[cx_cxu_id]) begin
                     switch_state_n = AWAIT_REQ;
-                    cxu_response_c = (cxu_responses >> (cx_cxu_id * 32));
+                    cxu_response_n = (cxu_responses >> (cx_cxu_id * 32));
+                    cxu_status_n = (cxu_statuses >> (cx_cxu_id * 4));
                 end
             end
             AWAIT_RESP: begin
@@ -80,6 +85,7 @@ module switch #(parameter N_CXU = 4) (
                 cx_req_ready = 1'b0;
                 cx_resp_valid = 1'b1;
                 cx_resp_data = cxu_response;
+                cx_resp_status = cxu_status_c;
                 if (cx_resp_ready) begin
                     switch_state_n = AWAIT_REQ;
                 end
@@ -93,9 +99,8 @@ module switch #(parameter N_CXU = 4) (
             switch_state_c <= NO_REQ;
         end else begin
             switch_state_c <= switch_state_n;
-            if (switch_state_c == REQ_IN_PROGRESS && cxu_readys[cx_cxu_id]) begin
-                cxu_recxu_response <= cxu_response_c;
-            end
+            cxu_response_c <= cxu_response_n;
+            cxu_status_c <= cxu_status_n;
         end
     end
 
