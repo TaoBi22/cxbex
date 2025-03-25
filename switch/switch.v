@@ -1,6 +1,6 @@
 `define AWAIT_REQ 2'b00
 `define REQ_IN_PROGRESS 2'b01
-`define AWAIT_RESP 2'b10
+`define AWAIT_RESP 2'b11
 
 module switch #(parameter N_CXU = 4) (
     // CX signals from/to Ibex
@@ -38,7 +38,7 @@ module switch #(parameter N_CXU = 4) (
     output wire [1:0] cx_state_id_o
 
 );
-    
+
     assign cxu_data0_o = cx_req_data0;
     assign cxu_data1_o = cx_req_data1;
     assign cx_state_id_o = cx_state_id;
@@ -51,28 +51,30 @@ module switch #(parameter N_CXU = 4) (
     reg[3:0] cxu_status_c;
     reg[3:0] cxu_status_n;
 
-    always @ (*) begin 
+    // [MK] Can we always set those?
+    // We have hand-shaking anyways
+    always cx_resp_status = cxu_status_c;
+    always cx_resp_data = cxu_response_c;
+    always cxu_requesting = 4'b1 << cx_cxu_id;
+
+
+    always @ (*) begin
         cx_req_ready = 1'b0;
         cx_resp_valid = 1'b0;
         cx_resp_state = 1'b0;
-        cx_resp_status = 4'b0;
-        cx_resp_data = 32'h0;
-        cxu_requesting = 4'b0;
+
         switch_state_n = switch_state_c;
         cxu_response_n = cxu_response_c;
         cxu_status_n = cxu_status_c;
+
         case (switch_state_c)
             `AWAIT_REQ: begin
                 cx_req_ready = 1'b1;
-                cx_resp_valid = 1'b0;
                 if (cx_req_valid) begin
                     switch_state_n = `REQ_IN_PROGRESS;
                 end
             end
             `REQ_IN_PROGRESS: begin
-                cx_req_ready = 1'b0;
-                cx_resp_valid = 1'b0;
-                cxu_requesting = 4'b1 << cx_cxu_id;
                 if (cxu_replying[cx_cxu_id]) begin
                     switch_state_n = `AWAIT_RESP;
                     cxu_response_n = (cxu_responses >> (cx_cxu_id * 32));
@@ -81,10 +83,7 @@ module switch #(parameter N_CXU = 4) (
             end
             `AWAIT_RESP: begin
                 // TODO: return status bits
-                cx_req_ready = 1'b0;
                 cx_resp_valid = 1'b1;
-                cx_resp_data = cxu_response_c;
-                cx_resp_status = cxu_status_c;
                 if (cx_resp_ready) begin
                     switch_state_n = `AWAIT_REQ;
                 end
