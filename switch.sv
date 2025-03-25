@@ -1,56 +1,55 @@
+`define AWAIT_REQ 2'b00
+`define REQ_IN_PROGRESS 2'b01
+`define AWAIT_RESP 2'b10
+
 module switch #(parameter N_CXU = 4) (
     // CX signals from/to Ibex
 
-    input wire        clk,
-    input wire        rst,
-    input wire        cx_clk,
-    input wire        cx_rst,
-    input wire        cx_req_valid,
-    input wire        cx_resp_ready,
-    input wire [1:0]  cx_cxu_id,
-    input wire [1:0]  cx_state_id,
-    input wire [31:0] cx_req_data0,
-    input wire [31:0] cx_req_data1,
+    input reg        clk,
+    input reg        rst,
+    input reg        cx_clk,
+    input reg        cx_rst,
+    input reg        cx_req_valid,
+    input reg        cx_resp_ready,
+    input reg [1:0]  cx_cxu_id,
+    input reg [1:0]  cx_state_id,
+    input reg [31:0] cx_req_data0,
+    input reg [31:0] cx_req_data1,
 
-    output  wire        cx_req_ready,
-    output  wire        cx_resp_valid,
-    output  wire        cx_resp_state,
-    output  wire [3:0]  cx_resp_status,
-    output  wire [31:0] cx_resp_data,
+    output  reg        cx_req_ready,
+    output  reg        cx_resp_valid,
+    output  reg        cx_resp_state,
+    output  reg [3:0]  cx_resp_status,
+    output  reg [31:0] cx_resp_data,
 
-    input wire [1:0]  cx_virt_state_id,
+    input reg [1:0]  cx_virt_state_id,
 
-    input wire [31:0] cx_insn_o,
-    input wire [24:0] cx_func_o,
+    input reg [31:0] cx_insn_o,
+    input reg [24:0] cx_func_o,
 
     // Interfaces with CXUs
-    input wire [32 * N_CXU - 1:0] cxu_responses,
-    input wire [N_CXU - 1:0] cxu_readys,
-    input wire [4 * N_CXU - 1:0] cxu_statuses,
-    output wire [N_CXU - 1:0] cxu_valids,
+    input reg [32 * N_CXU - 1:0] cxu_responses,
+    input reg [N_CXU - 1:0] cxu_readys,
+    input reg [4 * N_CXU - 1:0] cxu_statuses,
+    output reg [N_CXU - 1:0] cxu_valids,
     // no point replicating these for each CXU
-    output wire [31:0] cxu_data0,
-    output wire [31:0] cxu_data1,
-    output wire [1:0] cx_state_id,
+    output wire [31:0] cxu_data0_o,
+    output wire [31:0] cxu_data1_o,
+    output wire [1:0] cx_state_id_o
 
 );
     
-    assign cxu_data0 = cx_req_data0;
-    assign cxu_data1 = cx_req_data1;
-    assign cx_state_id = cx_state_id;
+    assign cxu_data0_o = cx_req_data0;
+    assign cxu_data1_o = cx_req_data1;
+    assign cx_state_id_o = cx_state_id;
 
-    typedef enum logic[1:0] {
-        AWAIT_REQ,
-        REQ_IN_PROGRESS,
-        AWAIT_RESP,
-    } switch_state;
-    switch_state switch_state_c, switch_state_n;
+    reg[1:0] switch_state_c, switch_state_n;
 
     reg[31:0] cxu_response_c;
-    wire[31:0] cxu_response_n;
+    reg[31:0] cxu_response_n;
 
     reg[3:0] cxu_status_c;
-    wire[3:0] cxu_status_n;
+    reg[3:0] cxu_status_n;
 
     always_comb begin 
         cx_req_ready = 1'b0;
@@ -63,40 +62,41 @@ module switch #(parameter N_CXU = 4) (
         cxu_response_n = cxu_response_c;
         cxu_status_n = cxu_status_c;
         case (switch_state_c)
-            AWAIT_REQ: begin
+            `AWAIT_REQ: begin
                 cx_req_ready = 1'b1;
                 cx_resp_valid = 1'b0;
                 if (cx_req_valid) begin
-                    switch_state_n = REQ_IN_PROGRESS;
+                    switch_state_n = `REQ_IN_PROGRESS;
                 end
             end
-            REQ_IN_PROGRESS: begin
+            `REQ_IN_PROGRESS: begin
                 cx_req_ready = 1'b0;
                 cx_resp_valid = 1'b1;
                 cxu_valids = 4'b1 << cx_cxu_id;
                 if (cxu_readys[cx_cxu_id]) begin
-                    switch_state_n = AWAIT_REQ;
+                    switch_state_n = `AWAIT_REQ;
                     cxu_response_n = (cxu_responses >> (cx_cxu_id * 32));
                     cxu_status_n = (cxu_statuses >> (cx_cxu_id * 4));
                 end
             end
-            AWAIT_RESP: begin
+            `AWAIT_RESP: begin
                 // TODO: return status bits
                 cx_req_ready = 1'b0;
                 cx_resp_valid = 1'b1;
-                cx_resp_data = cxu_response;
+                cx_resp_data = cxu_response_c;
                 cx_resp_status = cxu_status_c;
                 if (cx_resp_ready) begin
-                    switch_state_n = AWAIT_REQ;
+                    switch_state_n = `AWAIT_REQ;
                 end
             end
-
+            default: begin
+            end
         endcase
     end
 
-    always_ff @(posedge clk) begin
+    always @(posedge clk) begin
         if (!rst) begin
-            switch_state_c <= NO_REQ;
+            switch_state_c <= `AWAIT_REQ;
         end else begin
             switch_state_c <= switch_state_n;
             cxu_response_c <= cxu_response_n;
