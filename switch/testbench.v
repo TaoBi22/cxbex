@@ -96,9 +96,9 @@ module testbench;
     .cx_func_o(cx_func_o),
 
     .cxu_responses(cxu_responses),
-    .cxu_readys(cxu_readys),
+    .cxu_replying(cxu_readys),
     .cxu_statuses(cxu_statuses),
-    .cxu_valids(cxu_valids),
+    .cxu_requesting(cxu_valids),
     .cxu_data0_o(cxu_data0_o),
     .cxu_data1_o(cxu_data1_o),
     .cx_state_id_o(cx_state_id_o)

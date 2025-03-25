@@ -29,9 +29,9 @@ module switch #(parameter N_CXU = 4) (
 
     // Interfaces with CXUs
     input wire [32 * N_CXU - 1:0] cxu_responses,
-    input wire [N_CXU - 1:0] cxu_readys,
+    input wire [N_CXU - 1:0] cxu_replying,
     input wire [4 * N_CXU - 1:0] cxu_statuses,
-    output reg [N_CXU - 1:0] cxu_valids,
+    output reg [N_CXU - 1:0] cxu_requesting,
     // no point replicating these for each CXU
     output wire [31:0] cxu_data0_o,
     output wire [31:0] cxu_data1_o,
@@ -57,7 +57,7 @@ module switch #(parameter N_CXU = 4) (
         cx_resp_state = 1'b0;
         cx_resp_status = 4'b0;
         cx_resp_data = 32'h0;
-        cxu_valids = 4'b0;
+        cxu_requesting = 4'b0;
         switch_state_n = switch_state_c;
         cxu_response_n = cxu_response_c;
         cxu_status_n = cxu_status_c;
@@ -72,8 +72,8 @@ module switch #(parameter N_CXU = 4) (
             `REQ_IN_PROGRESS: begin
                 cx_req_ready = 1'b0;
                 cx_resp_valid = 1'b0;
-                cxu_valids = 4'b1 << cx_cxu_id;
-                if (cxu_readys[cx_cxu_id]) begin
+                cxu_requesting = 4'b1 << cx_cxu_id;
+                if (cxu_replying[cx_cxu_id]) begin
                     switch_state_n = `AWAIT_RESP;
                     cxu_response_n = (cxu_responses >> (cx_cxu_id * 32));
                     cxu_status_n = (cxu_statuses >> (cx_cxu_id * 4));
