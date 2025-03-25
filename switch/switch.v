@@ -5,16 +5,16 @@
 module switch #(parameter N_CXU = 4) (
     // CX signals from/to Ibex
 
-    input reg        clk,
-    input reg        rst,
-    input reg        cx_clk,
-    input reg        cx_rst,
-    input reg        cx_req_valid,
-    input reg        cx_resp_ready,
-    input reg [1:0]  cx_cxu_id,
-    input reg [1:0]  cx_state_id,
-    input reg [31:0] cx_req_data0,
-    input reg [31:0] cx_req_data1,
+    input wire        clk,
+    input wire        rst,
+    input wire        cx_clk,
+    input wire        cx_rst,
+    input wire        cx_req_valid,
+    input wire        cx_resp_ready,
+    input wire [1:0]  cx_cxu_id,
+    input wire [1:0]  cx_state_id,
+    input wire [31:0] cx_req_data0,
+    input wire [31:0] cx_req_data1,
 
     output  reg        cx_req_ready,
     output  reg        cx_resp_valid,
@@ -22,15 +22,15 @@ module switch #(parameter N_CXU = 4) (
     output  reg [3:0]  cx_resp_status,
     output  reg [31:0] cx_resp_data,
 
-    input reg [1:0]  cx_virt_state_id,
+    input wire [1:0]  cx_virt_state_id,
 
-    input reg [31:0] cx_insn_o,
-    input reg [24:0] cx_func_o,
+    input wire [31:0] cx_insn_o,
+    input wire [24:0] cx_func_o,
 
     // Interfaces with CXUs
-    input reg [32 * N_CXU - 1:0] cxu_responses,
-    input reg [N_CXU - 1:0] cxu_readys,
-    input reg [4 * N_CXU - 1:0] cxu_statuses,
+    input wire [32 * N_CXU - 1:0] cxu_responses,
+    input wire [N_CXU - 1:0] cxu_readys,
+    input wire [4 * N_CXU - 1:0] cxu_statuses,
     output reg [N_CXU - 1:0] cxu_valids,
     // no point replicating these for each CXU
     output wire [31:0] cxu_data0_o,
@@ -51,7 +51,7 @@ module switch #(parameter N_CXU = 4) (
     reg[3:0] cxu_status_c;
     reg[3:0] cxu_status_n;
 
-    always_comb begin 
+    always @ (*) begin 
         cx_req_ready = 1'b0;
         cx_resp_valid = 1'b0;
         cx_resp_state = 1'b0;
